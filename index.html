@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oportunidades IA BR — Ganhe em dólar treinando IA</title>
-<meta name="description" content="Descubra plataformas que pagam por tarefas e vídeos para treinamento de IA. Compare Claru, Hub, Crow e KGeN, veja requisitos, estimativas e como começar.">
+<meta name="description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos para treinamento de IA. Compare Claru, Hub, Crow e KGeN, veja requisitos, estimativas e como começar.">
 <meta property="og:title" content="Oportunidades IA BR — Ganhe em dólar treinando IA">
-<meta property="og:description" content="Compare plataformas que pagam por tarefas e vídeos POV para treinamento de IA e descubra por onde começar.">
+<meta property="og:description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos POV para treinamento de IA.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@ input{font:inherit;}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
 }
 
-/* ===================== TOKENS ===================== */
+/* ===================== TOKENS (mantidos) ===================== */
 :root{
   --ink:#17140f;
   --ink-70:rgba(23,20,15,.72);
@@ -72,11 +72,9 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 14px);}
 .skip-link:focus{left:12px;top:12px;}
 
 .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;color:var(--accent-text);display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;}
-.section-dark .eyebrow{color:var(--accent);}
 .eyebrow::before{content:"";width:18px;height:1px;background:currentColor;display:inline-block;}
 h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.55rem);letter-spacing:-.01em;line-height:1.12;margin-bottom:16px;}
-.lede{font-size:1.05rem;color:var(--ink-70);max-width:620px;line-height:1.7;margin-bottom:44px;}
-.section-dark .lede{color:var(--paper-70);}
+.lede{font-size:1.05rem;color:var(--ink-70);max-width:640px;line-height:1.7;margin-bottom:44px;}
 
 .btn{font-family:var(--font-mono);font-weight:500;font-size:.82rem;letter-spacing:.02em;padding:15px 24px;border-radius:var(--r-s);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:background .15s ease,border-color .15s ease,color .15s ease,transform .15s ease;}
 .btn-primary{background:var(--accent);color:#fff;border:1.5px solid var(--accent);}
@@ -87,14 +85,11 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .btn-onaccent:hover{background:transparent;color:var(--ink);}
 .btn-outline-onaccent{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6);}
 .btn-outline-onaccent:hover{background:#fff;color:var(--accent);border-color:#fff;}
-.btn-onlight-dark{background:var(--accent);color:#fff;border:1.5px solid var(--accent);}
-.btn-onlight-dark:hover{background:#4661ff;border-color:#4661ff;}
 .mini-link{font-family:var(--font-mono);font-size:.74rem;color:var(--accent-text);border-bottom:1px solid currentColor;padding-bottom:1px;}
-.section-dark .mini-link{color:var(--accent);}
 
-/* corner-bracket frame — used sparingly (hero + Claru highlight only) */
+/* corner-bracket frame */
 .frame{position:relative;}
-.corner{position:absolute;width:18px;height:18px;pointer-events:none;}
+.corner{position:absolute;width:18px;height:18px;pointer-events:none;z-index:2;}
 .corner.tl{top:-1px;left:-1px;border-top:2px solid var(--accent);border-left:2px solid var(--accent);}
 .corner.tr{top:-1px;right:-1px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);}
 .corner.bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--accent);border-left:2px solid var(--accent);}
@@ -125,72 +120,90 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .hero-sub{font-size:1.12rem;color:var(--ink-70);max-width:480px;line-height:1.65;margin-bottom:32px;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
 .hero-disclaimer{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-50);max-width:420px;}
-.hero-visual{position:relative;aspect-ratio:1/1;max-width:400px;justify-self:center;width:100%;}
-.viewfinder-svg{width:100%;height:100%;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;}
-.viewfinder-svg .reticle{stroke:var(--ink-30);stroke-width:1.5;}
-.viewfinder-svg .scan-line{fill:var(--accent);opacity:.55;}
+.hero-visual{position:relative;max-width:460px;justify-self:center;width:100%;padding:10px;}
+.hero-visual-img{width:100%;border-radius:var(--r-m);display:block;}
+.hero-visual-tag{position:absolute;top:22px;left:22px;background:rgba(23,20,15,.78);color:var(--paper);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.03em;padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:7px;z-index:3;}
+.rec-dot{width:7px;height:7px;border-radius:50%;background:var(--rec);flex-shrink:0;}
 @media (prefers-reduced-motion: no-preference){
-  .viewfinder-svg .scan-line{animation:scan 3.6s ease-in-out infinite;}
   .rec-dot{animation:pulse 1.7s ease-in-out infinite;}
 }
-@keyframes scan{0%,100%{transform:translateY(-92px);}50%{transform:translateY(92px);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
-.rec-tag{position:absolute;top:18px;left:18px;display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;color:var(--ink-70);}
-.rec-dot{width:7px;height:7px;border-radius:50%;background:var(--rec);}
+.hero-visual-caption{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);margin-top:14px;line-height:1.55;padding:0 4px;}
 
-/* ===================== NUMBERS ===================== */
-.numbers{padding-top:52px;padding-bottom:36px;}
-.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
-.stat{display:flex;flex-direction:column;gap:6px;border-left:1px solid rgba(236,230,216,.2);padding-left:20px;}
-.stat:first-child{border-left:0;padding-left:0;}
-.stat-num{font-family:var(--font-display);font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);color:var(--paper);}
-.stat-label{font-size:.86rem;color:var(--paper-70);}
-.numbers-footnote{font-family:var(--font-mono);font-size:.72rem;color:var(--paper-50);margin-top:28px;}
+/* ===================== PLATFORM ROWS ===================== */
+.platforms-list{display:flex;flex-direction:column;gap:14px;}
+.platform-row{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);overflow:hidden;}
+.platform-row.is-recommended{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.platform-row-head{display:flex;align-items:center;gap:22px;padding:24px 28px;flex-wrap:wrap;}
+.platform-identity{display:flex;flex-direction:column;gap:5px;min-width:160px;}
+.platform-identity .name-line{display:flex;align-items:center;gap:9px;}
+.platform-identity .name{font-family:var(--font-display);font-weight:600;font-size:1.25rem;}
+.star-badge{color:var(--accent);font-size:.95rem;}
+.identity-note{font-family:var(--font-mono);font-size:.68rem;color:var(--accent-text);}
+.identity-note.is-muted{color:var(--ink-50);}
+.platform-tags{display:flex;gap:8px;flex-wrap:wrap;flex:1 1 220px;}
+.tag-chip{font-family:var(--font-mono);font-size:.68rem;padding:6px 11px;border:1px solid var(--ink-12);border-radius:20px;color:var(--ink-70);white-space:nowrap;}
+.platform-rate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:110px;text-align:right;}
+.platform-rate .num{font-family:var(--font-display);font-weight:600;font-size:1.4rem;white-space:nowrap;}
+.platform-rate .unit{font-family:var(--font-mono);font-size:.64rem;color:var(--ink-50);}
+.platform-toggle{font-family:var(--font-mono);font-size:.78rem;padding:11px 18px;border:1.5px solid var(--ink);border-radius:20px;display:flex;align-items:center;gap:9px;flex-shrink:0;transition:background .15s ease,color .15s ease;}
+.platform-toggle:hover{background:var(--ink);color:var(--paper);}
+.platform-toggle .chev{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;flex-shrink:0;}
+.platform-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg);}
+.platform-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.platform-panel-inner{padding:28px 28px 34px;border-top:1px solid var(--ink-12);}
+.panel-section{margin-top:26px;}
+.panel-section:first-child{margin-top:4px;}
+.panel-section h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--accent-text);margin-bottom:14px;}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;}
+.pros-cons ul{display:flex;flex-direction:column;gap:9px;}
+.pros-cons li{position:relative;padding-left:20px;font-size:.88rem;color:var(--ink-70);line-height:1.55;}
+.pros li::before{content:"+";position:absolute;left:0;top:-1px;color:var(--accent-text);font-weight:600;}
+.cons li::before{content:"–";position:absolute;left:0;top:-1px;color:var(--ink-50);font-weight:600;}
+.facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 32px;}
+.facts-grid>div{font-size:.86rem;}
+.facts-grid dt{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-50);margin-bottom:5px;}
+.facts-grid dd{color:var(--ink-70);line-height:1.55;}
+.bonus-table{display:flex;flex-direction:column;border-top:1px solid var(--ink-12);}
+.bonus-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed var(--ink-12);font-size:.86rem;}
+.bonus-row .trigger{color:var(--ink-70);}
+.bonus-row .reward{color:var(--accent-text);font-weight:600;text-align:right;}
+.panel-text{font-size:.9rem;color:var(--ink-70);line-height:1.65;max-width:620px;}
+.panel-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;}
+.panel-link{font-family:var(--font-mono);font-size:.78rem;color:var(--accent-text);border-bottom:1px solid currentColor;}
+.signup-steps{display:flex;flex-direction:column;gap:18px;}
+.signup-step{display:flex;gap:16px;}
+.signup-step .step-num{font-family:var(--font-display);font-weight:600;font-size:.98rem;color:var(--accent-text);flex-shrink:0;width:22px;}
+.signup-step .step-body p{font-size:.88rem;color:var(--ink-70);line-height:1.55;margin-bottom:9px;}
+.signup-step .step-body p:last-child{margin-bottom:0;}
+.code-copy{display:inline-flex;align-items:center;gap:9px;background:var(--paper-deep);border-radius:20px;padding:6px 6px 6px 15px;margin:5px 10px 5px 0;}
+.code-copy code{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.03em;}
+.code-copy .code-note{display:block;font-size:.8rem;color:var(--ink-70);margin-top:4px;max-width:480px;}
+.copy-btn{font-family:var(--font-mono);font-size:.66rem;background:var(--ink);color:var(--paper);padding:6px 11px;border-radius:16px;transition:background .15s ease;}
+.copy-btn.is-copied{background:var(--accent);}
 
-/* ===================== FLOW (como funciona) ===================== */
-.flow{display:flex;gap:0;flex-wrap:wrap;counter-reset:step;}
-.flow-step{flex:1 1 150px;position:relative;padding:0 18px 0 0;}
-.flow-step:not(:last-child)::after{content:"";position:absolute;top:22px;left:60px;right:0;height:1px;background:var(--ink-12);}
-.flow-icon{width:44px;height:44px;color:var(--accent-text);margin-bottom:16px;}
-.flow-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.flow-num{display:block;font-family:var(--font-mono);font-size:.7rem;color:var(--ink-50);margin-bottom:6px;}
-.flow-step h3{font-family:var(--font-display);font-weight:600;font-size:1rem;line-height:1.3;}
-
-/* ===================== PLATFORMS ===================== */
-.group-label{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;color:var(--ink-50);text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--ink-12);}
-.platform-group{margin-bottom:52px;}
-.platform-group:last-child{margin-bottom:0;}
-.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.platform-grid--single{grid-template-columns:minmax(0,420px);}
-.platform-card{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:28px;display:flex;flex-direction:column;gap:16px;transition:transform .15s ease,border-color .15s ease;}
-.platform-card:hover{transform:translateY(-3px);border-color:var(--ink-30);}
-.platform-card.is-untested{background:transparent;border-style:dashed;border-color:var(--ink-30);}
-.badge{align-self:flex-start;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.03em;padding:6px 11px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;}
-.badge--recommended{background:var(--accent);color:#fff;}
-.badge--easiest{background:var(--ink);color:var(--paper);}
-.badge--used{border:1px solid var(--ink);color:var(--ink);}
-.badge--untested{border:1px dashed var(--ink-50);color:var(--ink-70);}
-.platform-card h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;}
-.platform-facts{display:flex;flex-direction:column;gap:10px;}
-.platform-facts>div{display:grid;grid-template-columns:104px 1fr;gap:10px;font-size:.88rem;}
-.platform-facts dt{color:var(--ink-50);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.02em;padding-top:2px;}
-.platform-facts dd{color:var(--ink-70);}
-.platform-review{font-size:.92rem;font-style:italic;color:var(--ink-70);border-left:2px solid var(--ink-12);padding-left:14px;}
-.platform-personal-note{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);background:var(--ink-12);padding:8px 12px;border-radius:var(--r-s);}
-.platform-cta{margin-top:auto;justify-content:center;text-align:center;}
-
-/* ===================== CLARU HIGHLIGHT ===================== */
-.claru-feature{padding:80px 0;}
-.claru-feature-inner{padding:52px;max-width:760px;}
-.claru-feature-inner .badge{margin-bottom:22px;}
-.claru-feature-inner h2{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4vw,2.8rem);margin-bottom:18px;}
-.claru-feature-text{font-size:1.08rem;color:var(--paper-70);line-height:1.7;margin-bottom:26px;max-width:560px;}
-.claru-points{display:grid;gap:10px;margin-bottom:32px;}
-.claru-points li{position:relative;padding-left:20px;font-size:.94rem;color:var(--paper-70);}
-.claru-points li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--accent);}
+/* ===================== CALCULATOR (redesenhada) ===================== */
+.calc-shell{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);overflow:hidden;}
+.calc-grid{display:grid;grid-template-columns:1.1fr .9fr;}
+.calc-controls{padding:48px;}
+.calc-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:36px;}
+.calc-tab{font-family:var(--font-mono);font-size:.8rem;padding:11px 18px;border-radius:20px;border:1.5px solid var(--ink-12);color:var(--ink-70);transition:border-color .15s ease,background .15s ease,color .15s ease;}
+.calc-tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+.calc-row label,.calc-label-block{display:block;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-70);margin-bottom:16px;}
+input[type="range"]{width:100%;-webkit-appearance:none;appearance:none;height:3px;background:var(--ink-12);border-radius:2px;outline-offset:6px;}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
+input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
+.calc-scale{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.68rem;color:var(--ink-50);margin-top:10px;}
+.calc-current{font-size:.9rem;color:var(--ink-70);margin-top:16px;}
+.calc-result-panel{background:var(--ink);color:var(--paper);padding:48px;display:flex;flex-direction:column;justify-content:center;}
+.calc-result-label{font-family:var(--font-mono);font-size:.76rem;color:var(--paper-70);margin-bottom:8px;}
+.calc-result-usd{font-family:var(--font-display);font-weight:600;font-size:clamp(2.3rem,5.4vw,3.2rem);line-height:1;}
+.calc-result-brl{font-size:1.05rem;color:var(--paper-70);margin-top:8px;}
+.calc-bonus-note{margin-top:24px;font-size:.86rem;color:var(--paper-70);background:rgba(255,255,255,.08);padding:16px 18px;border-radius:var(--r-s);line-height:1.55;}
+.calc-disclaimer-bar{padding:20px 48px;border-top:1px solid var(--ink-12);font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);line-height:1.6;}
 
 /* ===================== COMPARE ===================== */
-.compare-wrap{margin-bottom:56px;overflow-x:auto;}
+.compare-wrap{overflow-x:auto;}
 .compare-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px;}
 .compare-table th,.compare-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--ink-12);}
 .compare-table thead th{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--ink-50);font-weight:500;}
@@ -210,56 +223,6 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
   .compare-cards{display:block;}
 }
 
-.recommend-block{background:var(--paper-deep);border-radius:var(--r-m);padding:40px;}
-.recommend-title{font-family:var(--font-display);font-weight:600;font-size:1.4rem;margin-bottom:26px;}
-.recommend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:22px;}
-.recommend-card .medal{font-size:1.8rem;display:block;margin-bottom:10px;}
-.recommend-card h4{font-family:var(--font-display);font-weight:600;font-size:1.1rem;margin-bottom:4px;}
-.recommend-tag{font-family:var(--font-mono);font-size:.72rem;color:var(--accent-text);margin-bottom:10px;}
-.recommend-card p:last-child{font-size:.9rem;color:var(--ink-70);line-height:1.6;}
-.recommend-disclaimer{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);}
-
-/* ===================== CALCULATOR ===================== */
-.calc-card{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:40px;max-width:640px;}
-.calc-row{margin-bottom:32px;}
-.calc-row label,.calc-label-block{display:block;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-70);margin-bottom:16px;}
-input[type="range"]{width:100%;-webkit-appearance:none;appearance:none;height:3px;background:var(--ink-12);border-radius:2px;outline-offset:6px;}
-input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
-input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
-.calc-scale{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.68rem;color:var(--ink-50);margin-top:10px;}
-.calc-current{font-size:.88rem;color:var(--ink-70);margin-top:14px;}
-.calc-platform-select{display:flex;gap:10px;flex-wrap:wrap;}
-.calc-chip{font-family:var(--font-mono);font-size:.8rem;padding:10px 18px;border-radius:20px;border:1.5px solid var(--ink-12);color:var(--ink-70);transition:border-color .15s ease,background .15s ease,color .15s ease;}
-.calc-chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);}
-.calc-result{border-top:1px solid var(--ink-12);padding-top:28px;display:flex;flex-direction:column;gap:4px;}
-.calc-result-label{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-50);}
-.calc-result-usd{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,5vw,2.6rem);}
-.calc-result-brl{font-size:1rem;color:var(--ink-70);}
-.calc-claru-note{margin-top:18px;font-size:.88rem;color:var(--accent-text);background:var(--accent-dim);padding:14px 16px;border-radius:var(--r-s);}
-.calc-disclaimer{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);margin-top:22px;line-height:1.6;}
-
-/* ===================== TASKS ===================== */
-.task-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.task-card{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:22px 18px;display:flex;flex-direction:column;gap:14px;text-align:left;transition:transform .15s ease,border-color .15s ease;}
-.task-card:hover{transform:translateY(-3px);border-color:var(--ink-30);}
-.task-icon{width:36px;height:36px;color:var(--accent-text);}
-.task-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.task-card span{font-size:.92rem;font-weight:500;}
-
-/* ===================== MODAL ===================== */
-.modal-overlay{position:fixed;inset:0;background:rgba(23,20,15,.65);display:none;align-items:center;justify-content:center;padding:24px;z-index:200;}
-.modal-overlay.is-open{display:flex;}
-.modal{background:var(--card);border-radius:var(--r-m);max-width:520px;width:100%;max-height:86vh;overflow-y:auto;padding:40px;position:relative;}
-.modal-close{position:absolute;top:18px;right:18px;width:32px;height:32px;font-size:1.4rem;line-height:1;color:var(--ink-50);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.modal-close:hover{background:var(--ink-12);color:var(--ink);}
-.modal-icon{width:44px;height:44px;color:var(--accent-text);margin-bottom:18px;}
-.modal-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.modal h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin-bottom:20px;}
-.modal-body dl{display:flex;flex-direction:column;gap:16px;}
-.modal-body dt{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--accent-text);margin-bottom:5px;}
-.modal-body dd{font-size:.92rem;color:var(--ink-70);line-height:1.6;}
-.modal-note{margin-top:20px;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);border-top:1px solid var(--ink-12);padding-top:16px;}
-
 /* ===================== REQUIREMENTS ===================== */
 .requirements-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink-12);}
 .req-block{padding:28px 24px 28px 0;border-right:1px solid var(--ink-12);}
@@ -269,47 +232,12 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .req-block p{font-size:1rem;font-weight:500;margin-bottom:8px;}
 .req-footnote{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);margin-top:24px;}
 
-/* ===================== HEADSET ===================== */
-.headset-section{background:var(--paper-deep);}
-.headset-grid{display:grid;grid-template-columns:1fr .8fr;gap:48px;align-items:center;}
-.headset-copy h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin-bottom:14px;}
-.headset-copy>p{color:var(--ink-70);margin-bottom:18px;max-width:440px;}
-.headset-copy ul{display:flex;flex-direction:column;gap:10px;}
-.headset-copy li{position:relative;padding-left:20px;font-size:.92rem;color:var(--ink-70);}
-.headset-copy li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--accent);}
-.headset-illustration{color:var(--ink-50);max-width:220px;margin:0 auto;}
-.headset-illustration svg{stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;}
-
-/* ===================== RECORDING ===================== */
-.record-steps{display:flex;flex-direction:column;margin-bottom:48px;}
-.record-steps li{display:flex;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--ink-12);font-size:1.02rem;}
-.record-steps li:first-child{border-top:1px solid var(--ink-12);}
-.record-steps li span{font-family:var(--font-mono);font-size:.78rem;color:var(--accent-text);flex-shrink:0;}
-.rejection-box{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:32px;}
-.rejection-box h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;margin-bottom:18px;}
-.rejection-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;margin-bottom:18px;}
-.rejection-list li{position:relative;padding-left:18px;font-size:.9rem;color:var(--ink-70);}
-.rejection-list li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--rec);opacity:.7;}
-.rejection-note{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);}
-
-/* ===================== PAYMENTS ===================== */
-.payment-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:32px;}
-.payment-card{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:24px;}
-.payment-card svg{width:28px;height:28px;stroke:var(--accent-text);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px;}
-.payment-card h4{font-family:var(--font-display);font-weight:600;font-size:1.02rem;margin-bottom:6px;}
-.payment-card p{font-size:.86rem;color:var(--ink-70);}
-.claru-payment-highlight{font-size:.98rem;color:var(--ink-70);background:var(--paper-deep);border-radius:var(--r-m);padding:22px 26px;max-width:640px;}
-.claru-payment-highlight strong{color:var(--ink);}
-
-/* ===================== START ===================== */
-.start-steps{display:flex;flex-direction:column;max-width:640px;}
-.start-steps li{display:flex;gap:22px;padding:22px 0;border-bottom:1px solid var(--ink-12);}
-.start-steps li:first-child{border-top:1px solid var(--ink-12);}
-.start-num{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--accent-text);flex-shrink:0;width:28px;}
-.start-steps p{font-size:1.02rem;padding-top:2px;}
-.start-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
-.chip{font-family:var(--font-mono);font-size:.76rem;padding:9px 14px;border-radius:18px;border:1.5px solid var(--ink-12);color:var(--ink-70);transition:border-color .15s ease,color .15s ease;}
-.chip:hover{border-color:var(--accent);color:var(--accent-text);}
+.headset-banner{display:flex;align-items:center;gap:36px;background:var(--paper-deep);border-radius:var(--r-m);padding:34px 38px;margin-top:40px;}
+.headset-banner-icon{width:74px;height:74px;flex-shrink:0;color:var(--ink-50);}
+.headset-banner-icon svg{stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;}
+.headset-banner-body h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;margin-bottom:8px;}
+.headset-banner-body p{font-size:.92rem;color:var(--ink-70);margin-bottom:16px;max-width:520px;}
+.headset-banner-links{display:flex;gap:12px;flex-wrap:wrap;}
 
 /* ===================== FAQ ===================== */
 .accordion-item{border-bottom:1px solid var(--ink-12);}
@@ -322,7 +250,8 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .accordion-trigger[aria-expanded="true"] .plus::after{transform:rotate(90deg);opacity:0;}
 .accordion-panel{max-height:0;overflow:hidden;transition:max-height .28s ease;}
 .accordion-panel p,.accordion-panel div{padding:0 0 24px;font-size:.94rem;color:var(--ink-70);line-height:1.7;max-width:640px;}
-.accordion-panel .btn{margin-top:6px;}
+.faq-contact{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--paper-deep);border-radius:var(--r-m);padding:28px 32px;margin-top:44px;}
+.faq-contact p{font-size:.96rem;color:var(--ink-70);max-width:440px;}
 
 /* ===================== FINAL CTA ===================== */
 .final-cta{background:var(--accent);color:#fff;padding:88px 0;}
@@ -353,18 +282,15 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 /* ===================== RESPONSIVE ===================== */
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;}
-  .hero-visual{max-width:280px;order:-1;}
-  .platform-grid{grid-template-columns:repeat(2,1fr);}
-  .task-grid{grid-template-columns:repeat(3,1fr);}
-  .recommend-grid{grid-template-columns:1fr;gap:32px;}
+  .hero-visual{max-width:340px;order:-1;margin:0 auto;}
   .requirements-row{grid-template-columns:repeat(2,1fr);}
   .req-block:nth-child(2){border-right:0;}
   .req-block:nth-child(3){padding-left:0;border-top:1px solid var(--ink-12);padding-top:28px;}
   .req-block:nth-child(4){border-top:1px solid var(--ink-12);padding-top:28px;}
-  .payment-cards{grid-template-columns:repeat(2,1fr);}
-  .headset-grid{grid-template-columns:1fr;}
-  .headset-illustration{order:-1;max-width:160px;}
   .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .calc-grid{grid-template-columns:1fr;}
+  .pros-cons{grid-template-columns:1fr;}
+  .facts-grid{grid-template-columns:1fr;}
 }
 @media (max-width:720px){
   .nav-desktop,.nav-cta{display:none;}
@@ -374,20 +300,16 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   .mobile-menu nav{display:flex;flex-direction:column;padding:8px 24px 26px;gap:4px;}
   .mobile-menu a{padding:12px 0;font-size:.98rem;border-bottom:1px solid var(--ink-12);}
   .mobile-menu a:last-child{border-bottom:0;margin-top:10px;justify-content:center;}
-  .numbers-grid{grid-template-columns:repeat(2,1fr);row-gap:28px;}
-  .stat:nth-child(3){border-left:0;padding-left:0;}
-  .flow{flex-direction:column;gap:28px;}
-  .flow-step:not(:last-child)::after{display:none;}
-  .platform-grid{grid-template-columns:1fr;}
-  .task-grid{grid-template-columns:repeat(2,1fr);}
-  .recommend-block{padding:28px;}
+  .platform-row-head{padding:20px;}
+  .platform-rate{align-items:flex-start;text-align:left;}
+  .platform-panel-inner{padding:22px 20px 28px;}
+  .calc-controls,.calc-result-panel{padding:30px 24px;}
+  .calc-disclaimer-bar{padding:18px 24px;}
   .requirements-row{grid-template-columns:1fr;}
   .req-block{border-right:0 !important;padding-left:0 !important;}
   .req-block:not(:first-child){border-top:1px solid var(--ink-12);padding-top:24px;}
-  .payment-cards{grid-template-columns:1fr;}
-  .claru-feature-inner{padding:32px 24px;}
-  .calc-card{padding:26px;}
-  .rejection-list{grid-template-columns:1fr;}
+  .headset-banner{flex-direction:column;align-items:flex-start;padding:26px;}
+  .faq-contact{flex-direction:column;align-items:flex-start;}
   .footer-bottom{flex-direction:column;}
   .footer-transparency{text-align:left;}
 }
@@ -411,7 +333,6 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <span class="brand-text">OPORTUNIDADES <span class="accent-ia">IA</span> BR</span>
     </a>
     <nav class="nav-desktop" aria-label="Navegação principal">
-      <a href="#como-funciona">Como funciona</a>
       <a href="#plataformas">Plataformas</a>
       <a href="#calculadora">Quanto paga</a>
       <a href="#requisitos">Requisitos</a>
@@ -424,7 +345,6 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <nav aria-label="Navegação mobile">
-      <a href="#como-funciona">Como funciona</a>
       <a href="#plataformas">Plataformas</a>
       <a href="#calculadora">Quanto paga</a>
       <a href="#requisitos">Requisitos</a>
@@ -445,123 +365,26 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <p class="hero-sub">Conheça plataformas que pagam por vídeos e atividades usadas no desenvolvimento de Inteligência Artificial.</p>
       <div class="hero-ctas">
         <a href="#plataformas" class="btn btn-primary">VER PLATAFORMAS ↓</a>
-        <a href="#como-funciona" class="btn btn-outline">COMO FUNCIONA</a>
+        <a href="#calculadora" class="btn btn-outline">QUANTO DÁ PRA GANHAR</a>
       </div>
       <p class="hero-disclaimer">Valores e disponibilidade variam conforme a plataforma e as tarefas disponíveis.</p>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="viewfinder-svg" viewBox="0 0 320 320">
-        <path d="M20 60 L20 20 L60 20"/>
-        <path d="M260 20 L300 20 L300 60"/>
-        <path d="M300 260 L300 300 L260 300"/>
-        <path d="M60 300 L20 300 L20 260"/>
-        <circle class="reticle" cx="160" cy="160" r="72"/>
-        <line class="reticle" x1="160" y1="52" x2="160" y2="104"/>
-        <line class="reticle" x1="160" y1="216" x2="160" y2="268"/>
-        <line class="reticle" x1="52" y1="160" x2="104" y2="160"/>
-        <line class="reticle" x1="216" y1="160" x2="268" y2="160"/>
-        <rect class="scan-line" x="24" y="159" width="272" height="2" stroke="none"/>
-      </svg>
-      <div class="rec-tag"><span class="rec-dot"></span>REC</div>
+    <div class="hero-visual frame">
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <div class="hero-visual-tag"><span class="rec-dot"></span>GANHO REAL · HUB.XYZ</div>
+      <img class="hero-visual-img" src="{{HUB_IMAGE_SRC}}" alt="Cartão de ganhos mostrando o total recebido gravando tarefas pela Hub.xyz">
+      <p class="hero-visual-caption">Print de uma semana gravando pela Hub.xyz. Os resultados variam conforme a plataforma, as tarefas disponíveis, as horas gravadas e a aprovação dos vídeos.</p>
     </div>
-  </div>
-</section>
-
-<!-- ===================== NUMBERS ===================== -->
-<section class="numbers section-dark" id="numeros">
-  <div class="container numbers-grid">
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Plataformas que já usei</span></div>
-    <div class="stat"><span class="stat-num">US$ 5–8/h</span><span class="stat-label">Valor estimado por hora gravada</span></div>
-    <div class="stat"><span class="stat-num">PAGAMENTO EM DÓLAR</span><span class="stat-label">Receba pelas horas aprovadas</span></div>
-    <div class="stat"><span class="stat-num">FÁCIL DE COMEÇAR</span><span class="stat-label">Tarefas simples do dia a dia</span></div>
-  </div>
-  <p class="numbers-footnote container">*Os valores são uma referência do pagamento por horas aprovadas. Seguindo as regras da plataforma e realizando as tarefas corretamente, você recebe pelos trabalhos aprovados. O total pode variar conforme as horas e os bônus disponíveis.</p>
-</section>
-
-<!-- ===================== COMO FUNCIONA ===================== -->
-<section class="section" id="como-funciona">
-  <div class="container">
-    <p class="eyebrow">COMO FUNCIONA</p>
-    <h2 class="title">Como transformar tarefas do dia a dia em renda extra?</h2>
-    <p class="lede">Seis passos simples, do cadastro até o pagamento.</p>
-    <ol class="flow" id="flowSteps"></ol>
   </div>
 </section>
 
 <!-- ===================== PLATAFORMAS ===================== -->
 <section class="section" id="plataformas">
   <div class="container">
-    <p class="eyebrow">AS PLATAFORMAS</p>
-    <h2 class="title">As plataformas que eu uso ou já usei.</h2>
-    <p class="lede">Eu já testei algumas das principais plataformas desse mercado. Aqui você encontra minha experiência, os pontos fortes e o que considero importante saber antes de se cadastrar.</p>
-
-    <div class="platform-group">
-      <h3 class="group-label">Já usei</h3>
-      <div class="platform-grid" id="platformsUsed"></div>
-    </div>
-    <div class="platform-group">
-      <h3 class="group-label">Ainda não usei</h3>
-      <div class="platform-grid platform-grid--single" id="platformsUntested"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CLARU DESTAQUE ===================== -->
-<section class="claru-feature section-dark" id="claru-destaque">
-  <div class="container">
-    <div class="claru-feature-inner frame">
-      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-      <span class="badge badge--recommended">⭐ MINHA PRINCIPAL INDICAÇÃO</span>
-      <h2>Claru</h2>
-      <p class="claru-feature-text">É a que eu mais gosto pela possibilidade de combinar o pagamento das horas com bônus acumulados conforme você avança.</p>
-      <ul class="claru-points">
-        <li>Possui bônus, que aumentam conforme as horas gravadas</li>
-        <li>Permite alcançar valores maiores com mais facilidade</li>
-        <li>Mecânica de recompensa interessante</li>
-        <li>Pagamento processado às terças-feiras</li>
-        <li>Rotina de pagamento fácil de entender</li>
-      </ul>
-      <a href="#" class="btn btn-onlight-dark" id="claruFeatureCta" target="_blank" rel="noopener sponsored">FAÇA SEU CADASTRO NA CLARU →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== COMPARATIVO ===================== -->
-<section class="section" id="comparativo">
-  <div class="container">
-    <p class="eyebrow">COMPARATIVO</p>
-    <h2 class="title">Qual plataforma combina mais com você?</h2>
-    <p class="lede">Um resumo lado a lado do que já testei — e do que ainda não testei.</p>
-
-    <div class="compare-wrap">
-      <table class="compare-table" id="compareTable" aria-label="Comparativo entre Claru, Hub, Crow e KGeN"></table>
-      <div class="compare-cards" id="compareCards"></div>
-    </div>
-
-    <div class="recommend-block">
-      <h3 class="recommend-title">Se eu tivesse que começar hoje...</h3>
-      <div class="recommend-grid">
-        <div class="recommend-card">
-          <span class="medal" aria-hidden="true">🥇</span>
-          <h4>Claru</h4>
-          <p class="recommend-tag">Minha primeira escolha</p>
-          <p>Eu escolheria a Claru principalmente pelos bônus. Conforme você aumenta suas horas de gravação, os bônus podem aumentar — e isso cria uma oportunidade de elevar os ganhos além do valor básico por hora.</p>
-        </div>
-        <div class="recommend-card">
-          <span class="medal" aria-hidden="true">🥈</span>
-          <h4>Hub</h4>
-          <p class="recommend-tag">Minha escolha pela facilidade</p>
-          <p>Se a prioridade for facilidade de uso e uma experiência mais fluida, a Hub é uma ótima opção.</p>
-        </div>
-        <div class="recommend-card">
-          <span class="medal" aria-hidden="true">🥉</span>
-          <h4>Crow</h4>
-          <p class="recommend-tag">Para complementar</p>
-          <p>Uma opção para complementar.</p>
-        </div>
-      </div>
-      <p class="recommend-disclaimer">Essa classificação é uma opinião pessoal baseada nas plataformas que já utilizei — não é uma garantia de melhores ganhos.</p>
-    </div>
+    <p class="eyebrow">01 · PLATAFORMAS</p>
+    <h2 class="title">As melhores que recomendo.</h2>
+    <p class="lede">Três delas eu já testei, gravei e saquei pessoalmente. A quarta eu ainda não usei, mas também vale conhecer. Toque em "mais detalhes" para ver o review completo, os requisitos técnicos, os bônus e o passo a passo de cadastro.</p>
+    <div class="platforms-list" id="platformsList"></div>
   </div>
 </section>
 
@@ -570,37 +393,43 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   <div class="container">
     <p class="eyebrow">02 · ESTIMATIVA</p>
     <h2 class="title">Quanto dá para ganhar?</h2>
-    <p class="lede">Ajuste as horas e escolha uma plataforma para ver uma estimativa mensal.</p>
+    <p class="lede">Você ganha pelas horas gravadas — escolha a plataforma e arraste o slider para ver a estimativa mensal na hora.</p>
 
-    <div class="calc-card">
-      <div class="calc-row">
-        <label for="hoursRange">Horas que você grava por dia</label>
-        <input type="range" id="hoursRange" min="0" max="12" step="0.5" value="3" aria-describedby="hoursValue">
-        <div class="calc-scale"><span>0h</span><span>3h</span><span>6h</span><span>9h</span><span>12h</span></div>
-        <p class="calc-current">Você selecionou <strong id="hoursValue">3h</strong> por dia</p>
+    <div class="calc-shell">
+      <div class="calc-grid">
+        <div class="calc-controls">
+          <span class="calc-label-block">Plataforma</span>
+          <div class="calc-tabs" id="calcPlatformSelect" role="group" aria-label="Selecionar plataforma"></div>
+          <div class="calc-row">
+            <label for="hoursRange">Horas que você grava por dia</label>
+            <input type="range" id="hoursRange" min="0" max="12" step="0.5" value="3" aria-describedby="hoursValue">
+            <div class="calc-scale"><span>0h</span><span>3h</span><span>6h</span><span>9h</span><span>12h</span></div>
+            <p class="calc-current">Você selecionou <strong id="hoursValue">3h</strong> por dia</p>
+          </div>
+        </div>
+        <div class="calc-result-panel">
+          <span class="calc-result-label">Sua estimativa mensal</span>
+          <span class="calc-result-usd" id="calcUsd">US$ 0</span>
+          <span class="calc-result-brl" id="calcBrl">≈ R$ 0</span>
+          <p class="calc-bonus-note" id="calcBonusNote"></p>
+        </div>
       </div>
-      <div class="calc-row">
-        <span class="calc-label-block">Plataforma</span>
-        <div class="calc-platform-select" id="calcPlatformSelect" role="group" aria-label="Selecionar plataforma"></div>
-      </div>
-      <div class="calc-result">
-        <span class="calc-result-label">Sua estimativa mensal</span>
-        <span class="calc-result-usd" id="calcUsd">US$ 0</span>
-        <span class="calc-result-brl" id="calcBrl">≈ R$ 0</span>
-      </div>
-      <p class="calc-claru-note" id="calcClaruNote" hidden>💡 Na Claru, além das horas gravadas, existem bônus que podem aumentar conforme você alcança determinados marcos.</p>
-      <p class="calc-disclaimer">Estimativa matemática baseada nas taxas configuradas (considerando ~22 dias de gravação por mês e cotação aproximada do dólar). Os ganhos reais dependem de disponibilidade, aprovação, bônus e regras de cada plataforma.</p>
+      <p class="calc-disclaimer-bar">Estimativa matemática considerando ~22 dias de gravação por mês e cotação aproximada do dólar. Não inclui bônus por metas de horas acumuladas, que variam por plataforma. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== TAREFAS ===================== -->
-<section class="section" id="tarefas">
+<!-- ===================== COMPARATIVO ===================== -->
+<section class="section" id="comparativo">
   <div class="container">
-    <p class="eyebrow">TAREFAS</p>
-    <h2 class="title">O que você pode fazer?</h2>
-    <p class="lede">Algumas oportunidades envolvem tarefas simples do cotidiano, gravadas em vídeo. Toque em uma tarefa para saber mais.</p>
-    <div class="task-grid" id="taskGrid"></div>
+    <p class="eyebrow">03 · COMPARATIVO</p>
+    <h2 class="title">Qual plataforma combina mais com você?</h2>
+    <p class="lede">Um resumo lado a lado do que já testei — e do que ainda não testei.</p>
+
+    <div class="compare-wrap">
+      <table class="compare-table" id="compareTable" aria-label="Comparativo entre Claru, Hub, Crow e KGeN"></table>
+      <div class="compare-cards" id="compareCards"></div>
+    </div>
   </div>
 </section>
 
@@ -613,117 +442,31 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     <div class="requirements-row">
       <div class="req-block"><span class="req-num">01</span><p>Ter 18 anos ou mais</p></div>
       <div class="req-block"><span class="req-num">02</span><p>Residir em um país da América Latina</p></div>
-      <div class="req-block"><span class="req-num">03</span><p>Ter um celular compatível
-iPhone 12+, Pixel 6+ ou Galaxy S21+.</p><a href="#faq-celulares" class="mini-link">Confira a lista completa no FAQ.</a></div>
-      <div class="req-block"><span class="req-num">04</span><p>Suporte de cabeça pra celular (R$35)</p></div>
+      <div class="req-block"><span class="req-num">03</span><p>Ter um celular compatível</p><a href="#faq-celulares" class="mini-link">Confira a lista completa no FAQ.</a></div>
+      <div class="req-block"><span class="req-num">04</span><p>Suporte de cabeça pra celular</p></div>
     </div>
     <p class="req-footnote">A lista de celulares compatíveis pode variar conforme a plataforma e a campanha. Verifique os modelos aceitos antes de começar.</p>
-  </div>
-</section>
 
-<!-- ===================== SUPORTE DE CABEÇA ===================== -->
-<section class="section-tight headset-section">
-  <div class="container headset-grid">
-    <div class="headset-copy">
-      <h3>O suporte de cabeça</h3>
-      <p>Para algumas atividades, o celular precisa ficar preso à cabeça durante a gravação. Dessa forma, a câmera acompanha seus movimentos e registra a tarefa pela sua perspectiva.</p>
-      <ul>
-        <li>Na Hub em algumas situações, o suporte pode ser disponibilizado gratuitamente, dependendo das condições e da disponibilidade.</li>
-        <li>Outra opção: você também pode adquirir o seu próprio suporte de cabeça.</li>
-        <li>Preço aproximado de referência: R$35.</li>
-      </ul>
-    </div>
-    <div class="headset-illustration" aria-hidden="true">
-      <svg viewBox="0 0 200 160">
-        <circle cx="90" cy="80" r="55"/>
-        <path d="M38 63 C58 28 122 28 148 68" stroke="var(--accent)"/>
-        <rect x="150" y="53" width="30" height="50" rx="5"/>
-        <circle cx="165" cy="98" r="2" fill="currentColor" stroke="none"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== COMO GRAVAR ===================== -->
-<section class="section" id="como-gravar">
-  <div class="container">
-    <p class="eyebrow">COMO GRAVAR</p>
-    <h2 class="title">Como gravar uma tarefa POV</h2>
-    <ol class="record-steps">
-      <li><span>01</span>Posicione o celular corretamente</li>
-      <li><span>02</span>Deixe as mãos visíveis quando solicitado</li>
-      <li><span>03</span>Faça os movimentos naturalmente</li>
-      <li><span>04</span>Siga exatamente o briefing</li>
-      <li><span>05</span>Confira o vídeo antes de enviar</li>
-    </ol>
-    <div class="rejection-box">
-      <h3>O que pode causar rejeição?</h3>
-      <ul class="rejection-list">
-        <li>Enquadramento incorreto</li>
-        <li>Vídeo incompleto</li>
-        <li>Tarefa diferente da solicitada</li>
-        <li>Celular mal posicionado</li>
-        <li>Baixa qualidade</li>
-        <li>Não seguir o briefing</li>
-      </ul>
-      <p class="rejection-note">Os critérios exatos variam de acordo com cada plataforma.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PAGAMENTOS ===================== -->
-<section class="section section-tight" id="pagamentos">
-  <div class="container">
-    <p class="eyebrow">PAGAMENTOS</p>
-    <h2 class="title">Depois de gravar, como recebo?</h2>
-    <p class="lede">Você grava → envia → aguarda aprovação → recebe, conforme as regras da plataforma.</p>
-    <div class="payment-cards">
-      <div class="payment-card">
-        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 9 L16 16 L21 19"/></svg>
-        <h4>Valor por hora</h4><p>US$4 a US$6,50/h como faixa de referência. O valor pode variar conforme a plataforma e a campanha.</p>
+    <div class="headset-banner">
+      <div class="headset-banner-icon" aria-hidden="true">
+        <svg viewBox="0 0 100 80"><circle cx="45" cy="40" r="27"/><path d="M19 32 C29 14 61 14 74 34" stroke="var(--accent)"/><rect x="75" y="27" width="15" height="25" rx="3"/></svg>
       </div>
-      <div class="payment-card">
-        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M10 16 L14 20 L22 11"/></svg>
-        <h4>Aprovação</h4><p>Os vídeos precisam seguir as regras da tarefa para que as horas sejam aprovadas e contabilizadas.</p>
-      </div>
-      <div class="payment-card">
-        <svg viewBox="0 0 32 32"><rect x="5" y="9" width="22" height="16" rx="2"/><path d="M5 13 L27 13"/><circle cx="21" cy="18" r="1.4" fill="currentColor" stroke="none"/></svg>
-        <h4>Saque</h4><p>Cada plataforma possui valor mínimo e regras próprias de pagamento. Confira as condições antes de começar.</p>
-      </div>
-      <div class="payment-card">
-        <svg viewBox="0 0 32 32"><path d="M16 6 L18.5 12.5 L25.5 13 L20 17.5 L21.8 24.5 L16 20.5 L10.2 24.5 L12 17.5 L6.5 13 L13.5 12.5 Z"/></svg>
-        <h4>Bônus</h4><p>Algumas plataformas oferecem bônus além do valor por hora, aumentando o potencial de ganho.</p>
-      </div>
-    </div>
-    <p class="claru-payment-highlight"><strong>Na Claru</strong>, os pagamentos são processados às terças-feiras, e os bônus fazem parte do diferencial que mais considero interessante na plataforma.</p>
-  </div>
-</section>
-
-<!-- ===================== COMO COMEÇAR ===================== -->
-<section class="section" id="comecar">
-  <div class="container">
-    <p class="eyebrow">COMO COMEÇAR</p>
-    <h2 class="title">Quer começar?</h2>
-    <ol class="start-steps">
-      <li><span class="start-num">1</span><p>Escolha uma plataforma</p></li>
-      <li>
-        <span class="start-num">2</span>
-        <div>
-          <p>Clique na plataforma escolhida para se cadastrar</p>
-          <div class="start-links" id="startLinks"></div>
+      <div class="headset-banner-body">
+        <h3>O suporte de cabeça</h3>
+        <p>Ele prende o celular na cabeça e grava a tarefa em POV, do jeito que as plataformas pedem. A Hub costuma liberar de graça pra quem entra na fila; se quiser começar hoje, dá pra comprar pronto no Mercado Livre.</p>
+        <div class="headset-banner-links">
+          <a href="#" id="headsetHubLink" class="btn btn-outline" target="_blank" rel="noopener sponsored">GRÁTIS NA HUB →</a>
+          <a href="https://meli.la/1PQDK2c" class="btn btn-outline" target="_blank" rel="noopener">MERCADO LIVRE →</a>
         </div>
-      </li>
-      <li><span class="start-num">3</span><p>Crie sua conta</p></li>
-      <li><span class="start-num">4</span><p>Confira as tarefas disponíveis</p></li>
-      <li><span class="start-num">5</span><p>Grave e envie</p></li>
-    </ol>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===================== FAQ ===================== -->
 <section class="section section-tight" id="faq">
   <div class="container container--narrow">
-    <p class="eyebrow">FAQ</p>
+    <p class="eyebrow">05 · FAQ</p>
     <h2 class="title">Dúvidas frequentes</h2>
     <div class="accordion" id="accordion">
 
@@ -732,58 +475,78 @@ iPhone 12+, Pixel 6+ ou Galaxy S21+.</p><a href="#faq-celulares" class="mini-lin
           O que é treinamento de IA e como posso ganhar dinheiro com isso?<span class="plus" aria-hidden="true"></span>
         </button></h3>
         <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
-          <p>Empresas de tecnologia precisam de dados reais — vídeos, fotos, voz — para desenvolver e treinar sistemas de Inteligência Artificial. Algumas plataformas pagam pessoas para realizar tarefas simples do dia a dia e gravar esse conteúdo, que depois é usado nesse processo.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
-          Quanto posso ganhar?<span class="plus" aria-hidden="true"></span>
-        </button></h3>
-        <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
-          <p>Isso varia de acordo com a plataforma, a quantidade de tarefas disponíveis, as horas gravadas, a aprovação dos vídeos e possíveis bônus. Use a <a href="#calculadora" class="mini-link">calculadora deste site</a> como uma estimativa — ela não é uma garantia de renda.</p>
+          <p>Empresas de tecnologia precisam de dados reais — vídeos, fotos, voz — para desenvolver e treinar sistemas de Inteligência Artificial e robôs domésticos. Algumas plataformas pagam pessoas para gravar tarefas simples do dia a dia pelo celular, e esse conteúdo é usado nesse processo.</p>
         </div>
       </div>
 
       <div class="accordion-item" id="faq-celulares">
-        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
           Quais celulares são compatíveis?<span class="plus" aria-hidden="true"></span>
         </button></h3>
+        <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+          <p><strong>iPhone:</strong> 12 a 15 (todas as variantes), linha 16 (exceto 16e) e linha 17 (exceto 17e). O iPhone 11 não é compatível.<br><strong>Pixel:</strong> 6, 7, 8 e 9 (e versões Pro).<br><strong>Galaxy S:</strong> S21 a S24 (e variantes Plus/Ultra), além de S25+ e S26+.<br>A compatibilidade exata pode variar conforme a plataforma e a campanha — confira antes de comprar qualquer acessório.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+          Posso usar mais de uma plataforma ao mesmo tempo?<span class="plus" aria-hidden="true"></span>
+        </button></h3>
         <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
-          <p>Como referência: iPhone 12 ou superior, Google Pixel 6 ou superior e Samsung Galaxy S21 ou superior. A compatibilidade exata pode variar conforme a plataforma e a campanha — confira antes de comprar qualquer acessório.</p>
+          <p>Pode, e é o que costumo recomendar — cada uma paga por hora gravada, então quanto mais plataformas ativas, mais você fatura. Só um cuidado importante: use um e-mail diferente em cada plataforma, e sempre troque o e-mail selecionado no app Minute antes de gravar para uma plataforma diferente. Cadastro duplicado com o mesmo e-mail pode travar sua conta.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
-          Preciso comprar algum equipamento para começar?<span class="plus" aria-hidden="true"></span>
+          Quanto posso ganhar?<span class="plus" aria-hidden="true"></span>
         </button></h3>
         <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
-          <p>O principal acessório usado em algumas tarefas é um suporte de cabeça para celular, encontrado por aproximadamente R$35. A Hub pode fornecer esse suporte gratuitamente em determinadas condições, conforme disponibilidade da plataforma.</p>
+          <p>Isso varia de acordo com a plataforma, a quantidade de tarefas disponíveis, as horas gravadas, a aprovação dos vídeos e possíveis bônus por metas. Use a <a href="#calculadora" class="mini-link">calculadora deste site</a> como uma estimativa — ela não é uma garantia de renda.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
-          Qual plataforma você recomenda?<span class="plus" aria-hidden="true"></span>
+          Como recebo meu pagamento?<span class="plus" aria-hidden="true"></span>
         </button></h3>
         <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
-          <p>Minha principal indicação é a Claru, principalmente pela possibilidade de acumular bônus conforme as horas de gravação aumentam e pelo calendário de pagamentos às terças-feiras. A Hub é a que considero mais fácil e fluida de usar, e a Crow é uma alternativa que já utilizei. Essa é uma avaliação baseada na minha experiência pessoal — não uma garantia de que será a melhor opção para todos.</p>
+          <p>Cada plataforma tem sua própria regra de saque, valor mínimo e método de pagamento — a maioria paga via Pix, e a Claru também oferece PayPal. Você confere o prazo e o mínimo exatos em "Pagamento", dentro do card de cada plataforma na seção acima.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
-          Como faço para começar?<span class="plus" aria-hidden="true"></span>
+          Preciso aparecer no vídeo ou vou precisar falar alguma coisa?<span class="plus" aria-hidden="true"></span>
         </button></h3>
         <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6">
-          <div>
-            <p>Escolha uma das plataformas apresentadas neste site, confira se seu celular é compatível e clique em "FAÇA SEU CADASTRO" para acessar diretamente o cadastro através do meu link de indicação.</p>
-            <a href="#plataformas" class="btn btn-outline">VER PLATAFORMAS →</a>
-          </div>
+          <p>Não precisa mostrar o rosto. Na maioria das tarefas você grava apenas as mãos realizando a atividade, em primeira pessoa (POV). Ainda assim, siga sempre o briefing exato de cada tarefa — alguns detalhes de enquadramento podem variar.</p>
         </div>
       </div>
 
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-trigger-7">
+          O que é o aplicativo Minute e para que ele serve?<span class="plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq-panel-7" role="region" aria-labelledby="faq-trigger-7">
+          <p>O Minute é o aplicativo usado para gravar os vídeos das tarefas nas quatro plataformas. Depois de se cadastrar em uma plataforma, você baixa o Minute, entra com o mesmo e-mail cadastrado e informa o código de organização daquela plataforma para liberar as tarefas.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-8" id="faq-trigger-8">
+          Meu vídeo pode ser recusado? O que fazer nesse caso?<span class="plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq-panel-8" role="region" aria-labelledby="faq-trigger-8">
+          <p>Pode — cada plataforma avalia o clipe antes de aprovar. Seguir exatamente os requisitos técnicos (duração, formato, mãos visíveis, zoom) reduz bastante a chance de recusa. Dá uma conferida nos "Requisitos técnicos" do card de cada plataforma antes de gravar.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-contact">
+      <p>Ficou com alguma dúvida ou travou em alguma tarefa? Me chama no Instagram — respondo por lá.</p>
+      <a href="https://www.instagram.com/oportunidadesiabr/" target="_blank" rel="noopener" class="btn btn-outline">FALAR NO INSTAGRAM →</a>
     </div>
   </div>
 </section>
@@ -817,135 +580,317 @@ iPhone 12+, Pixel 6+ ou Galaxy S21+.</p><a href="#faq-celulares" class="mini-lin
         </svg>
         <span>OPORTUNIDADES IA BR</span>
       </div>
-      <p>Informações, plataformas e guias para quem quer fazer renda extra contribuindo para o treinamento de Inteligência Artificial.</p>
+      <p>Curadoria pessoal de plataformas que pagam por tarefas do dia a dia gravadas em vídeo, usadas no treinamento de Inteligência Artificial.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 8 L9 17 A4 4 0 1 1 6 13"/><path d="M9 4 C9 7 12 9 15 9 L15 6 C13 6 11.5 5 11 3"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10 9.5 L15 12 L10 14.5 Z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.instagram.com/oportunidadesiabr/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="https://www.tiktok.com/@oportunidadesiabr" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 8 L9 17 A4 4 0 1 1 6 13"/><path d="M9 4 C9 7 12 9 15 9 L15 6 C13 6 11.5 5 11 3"/></svg></a>
       </div>
     </div>
     <nav class="footer-links" aria-label="Links do rodapé">
-      <a href="#como-funciona">Como funciona</a>
       <a href="#plataformas">Plataformas</a>
       <a href="#calculadora">Estimativa</a>
-      <a href="#tarefas">Tarefas</a>
       <a href="#requisitos">Requisitos</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>
   <div class="container footer-bottom">
     <p>© 2026 Oportunidades IA BR</p>
-    <p class="footer-transparency">Uso meu link de indicação porque também ganho uma comissão — mas você não paga nada a mais por isso.</p>
+    <p class="footer-transparency">Alguns dos links deste site são de indicação. Ao se cadastrar por meio deles, eu posso receber uma comissão — mas fique tranquilo: você não paga nada a mais por isso.</p>
   </div>
 </footer>
-
-<!-- ===================== MODAL DE TAREFAS ===================== -->
-<div class="modal-overlay" id="taskModalOverlay">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle" id="taskModal">
-    <button class="modal-close" id="taskModalClose" aria-label="Fechar">×</button>
-    <div class="modal-icon" id="taskModalIcon"></div>
-    <h3 id="taskModalTitle"></h3>
-    <div class="modal-body" id="taskModalBody"></div>
-  </div>
-</div>
 
 <script>
 (function(){
 "use strict";
 
-/* ===================== CONFIG — LINKS DE INDICAÇÃO ===================== */
+/* ===================== CONFIG — LINKS ===================== */
 const CLARU_REFERRAL_URL = "https://app.claru.ai/signup?ref=2qxq0h9f";
 const HUB_REFERRAL_URL   = "https://ai.hub.xyz/r/YKXT5X4R";
 const CROW_REFERRAL_URL  = "https://www.crowtado.com/sign-up?ref=WBQPJ9SC";
-const KGEN_REFERRAL_URL  = "https://www.kgen.quest/invite/7c2541b3";
-const REFERRAL_LINKS = { claru: CLARU_REFERRAL_URL, hub: HUB_REFERRAL_URL, crow: CROW_REFERRAL_URL, kgen: KGEN_REFERRAL_URL };
+const KGEN_REFERRAL_URL  = "https://www.kgen.quest/invite/5a9cfe79";
+const CLARU_INBOX_URL    = "https://app.claru.ai/inbox";
+const MINUTE_APPSTORE    = "https://apps.apple.com/app/minute-data/id6760918280";
+const MINUTE_PLAYSTORE   = "https://play.google.com/store/apps/details?id=com.bakerdata.minute";
 
-/* ===================== CONFIG — PLATAFORMAS ===================== */
+document.getElementById("headsetHubLink").href = HUB_REFERRAL_URL;
+
+/* ===================== REQUISITOS TÉCNICOS (iguais nas 4) ===================== */
+const REQ_STANDARD = {
+  duration:"Até 30 min",
+  format:"Horizontal, 1080p",
+  hands:"As duas mãos visíveis",
+  zoom:"0,5 (grande angular)",
+  devices:"iPhone: 12 a 15 (todas as variantes), linha 16 (exceto 16e) e linha 17 (exceto 17e). iPhone 11 não é compatível. Pixel: 6, 7, 8 e 9 (e versões Pro). Galaxy S: S21 a S24 (e variantes Plus/Ultra), além de S25+ e S26+."
+};
+
+const MINUTE_STEP = {
+  text:"Baixe o Minute, o app que você vai usar pra gravar os vídeos.",
+  links:[{label:"App Store", href:MINUTE_APPSTORE},{label:"Play Store", href:MINUTE_PLAYSTORE}]
+};
+const EMAIL_STEP = {
+  text:"Use um e-mail novo, diferente do que você já usa em outra plataforma. Cadastro duplicado pode travar sua conta."
+};
+const LAST_STEP = { text:"Depois de cadastrado, é só começar a gravar." };
+
+/* ===================== PLATAFORMAS ===================== */
 const PLATFORMS = [
   {
-    id:"claru", name:"Claru", used:true, status:"recommended", badge:"⭐ MINHA PRINCIPAL INDICAÇÃO",
-    payment:"Por hora + bônus progressivo, conforme as horas gravadas",
-    taskType:"Vídeos em POV",
-    devices:"Android e iPhone (modelos recentes)",
-    payout:"Pagamentos processados às terças-feiras",
-    strength:"Bônus que aumentam conforme as horas gravadas",
-    review:"É a que eu mais gosto pela possibilidade de combinar o pagamento das horas com bônus acumulados conforme você avança.",
-    cta:"FAÇA SEU CADASTRO NA CLARU →"
+    id:"claru", domain:"Claru.ai", recommended:true, usedPersonally:true,
+    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
+    rateNum:"$6", rateUnit:"USD por hora",
+    pros:[
+      "Pagamento na média ($6/h), mas tem muitos bônus por meta batida",
+      "Ganha $5 já no 1º clipe enviado, sem precisar bater hora",
+      "Suporte rápido no Discord — o melhor entre as quatro",
+      "Saque semanal, toda terça-feira"
+    ],
+    cons:[
+      "O vídeo demora pra aparecer na plataforma e ser avaliado",
+      "Saque mínimo alto: $50 (≈ R$ 250)"
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
+    bonus:[
+      {trigger:"1º clipe enviado", reward:"$5"},
+      {trigger:"1h", reward:"$5"},
+      {trigger:"5h", reward:"$10"},
+      {trigger:"10h", reward:"$15"},
+      {trigger:"25h", reward:"$30"},
+      {trigger:"50h", reward:"$75"},
+      {trigger:"100h", reward:"$100"},
+      {trigger:"175h", reward:"$175"},
+      {trigger:"250h", reward:"$250"},
+      {trigger:"375h", reward:"$375"},
+      {trigger:"500h", reward:"$500"},
+      {trigger:"750h", reward:"$750"},
+      {trigger:"1.000h", reward:"$1.000"}
+    ],
+    support:{ text:"Comunidade ativa no Discord com respostas rápidas. É o melhor suporte entre as quatro." },
+    referral:"Você ganha $25 quando seu indicado bate 5 horas.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Claru.ai →", href:CLARU_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Use apenas o endereço de e-mail gerado pela Claru para se inscrever no app Minute. Você encontra esse e-mail na sua caixa de entrada da Claru.", links:[{label:"Acessar inbox da Claru →", href:CLARU_INBOX_URL}] },
+      { text:"Coloque o código de organização.", codes:[{code:"WSNEHSKC"}] },
+      LAST_STEP
+    ]
   },
   {
-    id:"hub", name:"Hub", used:true, status:"easiest", badge:"⭐ MAIS FÁCIL DE USAR",
-    payment:"Por hora, conforme regras da plataforma",
-    taskType:"Vídeos em POV",
-    devices:"Android e iPhone (modelos recentes)",
-    payout:"Conforme regras da plataforma",
-    strength:"Interface fluida — pode oferecer suporte de cabeça gratuito, conforme disponibilidade",
-    review:"Entre as que já usei, considero a Hub uma das mais fáceis e fluidas para o usuário.",
-    cta:"FAÇA SEU CADASTRO NA HUB →"
+    id:"crow", domain:"Crowtado", recommended:false, usedPersonally:true,
+    tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
+    rateNum:"$6,50", rateUnit:"USD por hora",
+    pros:[
+      "Aceita tarefas comerciais (no trabalho), além das domésticas",
+      "Saque em Pix com mínimo baixo: $10 (≈ R$ 50)"
+    ],
+    cons:[
+      "O vídeo demora pra aparecer na plataforma e ser avaliado",
+      "Suporte é o mais fraco das quatro — não encontrei relatos de bom atendimento"
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"US$ 10", avgTime:"Variável", methods:"Pix, transferência internacional" },
+    bonus:null,
+    support:{ text:"Atendimento só por chat dentro do próprio site — é o suporte mais fraco entre as quatro." },
+    referral:"Você ganha $10 quando seu indicado faz $50.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Crowtado →", href:CROW_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Escolha o código de organização de acordo com o tipo de tarefa que você vai gravar, usando o mesmo e-mail cadastrado na Crowtado.",
+        codes:[
+          {label:"Residencial (em casa)", code:"VZEAE7WC", note:"Ex: lavar louça, dobrar e guardar roupas, jardinagem, tirar o lixo, organizar a garagem."},
+          {label:"Comercial (no trabalho)", code:"4BYSAHUG", note:"Ex: lavar louça em restaurante, limpeza de hotel, separação de pedidos em armazém, reposição de prateleiras, troca de óleo."}
+        ]
+      },
+      LAST_STEP
+    ]
   },
   {
-    id:"crow", name:"Crow", used:true, status:"used", badge:"JÁ USEI",
-    payment:"Por hora, conforme regras da plataforma",
-    taskType:"Vídeos em POV",
-    devices:"Android e iPhone (modelos recentes)",
-    payout:"Saques a partir de US$10",
-    strength:"US$6,50/h aprovada. Boa opção para complementar outras plataformas.",
-    review:"Já usei a Crowtado e gosto dela como complemento às outras plataformas. O valor de US$6,50/h aprovada é interessante e o saque mínimo de apenas US$10 facilita bastante para começar a receber.",
-    cta:"FAÇA SEU CADASTRO NA CROW →"
+    id:"hub", domain:"Hub.xyz", recommended:false, usedPersonally:true,
+    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
+    rateNum:"$5 a $6", rateUnit:"USD por hora",
+    pros:[
+      "Saque semanal em Pix, mínimo baixo (R$ 25) — a mais fácil pra tirar o dinheiro",
+      "O vídeo aparece na plataforma mais rápido que nas outras",
+      "Suporte ativo no Telegram"
+    ],
+    cons:[
+      "É a que paga menos por hora ($5/h na base)"
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"R$ 25", avgTime:"Semanal", methods:"Pix" },
+    bonus:[
+      {trigger:"Tarefas turbinadas", reward:"$7/h (R$ 35/h)"},
+      {trigger:"1h", reward:"Bônus de R$ 15"},
+      {trigger:"2h", reward:"Bilhete de sorteio de R$ 2.500"},
+      {trigger:"5h", reward:"Bônus de R$ 10"},
+      {trigger:"10h", reward:"Bilhete de sorteio"},
+      {trigger:"20h", reward:"Bilhete de sorteio de R$ 2.500"},
+      {trigger:"40h", reward:"Status Premium Collector"},
+      {trigger:"50h", reward:"Bônus de R$ 50"},
+      {trigger:"75h", reward:"Bilhete mensal de sorteio de iPhone"},
+      {trigger:"100h", reward:"Headstrap premium"},
+      {trigger:"200h", reward:"Bilhete mensal de sorteio de iPhone"}
+    ],
+    support:{ text:"Atendimento pelo próprio site, além de canal ativo no Telegram e por e-mail.", links:[{label:"Grupo no Telegram", href:null},{label:"support@hub.xyz", href:"mailto:support@hub.xyz"}] },
+    referral:"Você ganha R$ 2,50 a cada hora do seu indicado, e R$ 1,25 a cada hora do indicado do seu indicado.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Hub.xyz →", href:HUB_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Coloque o código de organização no app Minute ao criar sua conta, usando o mesmo e-mail cadastrado na Hub.", codes:[{code:"JUK9YQWE"}] },
+      LAST_STEP
+    ]
   },
   {
-    id:"kgen", name:"KGeN", used:false, status:"untested", badge:"AINDA NÃO USEI",
-    payment:"Campanhas de tarefas diárias — uma campanha exibida oferece US$3 + bônus de US$1/h",
-    taskType:"Tarefas diárias, conforme campanha",
-    devices:"Conforme campanha",
-    payout:"Conforme regras da campanha",
-    strength:"Campanhas específicas para usuários no Brasil",
-    review:"Ainda não utilizei pessoalmente esta plataforma, mas ela também oferece oportunidades de tarefas para treinamento de IA, inclusive campanhas para usuários no Brasil.",
-    personalNote:"Experiência pessoal: ainda não testei.",
-    cta:"CONHECER A KGEN →"
+    id:"kgen", domain:"Kgen.quest", recommended:false, usedPersonally:false,
+    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
+    rateNum:"$3 + $1", rateUnit:"bônus por hora",
+    pros:[
+      "Interface simples, direta ao ponto",
+      "Campanhas específicas voltadas para o Brasil"
+    ],
+    cons:[
+      "Ainda não reuni relatos suficientes sobre o tempo de aprovação dos vídeos",
+      "Poucas informações públicas sobre saque e suporte, comparado às outras três"
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"Consulte as regras atuais da plataforma.", avgTime:"Consulte as regras atuais da plataforma.", methods:"Consulte as regras atuais da plataforma." },
+    bonus:"Bônus de $1/h somado ao valor base, conforme a campanha ativa no momento do cadastro.",
+    support:{ text:"Atendimento pelo próprio site, além de canal ativo no WhatsApp e no Discord." },
+    referral:"Consulte as regras atuais da plataforma.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na KGeN →", href:KGEN_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Coloque o código de organização no app Minute ao criar sua conta, usando o mesmo e-mail cadastrado na KGeN.", codes:[{code:"5TBCT4ZC"}] },
+      LAST_STEP
+    ]
   }
 ];
 
-function renderPlatformCard(p){
-  const el = document.createElement("article");
-  el.className = "platform-card" + (p.status==="untested" ? " is-untested" : "");
-  const badgeClass = "badge--" + p.status;
-  el.innerHTML =
-    '<span class="badge ' + badgeClass + '">' + p.badge + '</span>' +
-    '<h3>' + p.name + '</h3>' +
-    '<dl class="platform-facts">' +
-      '<div><dt>Pagamento</dt><dd>' + p.payment + '</dd></div>' +
-      '<div><dt>Tipo de tarefa</dt><dd>' + p.taskType + '</dd></div>' +
-      '<div><dt>Celulares</dt><dd>' + p.devices + ' — <a href="#faq-celulares" class="mini-link">ver modelos ↓</a></dd></div>' +
-      '<div><dt>Saque</dt><dd>' + p.payout + '</dd></div>' +
-      '<div><dt>Ponto forte</dt><dd>' + p.strength + '</dd></div>' +
-    '</dl>' +
-    '<p class="platform-review">"' + p.review + '"</p>' +
-    (p.personalNote ? '<p class="platform-personal-note">' + p.personalNote + '</p>' : '') +
-    '<a class="btn ' + (p.status==="recommended" ? "btn-primary" : "btn-outline") + ' platform-cta" href="' + REFERRAL_LINKS[p.id] + '" target="_blank" rel="noopener sponsored">' + p.cta + '</a>';
-  return el;
+function linksHtml(links){
+  if(!links || !links.length) return "";
+  return '<div class="panel-links">' + links.map(function(l){
+    return l.href ? '<a class="panel-link" href="'+l.href+'" target="_blank" rel="noopener sponsored">'+l.label+'</a>' : '<span class="panel-link" style="border-bottom:none;cursor:default;">'+l.label+'</span>';
+  }).join("") + "</div>";
+}
+
+function codesHtml(codes){
+  return codes.map(function(c){
+    var label = c.label ? '<strong>'+c.label+':</strong> ' : "";
+    var note = c.note ? '<span class="code-note">'+c.note+'</span>' : "";
+    return '<div style="margin:8px 0;">'+label+
+      '<span class="code-copy"><code>'+c.code+'</code><button type="button" class="copy-btn" data-copy="'+c.code+'">copiar</button></span>'+
+      note+'</div>';
+  }).join("");
+}
+
+function stepsHtml(steps){
+  return '<div class="signup-steps">' + steps.map(function(s, i){
+    var extra = "";
+    if(s.links){ extra += linksHtml(s.links); }
+    if(s.codes){ extra += codesHtml(s.codes); }
+    return '<div class="signup-step"><span class="step-num">'+(i+1)+'</span><div class="step-body"><p>'+s.text+'</p>'+extra+'</div></div>';
+  }).join("") + "</div>";
+}
+
+function bonusHtml(bonus){
+  if(!bonus){ return '<p class="panel-text">Esta plataforma não oferece bônus além do valor por hora.</p>'; }
+  if(typeof bonus === "string"){ return '<p class="panel-text">'+bonus+'</p>'; }
+  return '<div class="bonus-table">' + bonus.map(function(b){
+    return '<div class="bonus-row"><span class="trigger">'+b.trigger+'</span><span class="reward">'+b.reward+'</span></div>';
+  }).join("") + "</div>";
+}
+
+function renderPlatformPanel(p){
+  var req = p.requirements;
+  return (
+    '<div class="panel-section pros-cons">' +
+      '<div class="pros"><h4>+ Pontos positivos</h4><ul>' + p.pros.map(function(x){return "<li>"+x+"</li>";}).join("") + '</ul></div>' +
+      '<div class="cons"><h4>− Pontos negativos</h4><ul>' + p.cons.map(function(x){return "<li>"+x+"</li>";}).join("") + '</ul></div>' +
+    '</div>' +
+    '<div class="panel-section"><h4>Requisitos técnicos</h4><dl class="facts-grid">' +
+      '<div><dt>Duração</dt><dd>'+req.duration+'</dd></div>' +
+      '<div><dt>Formato</dt><dd>'+req.format+'</dd></div>' +
+      '<div><dt>Mãos</dt><dd>'+req.hands+'</dd></div>' +
+      '<div><dt>Zoom</dt><dd>'+req.zoom+'</dd></div>' +
+      '<div style="grid-column:1/-1;"><dt>Celulares compatíveis</dt><dd>'+req.devices+'</dd></div>' +
+    '</dl></div>' +
+    '<div class="panel-section"><h4>Pagamento</h4><dl class="facts-grid">' +
+      '<div><dt>Saque mínimo</dt><dd>'+p.payment.minWithdraw+'</dd></div>' +
+      '<div><dt>Tempo médio</dt><dd>'+p.payment.avgTime+'</dd></div>' +
+      '<div><dt>Métodos</dt><dd>'+p.payment.methods+'</dd></div>' +
+    '</dl></div>' +
+    '<div class="panel-section"><h4>Bônus</h4>' + bonusHtml(p.bonus) + '</div>' +
+    '<div class="panel-section"><h4>Suporte</h4><p class="panel-text">'+p.support.text+'</p>' + linksHtml(p.support.links) + '</div>' +
+    '<div class="panel-section"><h4>Sistema de indicação</h4><p class="panel-text">'+p.referral+'</p></div>' +
+    '<div class="panel-section"><h4>Como se cadastrar</h4>' + stepsHtml(p.steps) + '</div>'
+  );
 }
 
 function renderPlatforms(){
-  const usedWrap = document.getElementById("platformsUsed");
-  const untestedWrap = document.getElementById("platformsUntested");
-  PLATFORMS.forEach(function(p){
-    const card = renderPlatformCard(p);
-    if(p.used){ usedWrap.appendChild(card); } else { untestedWrap.appendChild(card); }
+  const wrap = document.getElementById("platformsList");
+  PLATFORMS.forEach(function(p, idx){
+    const row = document.createElement("div");
+    row.className = "platform-row" + (p.recommended ? " is-recommended" : "");
+    const panelId = "platform-panel-" + p.id;
+    row.innerHTML =
+      '<div class="platform-row-head">' +
+        '<div class="platform-identity">' +
+          '<div class="name-line">' + (p.recommended ? '<span class="star-badge">★</span>' : '') + '<span class="name">'+p.domain+'</span></div>' +
+          (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : '')) +
+        '</div>' +
+        '<div class="platform-tags">' + p.tags.map(function(t){return '<span class="tag-chip">'+t+'</span>';}).join("") + '</div>' +
+        '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
+        '<button type="button" class="platform-toggle" aria-expanded="false" aria-controls="'+panelId+'"><span class="toggle-label">Mais detalhes</span><span class="chev" aria-hidden="true"></span></button>' +
+      '</div>' +
+      '<div class="platform-panel" id="'+panelId+'"><div class="platform-panel-inner">' + renderPlatformPanel(p) + '</div></div>';
+    wrap.appendChild(row);
   });
-  const claruCta = document.getElementById("claruFeatureCta");
-  if(claruCta){ claruCta.href = CLARU_REFERRAL_URL; }
+
+  wrap.querySelectorAll(".platform-toggle").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      const panel = document.getElementById(btn.getAttribute("aria-controls"));
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      btn.querySelector(".toggle-label").textContent = isOpen ? "Mais detalhes" : "Menos detalhes";
+      panel.style.maxHeight = isOpen ? null : panel.scrollHeight + "px";
+    });
+  });
+}
+
+/* ===================== COPIAR CÓDIGO ===================== */
+function initCopyButtons(){
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest(".copy-btn");
+    if(!btn) return;
+    const text = btn.getAttribute("data-copy");
+    const original = btn.textContent;
+    function feedback(){
+      btn.textContent = "Copiado!";
+      btn.classList.add("is-copied");
+      setTimeout(function(){ btn.textContent = original; btn.classList.remove("is-copied"); }, 1600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(feedback).catch(feedback);
+    } else {
+      feedback();
+    }
+  });
 }
 
 /* ===================== COMPARATIVO ===================== */
 const COMPARE_ROWS = [
   { label:"Já usei", claru:"✓", hub:"✓", crow:"✓", kgen:"—" },
-  { label:"Minha indicação", claru:"⭐", hub:"✓", crow:"—", kgen:"—" },
-  { label:"Tarefas de vídeo", claru:"✓", hub:"✓", crow:"✓", kgen:"✓" },
-  { label:"Celular", claru:"Android/iPhone recentes", hub:"Android/iPhone recentes", crow:"Android/iPhone recentes", kgen:"Conforme campanha" },
-  { label:"Bônus", claru:"⭐ Destaque", hub:"—", crow:"—", kgen:"Conforme campanha" },
-  { label:"Facilidade de uso", claru:"Muito boa", hub:"⭐ Excelente", crow:"Boa", kgen:"Não testado" },
-  { label:"Pagamento", claru:"Conforme regras da plataforma", hub:"Conforme regras da plataforma", crow:"A partir de US$10 para saque", kgen:"Conforme campanha" },
-  { label:"Principal destaque", claru:"Bônus", hub:"Facilidade/fluidez", crow:"Opção complementar", kgen:"Oportunidade adicional" }
+  { label:"Tipo de tarefa", claru:"Doméstica", hub:"Doméstica", crow:"Doméstica + comercial", kgen:"Doméstica" },
+  { label:"Valor por hora", claru:"⭐ $6", hub:"$5 a $6", crow:"$6,50", kgen:"$3 + $1 bônus" },
+  { label:"Bônus", claru:"Metas por hora, até $1.000", hub:"Metas + sorteios", crow:"—", kgen:"Conforme campanha" },
+  { label:"Saque mínimo", claru:"US$ 50", hub:"R$ 25", crow:"US$ 10", kgen:"Consulte a plataforma" },
+  { label:"Tempo médio de saque", claru:"Semanal (terças)", hub:"Semanal", crow:"Variável", kgen:"Consulte a plataforma" },
+  { label:"Métodos de pagamento", claru:"Pix, PayPal", hub:"Pix", crow:"Pix, transferência internacional", kgen:"Consulte a plataforma" },
+  { label:"Suporte", claru:"⭐ Discord (mais rápido)", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", kgen:"Site, WhatsApp e Discord" }
 ];
 const COMPARE_COLS = [
   {id:"claru", label:"Claru"}, {id:"hub", label:"Hub"}, {id:"crow", label:"Crow"}, {id:"kgen", label:"KGeN"}
@@ -983,20 +928,17 @@ const CALC_CONFIG = {
   usdToBrl: 5.20,
   daysPerMonth: 22,
   platforms: {
-    claru: { label:"Claru", baseRate:6, bonusTiers:[ {minHours:0, extra:0}, {minHours:60, extra:1}, {minHours:120, extra:2} ] },
-    hub:   { label:"Hub",   baseRate:5.5, bonusTiers:[] },
-    crow:  { label:"Crow",  baseRate:5, bonusTiers:[] },
-    kgen:  { label:"KGeN",  baseRate:4, bonusTiers:[] }
+    claru: { label:"Claru", baseRate:6, note:"A Claru também paga bônus por metas de horas acumuladas — de $5 no 1º clipe até $1.000 ao completar 1.000h no total. Esse valor não entra na conta acima." },
+    hub:   { label:"Hub",   baseRate:5.5, note:"A Hub também sorteia prêmios e paga bônus extras em tarefas turbinadas ($7/h) e em marcos de horas — não incluídos na conta acima." },
+    crow:  { label:"Crow",  baseRate:6.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
+    kgen:  { label:"KGeN",  baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
   }
 };
 
 function computeEstimate(platformId, hoursPerDay){
   const cfg = CALC_CONFIG.platforms[platformId];
   const monthlyHours = hoursPerDay * CALC_CONFIG.daysPerMonth;
-  let bonusRate = 0;
-  cfg.bonusTiers.forEach(function(tier){ if(monthlyHours >= tier.minHours){ bonusRate = tier.extra; } });
-  const effectiveRate = cfg.baseRate + bonusRate;
-  const usd = monthlyHours * effectiveRate;
+  const usd = monthlyHours * cfg.baseRate;
   const brl = usd * CALC_CONFIG.usdToBrl;
   return { usd:usd, brl:brl };
 }
@@ -1009,14 +951,14 @@ function initCalculator(){
   let currentPlatform = "claru";
   Object.keys(CALC_CONFIG.platforms).forEach(function(id){
     const btn = document.createElement("button");
-    btn.className = "calc-chip";
+    btn.className = "calc-tab";
     btn.type = "button";
     btn.setAttribute("aria-pressed", id === currentPlatform ? "true" : "false");
     btn.textContent = CALC_CONFIG.platforms[id].label;
     btn.dataset.platform = id;
     btn.addEventListener("click", function(){
       currentPlatform = id;
-      select.querySelectorAll(".calc-chip").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.platform === id ? "true":"false"); });
+      select.querySelectorAll(".calc-tab").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.platform === id ? "true":"false"); });
       update();
     });
     select.appendChild(btn);
@@ -1026,7 +968,7 @@ function initCalculator(){
   const hoursValue = document.getElementById("hoursValue");
   const usdOut = document.getElementById("calcUsd");
   const brlOut = document.getElementById("calcBrl");
-  const claruNote = document.getElementById("calcClaruNote");
+  const bonusNote = document.getElementById("calcBonusNote");
 
   function update(){
     const hours = parseFloat(range.value);
@@ -1034,136 +976,10 @@ function initCalculator(){
     const est = computeEstimate(currentPlatform, hours);
     usdOut.textContent = formatUsd(est.usd);
     brlOut.textContent = formatBrl(est.brl);
-    claruNote.hidden = currentPlatform !== "claru";
+    bonusNote.textContent = "💡 " + CALC_CONFIG.platforms[currentPlatform].note;
   }
   range.addEventListener("input", update);
   update();
-}
-
-/* ===================== TAREFAS ===================== */
-const TASK_ICONS = {
-  fold: '<svg viewBox="0 0 40 40"><path d="M10 14 L16 10 L24 10 L30 14 L30 30 L10 30 Z"/><path d="M10 14 L14 18 L16 14"/><path d="M30 14 L26 18 L24 14"/><line x1="14" y1="24" x2="26" y2="24"/></svg>',
-  store: '<svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="26" rx="1.5"/><line x1="20" y1="8" x2="20" y2="34"/><circle cx="17" cy="21" r="1.2" fill="currentColor" stroke="none"/><circle cx="23" cy="21" r="1.2" fill="currentColor" stroke="none"/></svg>',
-  sweep: '<svg viewBox="0 0 40 40"><line x1="27" y1="7" x2="14" y2="26"/><path d="M14 26 L8 32 M14 26 L11 33.5 M14 26 L16.5 33 M14 26 L18.5 31"/></svg>',
-  bathroom: '<svg viewBox="0 0 40 40"><rect x="14" y="16" width="12" height="16" rx="2"/><rect x="17" y="10" width="6" height="6" rx="1"/><line x1="23" y1="10" x2="28" y2="6"/><line x1="18" y1="22" x2="22" y2="22"/><line x1="18" y1="26" x2="22" y2="26"/></svg>',
-  bed: '<svg viewBox="0 0 40 40"><path d="M6 30 L6 20 Q6 17 9 17 L31 17 Q34 17 34 20 L34 30"/><line x1="6" y1="30" x2="34" y2="30"/><rect x="9" y="19" width="8" height="5" rx="1.5"/><line x1="6" y1="24" x2="34" y2="24"/></svg>',
-  dishes: '<svg viewBox="0 0 40 40"><circle cx="17" cy="24" r="9"/><circle cx="17" cy="24" r="4"/><path d="M28 10 C31 14 31 17 28 19 C25 17 25 14 28 10 Z"/></svg>',
-  stove: '<svg viewBox="0 0 40 40"><rect x="7" y="9" width="26" height="22" rx="2"/><circle cx="15" cy="17" r="3"/><circle cx="25" cy="17" r="3"/><circle cx="15" cy="25" r="3"/><circle cx="25" cy="25" r="3"/></svg>',
-  room: '<svg viewBox="0 0 40 40"><path d="M7 20 L20 8 L33 20"/><path d="M10 18 L10 32 L30 32 L30 18"/><rect x="17" y="23" width="6" height="9"/></svg>'
-};
-
-const TASKS = [
-  { id:"dobrar", name:"Dobrar roupas", icon:"fold",
-    faz:"Dobrar peças de roupa limpas e organizá-las, como camisetas, calças e toalhas.",
-    gravar:"Posicione o celular para mostrar claramente as mãos e a peça sendo dobrada, do início ao fim do movimento.",
-    cuidados:"Mantenha boa iluminação e evite que o celular balance ou saia do enquadramento." },
-  { id:"guardar", name:"Guardar roupas", icon:"store",
-    faz:"Guardar roupas dobradas ou penduradas em um armário, gaveta ou cabideiro.",
-    gravar:"Grave o trajeto completo: pegar a peça, abrir o armário ou gaveta e guardá-la no lugar.",
-    cuidados:"Evite cortes bruscos de câmera — o movimento deve parecer natural." },
-  { id:"varrer", name:"Varrer", icon:"sweep",
-    faz:"Varrer um cômodo, juntando poeira e resíduos em um único ponto.",
-    gravar:"Mostre o cômodo antes de começar e o movimento completo da vassoura até o final.",
-    cuidados:"Mantenha um ritmo natural e não apresse os movimentos." },
-  { id:"banheiro", name:"Lavar banheiro", icon:"bathroom",
-    faz:"Limpar superfícies do banheiro, como pia, vaso ou box, com produtos de limpeza.",
-    gravar:"Grave a aplicação do produto e a limpeza da superfície, mantendo o enquadramento estável.",
-    cuidados:"Siga as orientações de segurança dos produtos utilizados e ventile o ambiente." },
-  { id:"cama", name:"Trocar roupa de cama", icon:"bed",
-    faz:"Retirar a roupa de cama usada e colocar lençóis, fronhas e capa de edredom limpos.",
-    gravar:"Mostre a cama sendo desarrumada e depois arrumada por completo, com as mãos sempre visíveis.",
-    cuidados:"Cuide para que o celular não caia durante os movimentos mais amplos." },
-  { id:"louca", name:"Lavar louça", icon:"dishes",
-    faz:"Lavar pratos, talheres e panelas na pia, com água e detergente.",
-    gravar:"Grave o processo completo: ensaboar, enxaguar e colocar a louça para secar.",
-    cuidados:"Proteja o celular e o suporte de cabeça contra respingos de água." },
-  { id:"fogao", name:"Limpar fogão", icon:"stove",
-    faz:"Limpar a superfície do fogão, incluindo bocas e a área ao redor.",
-    gravar:"Mostre o fogão antes de começar e o processo de limpeza até o resultado final.",
-    cuidados:"Espere o fogão esfriar completamente antes de iniciar a limpeza." },
-  { id:"comodos", name:"Limpar cômodos", icon:"room",
-    faz:"Organizar e limpar um cômodo da casa, como sala ou quarto.",
-    gravar:"Grave o cômodo antes de começar e o processo de organização e limpeza.",
-    cuidados:"Mantenha o celular estável para que o ambiente fique bem visível durante toda a gravação." }
-];
-
-function renderTasks(){
-  const grid = document.getElementById("taskGrid");
-  TASKS.forEach(function(t){
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "task-card";
-    card.setAttribute("data-task", t.id);
-    card.innerHTML = '<span class="task-icon">' + TASK_ICONS[t.icon] + '</span><span>' + t.name + '</span>';
-    card.addEventListener("click", function(){ openTaskModal(t); });
-    grid.appendChild(card);
-  });
-}
-
-function openTaskModal(t){
-  document.getElementById("taskModalIcon").innerHTML = TASK_ICONS[t.icon];
-  document.getElementById("taskModalTitle").textContent = t.name;
-  document.getElementById("taskModalBody").innerHTML =
-    '<dl>' +
-      '<div><dt>O que normalmente é feito</dt><dd>' + t.faz + '</dd></div>' +
-      '<div><dt>Como gravar</dt><dd>' + t.gravar + '</dd></div>' +
-      '<div><dt>Cuidados importantes</dt><dd>' + t.cuidados + '</dd></div>' +
-    '</dl>' +
-    '<p class="modal-note">O passo a passo exato depende das instruções específicas da plataforma.</p>';
-  const overlay = document.getElementById("taskModalOverlay");
-  overlay.classList.add("is-open");
-  lastFocused = document.activeElement;
-  document.getElementById("taskModalClose").focus();
-  document.addEventListener("keydown", onModalKeydown);
-}
-
-let lastFocused = null;
-function closeTaskModal(){
-  document.getElementById("taskModalOverlay").classList.remove("is-open");
-  document.removeEventListener("keydown", onModalKeydown);
-  if(lastFocused){ lastFocused.focus(); }
-}
-function onModalKeydown(e){ if(e.key === "Escape"){ closeTaskModal(); } }
-
-function initTaskModal(){
-  document.getElementById("taskModalClose").addEventListener("click", closeTaskModal);
-  document.getElementById("taskModalOverlay").addEventListener("click", function(e){
-    if(e.target === this){ closeTaskModal(); }
-  });
-}
-
-/* ===================== COMO FUNCIONA — ÍCONES E PASSOS ===================== */
-const FLOW_STEPS = [
-  { num:"01", label:"Escolha uma plataforma", icon:'<svg viewBox="0 0 40 40"><rect x="6" y="10" width="10" height="10" rx="1.5"/><rect x="22" y="10" width="10" height="10" rx="1.5" fill="currentColor" stroke="none"/><rect x="6" y="24" width="10" height="10" rx="1.5"/><rect x="22" y="24" width="10" height="10" rx="1.5"/></svg>' },
-  { num:"02", label:"Faça seu cadastro", icon:'<svg viewBox="0 0 40 40"><circle cx="16" cy="14" r="6"/><path d="M6 33 C6 25 11 21 16 21 C21 21 26 25 26 33"/><line x1="30" y1="10" x2="30" y2="20"/><line x1="25" y1="15" x2="35" y2="15"/></svg>' },
-  { num:"03", label:"Escolha uma tarefa", icon:'<svg viewBox="0 0 40 40"><line x1="16" y1="12" x2="32" y2="12"/><line x1="16" y1="20" x2="32" y2="20"/><line x1="16" y1="28" x2="32" y2="28"/><path d="M6 12 L8 14 L12 9"/><path d="M6 20 L8 22 L12 17"/><path d="M6 28 L8 30 L12 25"/></svg>' },
-  { num:"04", label:"Grave em POV", icon:'<svg viewBox="0 0 40 40"><rect x="6" y="12" width="22" height="16" rx="2"/><path d="M28 17 L34 13 L34 27 L28 23 Z"/><circle cx="17" cy="20" r="5"/><circle cx="31" cy="10" r="1.6" fill="currentColor" stroke="none"/></svg>' },
-  { num:"05", label:"Envie o vídeo", icon:'<svg viewBox="0 0 40 40"><line x1="20" y1="8" x2="20" y2="24"/><path d="M13 15 L20 8 L27 15"/><path d="M6 26 L6 32 L34 32 L34 26"/></svg>' },
-  { num:"06", label:"Receba após aprovação", icon:'<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M20 13 L20 27 M24 16.5 C24 14.5 22.2 13 20 13 C17.5 13 16 14.5 16 16.5 C16 21 24 19 24 23.5 C24 25.5 22.2 27 20 27 C17.8 27 16 25.5 16 23.5"/></svg>' }
-];
-
-function renderFlow(){
-  const list = document.getElementById("flowSteps");
-  FLOW_STEPS.forEach(function(s){
-    const li = document.createElement("li");
-    li.className = "flow-step";
-    li.innerHTML = '<span class="flow-icon">' + s.icon + '</span><span class="flow-num">' + s.num + '</span><h3>' + s.label + '</h3>';
-    list.appendChild(li);
-  });
-}
-
-/* ===================== ETAPA "COMO COMEÇAR" — LINKS ===================== */
-function renderStartLinks(){
-  const wrap = document.getElementById("startLinks");
-  PLATFORMS.forEach(function(p){
-    const a = document.createElement("a");
-    a.className = "chip";
-    a.href = REFERRAL_LINKS[p.id];
-    a.target = "_blank";
-    a.rel = "noopener sponsored";
-    a.textContent = p.name;
-    wrap.appendChild(a);
-  });
 }
 
 /* ===================== MENU MOBILE ===================== */
@@ -1223,13 +1039,10 @@ function initFaqHashLink(){
 
 /* ===================== INIT ===================== */
 document.addEventListener("DOMContentLoaded", function(){
-  renderFlow();
   renderPlatforms();
+  initCopyButtons();
   renderCompare();
   initCalculator();
-  renderTasks();
-  initTaskModal();
-  renderStartLinks();
   initMobileMenu();
   initAccordion();
   initFaqHashLink();
