@@ -443,9 +443,9 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <div class="req-block"><span class="req-num">01</span><p>Ter 18 anos ou mais</p></div>
       <div class="req-block"><span class="req-num">02</span><p>Residir em um país da América Latina</p></div>
       <div class="req-block"><span class="req-num">03</span><p>Ter um celular compatível</p><a href="#faq-celulares" class="mini-link">Confira a lista completa no FAQ.</a></div>
-      <div class="req-block"><span class="req-num">04</span><p>Suporte de cabeça pra celular</p></div>
+      <div class="req-block"><span class="req-num">04</span><p>Suporte de cabeça pra celular (R$35)</p></div>
     </div>
-    <p class="req-footnote">A lista de celulares compatíveis pode variar conforme a plataforma e a campanha. Verifique os modelos aceitos antes de começar.</p>
+    <p class="req-footnote">Os requisitos podem variar entre plataformas e campanhas. Confirme as regras antes de realizar o cadastro.</p>
 
     <div class="headset-banner">
       <div class="headset-banner-icon" aria-hidden="true">
@@ -453,7 +453,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       </div>
       <div class="headset-banner-body">
         <h3>O suporte de cabeça</h3>
-        <p>Ele prende o celular na cabeça e grava a tarefa em POV, do jeito que as plataformas pedem. A Hub costuma liberar de graça pra quem entra na fila; se quiser começar hoje, dá pra comprar pronto no Mercado Livre.</p>
+        <p>Ele prende o celular na cabeça e grava a tarefa em POV, do jeito que as plataformas pedem. A Hub costuma liberar de graça para quem entra na fila, mas, se preferir, também dá para comprar pelo Mercado Livre.</p>
         <div class="headset-banner-links">
           <a href="#" id="headsetHubLink" class="btn btn-outline" target="_blank" rel="noopener sponsored">GRÁTIS NA HUB →</a>
           <a href="https://meli.la/1PQDK2c" class="btn btn-outline" target="_blank" rel="noopener">MERCADO LIVRE →</a>
@@ -466,7 +466,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 <!-- ===================== FAQ ===================== -->
 <section class="section section-tight" id="faq">
   <div class="container container--narrow">
-    <p class="eyebrow">05 · FAQ</p>
+    <p class="eyebrow">FAQ</p>
     <h2 class="title">Dúvidas frequentes</h2>
     <div class="accordion" id="accordion">
 
@@ -620,7 +620,7 @@ const REQ_STANDARD = {
   format:"Horizontal, 1080p",
   hands:"As duas mãos visíveis",
   zoom:"0,5 (grande angular)",
-  devices:"iPhone: 12 a 15 (todas as variantes), linha 16 (exceto 16e) e linha 17 (exceto 17e). iPhone 11 não é compatível. Pixel: 6, 7, 8 e 9 (e versões Pro). Galaxy S: S21 a S24 (e variantes Plus/Ultra), além de S25+ e S26+."
+  devices:"iPhone: modelos do 12 ao 15, incluindo todas as variantes, além das linhas 16 (exceto 16e) e 17 (exceto 17e). O iPhone 11 não é compatível. Google Pixel: séries 6, 7, 8 e 9, incluindo os modelos Pro. Galaxy S: do S21 ao S24, incluindo versões Plus e Ultra, além dos modelos S25+ e S26+."
 };
 
 const MINUTE_STEP = {
@@ -639,14 +639,14 @@ const PLATFORMS = [
     tags:["Vídeo doméstico","Com indicação","Tem bônus"],
     rateNum:"$6", rateUnit:"USD por hora",
     pros:[
-      "Pagamento na média ($6/h), mas tem muitos bônus por meta batida",
-      "Ganha $5 já no 1º clipe enviado, sem precisar bater hora",
-      "Suporte rápido no Discord — o melhor entre as quatro",
-      "Saque semanal, toda terça-feira"
+      "Valor base de aproximadamente US$6 por hora, com possibilidade de aumentar os ganhos por meio de bônus e metas.",
+      "US$5 já no primeiro clipe enviado, sem necessidade de completar uma hora de gravação.",
+      "Suporte rápido pelo Discord, considerado o melhor entre as quatro plataformas.",
+      "Pagamentos semanais, realizados às terças-feiras."
     ],
     cons:[
-      "O vídeo demora pra aparecer na plataforma e ser avaliado",
-      "Saque mínimo alto: $50 (≈ R$ 250)"
+      "Pode levar algum tempo até que o vídeo enviado fique disponível para avaliação.",
+      "Valor mínimo para saque de US$50 (aproximadamente R$250)"
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
@@ -665,8 +665,8 @@ const PLATFORMS = [
       {trigger:"750h", reward:"$750"},
       {trigger:"1.000h", reward:"$1.000"}
     ],
-    support:{ text:"Comunidade ativa no Discord com respostas rápidas. É o melhor suporte entre as quatro." },
-    referral:"Você ganha $25 quando seu indicado bate 5 horas.",
+    support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as quatro opções, é o suporte que considero mais eficiente." },
+    referral:"Ao indicar alguém, você recebe US$25 quando essa pessoa atingir 5 horas de gravação.",
     steps:[
       EMAIL_STEP,
       { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Claru.ai →", href:CLARU_REFERRAL_URL}] },
@@ -681,18 +681,18 @@ const PLATFORMS = [
     tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
     rateNum:"$6,50", rateUnit:"USD por hora",
     pros:[
-      "Aceita tarefas comerciais (no trabalho), além das domésticas",
-      "Saque em Pix com mínimo baixo: $10 (≈ R$ 50)"
+      "Além das atividades domésticas, também disponibiliza tarefas relacionadas ao ambiente de trabalho/comerciais.",
+      "Saque mínimo de apenas US$10 (aproximadamente R$50), com possibilidade de recebimento via Pix."
     ],
     cons:[
-      "O vídeo demora pra aparecer na plataforma e ser avaliado",
-      "Suporte é o mais fraco das quatro — não encontrei relatos de bom atendimento"
+      "O conteúdo enviado pode demorar para aparecer na plataforma e passar pela avaliação.",
+      "O atendimento é mais limitado quando comparado às demais plataformas."
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 10", avgTime:"Variável", methods:"Pix, transferência internacional" },
     bonus:null,
-    support:{ text:"Atendimento só por chat dentro do próprio site — é o suporte mais fraco entre as quatro." },
-    referral:"Você ganha $10 quando seu indicado faz $50.",
+    support:{ text:"O contato com a plataforma é feito pelo chat disponível no próprio site, sem um canal de suporte dedicado como nas outras opções." },
+    referral:"O programa de indicação paga US$10 quando a pessoa indicada acumula US$50.",
     steps:[
       EMAIL_STEP,
       { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Crowtado →", href:CROW_REFERRAL_URL}] },
@@ -711,15 +711,15 @@ const PLATFORMS = [
     tags:["Vídeo doméstico","Com indicação","Tem bônus"],
     rateNum:"$5 a $6", rateUnit:"USD por hora",
     pros:[
-      "Saque semanal em Pix, mínimo baixo (R$ 25) — a mais fácil pra tirar o dinheiro",
-      "O vídeo aparece na plataforma mais rápido que nas outras",
-      "Suporte ativo no Telegram"
+      "Pagamento via Pix, com mínimo de apenas R$25, facilitando o primeiro saque.",
+      "Os vídeos costumam ficar disponíveis na plataforma mais rapidamente do que nas outras opções.",
+      "Possui canal de suporte ativo no Telegram."
     ],
     cons:[
-      "É a que paga menos por hora ($5/h na base)"
+      "O pagamento não possui uma data fixa semanal, tornando o prazo para receber menos previsível."
     ],
     requirements: REQ_STANDARD,
-    payment:{ minWithdraw:"R$ 25", avgTime:"Semanal", methods:"Pix" },
+    payment:{ minWithdraw:"R$ 25", avgTime:"Sem data fixa", methods:"Pix" },
     bonus:[
       {trigger:"Tarefas turbinadas", reward:"$7/h (R$ 35/h)"},
       {trigger:"1h", reward:"Bônus de R$ 15"},
@@ -733,8 +733,8 @@ const PLATFORMS = [
       {trigger:"100h", reward:"Headstrap premium"},
       {trigger:"200h", reward:"Bilhete mensal de sorteio de iPhone"}
     ],
-    support:{ text:"Atendimento pelo próprio site, além de canal ativo no Telegram e por e-mail.", links:[{label:"Grupo no Telegram", href:null},{label:"support@hub.xyz", href:"mailto:support@hub.xyz"}] },
-    referral:"Você ganha R$ 2,50 a cada hora do seu indicado, e R$ 1,25 a cada hora do indicado do seu indicado.",
+    support:{ text:"É possível entrar em contato pelo próprio site, além de contar com atendimento por Telegram e e-mail.", links:[{label:"Grupo no Telegram", href:null},{label:"support@hub.xyz", href:"mailto:support@hub.xyz"}] },
+    referral:"Você recebe R$2,50 por cada hora realizada pelo seu indicado e mais R$1,25 por hora quando uma pessoa indicada por ele também participa.",
     steps:[
       EMAIL_STEP,
       { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Hub.xyz →", href:HUB_REFERRAL_URL}] },
@@ -797,7 +797,7 @@ function stepsHtml(steps){
 }
 
 function bonusHtml(bonus){
-  if(!bonus){ return '<p class="panel-text">Esta plataforma não oferece bônus além do valor por hora.</p>'; }
+  if(!bonus){ return '<p class="panel-text">Não há bônus adicionais além do valor pago pelas horas realizadas.</p>'; }
   if(typeof bonus === "string"){ return '<p class="panel-text">'+bonus+'</p>'; }
   return '<div class="bonus-table">' + bonus.map(function(b){
     return '<div class="bonus-row"><span class="trigger">'+b.trigger+'</span><span class="reward">'+b.reward+'</span></div>';
@@ -885,7 +885,7 @@ function initCopyButtons(){
 const COMPARE_ROWS = [
   { label:"Já usei", claru:"✓", hub:"✓", crow:"✓", kgen:"—" },
   { label:"Tipo de tarefa", claru:"Doméstica", hub:"Doméstica", crow:"Doméstica + comercial", kgen:"Doméstica" },
-  { label:"Valor por hora", claru:"⭐ $6", hub:"$5 a $6", crow:"$6,50", kgen:"$3 + $1 bônus" },
+  { label:"Valor por hora", claru:"⭐ $6", hub:"$5 a $6", crow:"⭐ $6,50", kgen:"$3 + $1 bônus" },
   { label:"Bônus", claru:"Metas por hora, até $1.000", hub:"Metas + sorteios", crow:"—", kgen:"Conforme campanha" },
   { label:"Saque mínimo", claru:"US$ 50", hub:"R$ 25", crow:"US$ 10", kgen:"Consulte a plataforma" },
   { label:"Tempo médio de saque", claru:"Semanal (terças)", hub:"Semanal", crow:"Variável", kgen:"Consulte a plataforma" },
