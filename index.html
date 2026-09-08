@@ -250,28 +250,33 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 }
 
 .results-intro > .title{
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .results-intro-content{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;
-  align-items:start;
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-between;
   gap:60px;
+  width:100%;
 }
 
 .results-intro-content .lede{
+  flex:1;
   max-width:650px;
+  margin:0;
 }
 
 .results-note{
+  flex:0 0 320px;
+  max-width:320px;
+  margin:4px 0 0 0;
   font-family:var(--font-mono);
   font-size:.68rem;
   color:var(--ink-50);
-  max-width:320px;
   line-height:1.55;
   text-align:left;
-  margin:0;
 }
 
 /* Área que segura a faixa de imagens */
