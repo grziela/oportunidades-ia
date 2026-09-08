@@ -239,6 +239,193 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .headset-banner-body p{font-size:.92rem;color:var(--ink-70);margin-bottom:16px;max-width:520px;}
 .headset-banner-links{display:flex;gap:12px;flex-wrap:wrap;}
 
+/* ===================== RESULTADOS ===================== */
+
+.results-section{
+  overflow:hidden;
+}
+
+.results-intro{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:36px;
+}
+
+.results-intro-text{
+  max-width:650px;
+}
+
+.results-note{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  color:var(--ink-50);
+  max-width:260px;
+  line-height:1.55;
+  text-align:right;
+}
+
+/* Área que segura a faixa de imagens */
+.results-marquee{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  cursor:grab;
+  padding:12px 0 22px;
+}
+
+/* Fade nas laterais */
+.results-marquee::before,
+.results-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:90px;
+  z-index:3;
+  pointer-events:none;
+}
+
+.results-marquee::before{
+  left:0;
+  background:linear-gradient(
+    to right,
+    var(--paper),
+    rgba(236,230,216,0)
+  );
+}
+
+.results-marquee::after{
+  right:0;
+  background:linear-gradient(
+    to left,
+    var(--paper),
+    rgba(236,230,216,0)
+  );
+}
+
+/* Faixa que se movimenta */
+.results-track{
+  display:flex;
+  width:max-content;
+  gap:18px;
+  animation:results-scroll 38s linear infinite;
+}
+
+/* Quando o mouse entra, congela exatamente onde está */
+.results-marquee:hover .results-track{
+  animation-play-state:paused;
+  cursor:grab;
+}
+
+/* Cartão individual da imagem */
+.result-card{
+  width:270px;
+  height:372px;
+  flex-shrink:0;
+  background:var(--card);
+  border:1px solid var(--ink-12);
+  border-radius:var(--r-m);
+  padding:8px;
+  position:relative;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.results-marquee:hover .result-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 28px rgba(23,20,15,.12);
+}
+
+.results-marquee:has(.result-card:hover) .results-track{
+  animation-play-state:paused;
+}
+  
+.result-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:4px;
+  display:block;
+}
+
+/* Movimento contínuo */
+@keyframes results-scroll{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(calc(-50% - 9px));
+  }
+}
+
+/* Pequena informação abaixo */
+.results-proof{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--ink-12);
+}
+
+.results-proof p{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  color:var(--ink-50);
+  line-height:1.55;
+}
+
+.results-proof strong{
+  color:var(--ink-70);
+  font-weight:500;
+}
+
+/* Mobile */
+@media (max-width:720px){
+
+  .results-intro{
+    display:block;
+    margin-bottom:24px;
+  }
+
+  .results-note{
+    text-align:left;
+    max-width:100%;
+    margin-top:14px;
+  }
+
+  .results-marquee{
+    margin-left:-24px;
+    width:calc(100% + 48px);
+  }
+
+  .results-marquee::before,
+  .results-marquee::after{
+    width:45px;
+  }
+
+  .result-card{
+    width:230px;
+    height:310px;
+  }
+
+  .results-track{
+    gap:12px;
+    animation-duration:32s;
+  }
+
+  .results-proof{
+    display:block;
+  }
+
+  .results-proof p + p{
+    margin-top:8px;
+  }
+}
+  
 /* ===================== FAQ ===================== */
 .accordion-item{border-bottom:1px solid var(--ink-12);}
 .accordion-item:first-child{border-top:1px solid var(--ink-12);}
@@ -336,6 +523,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <a href="#plataformas">Plataformas</a>
       <a href="#calculadora">Quanto paga</a>
       <a href="#requisitos">Requisitos</a>
+      <a href="#resultados">Resultados</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#plataformas" class="btn btn-primary nav-cta">VER PLATAFORMAS</a>
@@ -348,6 +536,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <a href="#plataformas">Plataformas</a>
       <a href="#calculadora">Quanto paga</a>
       <a href="#requisitos">Requisitos</a>
+      <a href="#resultados">Resultados</a>
       <a href="#faq">FAQ</a>
       <a href="#plataformas" class="btn btn-primary">VER PLATAFORMAS</a>
     </nav>
@@ -463,6 +652,101 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   </div>
 </section>
 
+<!-- ===================== RESULTADOS ===================== -->
+<section class="section results-section" id="resultados">
+  <div class="container">
+
+    <p class="eyebrow">05 · RESULTADOS</p>
+
+    <div class="results-intro">
+      <div class="results-intro-text">
+        <h2 class="title">Resultados que falam por si.</h2>
+
+        <p class="lede">
+          Prints reais de pagamentos recebidos por quem já entrou nesse mercado e começou a gravar tarefas para treinamento de Inteligência Artificial.
+        </p>
+      </div>
+
+      <p class="results-note">
+        RESULTADOS REAIS · PAGAMENTOS RECEBIDOS<br>
+        Os valores variam conforme a plataforma, as tarefas disponíveis e o tempo de gravação.
+      </p>
+    </div>
+
+    <div class="results-marquee">
+
+      <div class="results-track">
+
+        <!-- PRIMEIRO CONJUNTO -->
+        <div class="result-card">
+          <img src="resultado-01.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-02.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-03.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-04.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-05.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-06.jpg" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+        </div>
+
+
+        <!-- SEGUNDO CONJUNTO — usado para criar o loop contínuo -->
+
+        <div class="result-card">
+          <img src="resultado-01.jpg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-02.jpg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-03.jpg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-04.jpg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-05.jpg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="result-card">
+          <img src="resultado-06.jpg" alt="" aria-hidden="true">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="results-proof">
+      <p>
+        <strong>PROVAS DA COMUNIDADE</strong> ·
+        Pagamentos e resultados compartilhados por participantes.
+      </p>
+
+      <p>
+        Valores exibidos nos prints podem variar conforme período e plataforma.
+      </p>
+    </div>
+
+  </div>
+</section>  
+  
 <!-- ===================== FAQ ===================== -->
 <section class="section section-tight" id="faq">
   <div class="container container--narrow">
