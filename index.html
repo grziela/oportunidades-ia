@@ -246,14 +246,21 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 }
 
 .results-intro{
-  display:grid;
-  grid-template-columns:minmax(0, 1fr) 320px;
-  align-items:start;
-  gap:60px;
   margin-bottom:36px;
 }
 
-.results-intro-text{
+.results-intro > .title{
+  margin-bottom:18px;
+}
+
+.results-intro-content{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  align-items:start;
+  gap:60px;
+}
+
+.results-intro-content .lede{
   max-width:650px;
 }
 
@@ -264,7 +271,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   max-width:320px;
   line-height:1.55;
   text-align:left;
-  margin-top:6px;
+  margin:0;
 }
 
 /* Área que segura a faixa de imagens */
@@ -385,15 +392,11 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 }
 
 /* Mobile */
-@media (max-width:720px){
-
-  .results-intro{
+.results-intro-content{
     display:block;
-    margin-bottom:24px;
   }
 
   .results-note{
-    text-align:left;
     max-width:100%;
     margin-top:14px;
   }
@@ -660,19 +663,23 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     <p class="eyebrow">05 · RESULTADOS</p>
 
     <div class="results-intro">
-      <div class="results-intro-text">
-        <h2 class="title">Meus resultados treinando IA.</h2>
 
-        <p class="lede">
-          Esses são alguns dos pagamentos que recebi realizando tarefas para treinamento de Inteligência Artificial. Estou mostrando meus próprios resultados para que você veja, com transparência, como esse trabalho funciona na prática.
-        </p>
-      </div>
+  <h2 class="title">Meus resultados gravando para IA.</h2>
 
-      <p class="results-note">
-        RESULTADOS REAIS · PAGAMENTOS RECEBIDOS<br>
-        Os valores variam conforme a plataforma, as tarefas disponíveis e o tempo de gravação.
-      </p>
-    </div>
+  <div class="results-intro-content">
+
+    <p class="lede">
+      Aqui estão alguns dos pagamentos que eu recebi realizando tarefas para treinamento de Inteligência Artificial. Estou mostrando meus próprios resultados para que você veja, com transparência, como esse trabalho funciona na prática.
+    </p>
+
+    <p class="results-note">
+      RESULTADOS REAIS · PAGAMENTOS RECEBIDOS<br>
+      Os valores podem variar conforme a plataforma, as tarefas disponíveis e o tempo de gravação.
+    </p>
+
+  </div>
+
+</div>
 
     <div class="results-marquee">
 
