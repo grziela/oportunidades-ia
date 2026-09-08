@@ -246,10 +246,10 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 }
 
 .results-intro{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:30px;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 320px;
+  align-items:start;
+  gap:60px;
   margin-bottom:36px;
 }
 
@@ -261,9 +261,10 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   font-family:var(--font-mono);
   font-size:.68rem;
   color:var(--ink-50);
-  max-width:260px;
+  max-width:320px;
   line-height:1.55;
-  text-align:right;
+  text-align:left;
+  margin-top:6px;
 }
 
 /* Área que segura a faixa de imagens */
@@ -660,10 +661,10 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
     <div class="results-intro">
       <div class="results-intro-text">
-        <h2 class="title">Resultados que falam por si.</h2>
+        <h2 class="title">Meus resultados treinando IA.</h2>
 
         <p class="lede">
-          Prints reais de pagamentos recebidos por quem já entrou nesse mercado e começou a gravar tarefas para treinamento de Inteligência Artificial.
+          Esses são alguns dos pagamentos que recebi realizando tarefas para treinamento de Inteligência Artificial. Estou mostrando meus próprios resultados para que você veja, com transparência, como esse trabalho funciona na prática.
         </p>
       </div>
 
@@ -734,15 +735,15 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     </div>
 
     <div class="results-proof">
-      <p>
-        <strong>PROVAS DA COMUNIDADE</strong> ·
-        Pagamentos e resultados compartilhados por participantes.
-      </p>
+  <p>
+    <strong>MEUS RESULTADOS</strong> ·
+    Pagamentos que recebi realizando tarefas para treinamento de Inteligência Artificial.
+  </p>
 
-      <p>
-        Valores exibidos nos prints podem variar conforme período e plataforma.
-      </p>
-    </div>
+  <p>
+    Os valores podem variar conforme a plataforma, a tarefa e a disponibilidade de projetos.
+  </p>
+</div>
 
   </div>
 </section>  
