@@ -8,6 +8,14 @@
 <meta property="og:title" content="Oportunidades IA BR — Ganhe em dólar treinando IA">
 <meta property="og:description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos POV para treinamento de IA.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://oportunidades-ia-ivory.vercel.app/">
+<meta property="og:image" content="https://oportunidades-ia-ivory.vercel.app/hub-ganhos.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oportunidades IA BR — Ganhe em dólar treinando IA">
+<meta name="twitter:description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos POV para treinamento de IA.">
+<meta name="twitter:image" content="https://oportunidades-ia-ivory.vercel.app/hub-ganhos.png">
+<link rel="canonical" href="https://oportunidades-ia-ivory.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -43,7 +51,6 @@ input{font:inherit;}
   --accent-text:#233ba8;
   --accent-dim:rgba(43,70,245,.1);
   --rec:#ff3b30;
-  --white:#ffffff;
   --r-s:3px;
   --r-m:7px;
   --maxw:1180px;
@@ -67,7 +74,6 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 14px);}
 .container--narrow{max-width:760px;}
 .section{padding:96px 0;}
 .section-tight{padding:64px 0;}
-.section-dark{background:var(--ink);color:var(--paper);}
 .skip-link{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:12px 18px;z-index:200;font-family:var(--font-mono);font-size:.85rem;}
 .skip-link:focus{left:12px;top:12px;}
 
@@ -254,15 +260,6 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   margin-bottom:20px;
 }
 
-.results-intro{
-  width:100%;
-  margin-bottom:36px;
-}
-
-.results-intro > .title{
-  margin-bottom:20px;
-}
-
 .results-intro-row{
   display:grid;
   grid-template-columns:minmax(0, 650px) 320px;
@@ -368,6 +365,48 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   object-fit:cover;
   border-radius:4px;
   display:block;
+}
+
+.result-tag{
+  position:absolute;
+  top:16px;
+  left:16px;
+  background:rgba(23,20,15,.78);
+  color:var(--paper);
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.03em;
+  padding:5px 10px;
+  border-radius:20px;
+  z-index:2;
+}
+
+.result-caption{
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:8px;
+  padding:34px 12px 10px;
+  border-radius:0 0 4px 4px;
+  background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0));
+  z-index:2;
+  pointer-events:none;
+}
+
+.result-caption .amount{
+  display:block;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1rem;
+  color:#fff;
+}
+
+.result-caption .meta{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  color:rgba(255,255,255,.85);
+  margin-top:2px;
 }
 
 /* Movimento contínuo */
@@ -548,7 +587,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#plataformas" class="btn btn-primary nav-cta">VER PLATAFORMAS</a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+    <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -659,7 +698,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
     <div class="headset-banner">
       <div class="headset-banner-icon">
-        <img src="headset-banner-icon.jpg" alt="Suporte de cabeça para celular">
+        <img src="headset-banner-icon.jpg" alt="Suporte de cabeça para celular" loading="lazy">
       </div>
       <div class="headset-banner-body">
         <h3>O suporte de cabeça</h3>
@@ -704,27 +743,57 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
         <!-- PRIMEIRO CONJUNTO -->
         <div class="result-card">
-          <img src="resultados-01.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-01.png" alt="Print de pagamento recebido pela Claru — primeira semana, 25 de agosto a 2 de setembro de 2026" loading="lazy">
+          <span class="result-tag">CLARU.AI</span>
+          <div class="result-caption">
+            <span class="amount">US$ 61,30 recebidos</span>
+            <span class="meta">1ª semana · 25 ago–02 set/2026 (com bônus de início)</span>
+          </div>
         </div>
 
         <div class="result-card">
-          <img src="resultados-02.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-02.png" alt="Print do segundo saque recebido pela Hub.xyz" loading="lazy">
+          <span class="result-tag">HUB.XYZ</span>
+          <div class="result-caption">
+            <span class="amount">2º saque</span>
+            <span class="meta">Hub.xyz</span>
+          </div>
         </div>
 
         <div class="result-card">
-          <img src="resultados-03.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-03.png" alt="Print de pagamento recebido pela Crowtado" loading="lazy">
+          <span class="result-tag">CROWTADO</span>
+          <div class="result-caption">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
-          <img src="resultados-04.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-04.png" alt="Print de pagamento recebido pela Crowtado" loading="lazy">
+          <span class="result-tag">CROWTADO</span>
+          <div class="result-caption">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
-          <img src="resultados-05.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-05.png" alt="Print de pagamento recebido pela Crowtado" loading="lazy">
+          <span class="result-tag">CROWTADO</span>
+          <div class="result-caption">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
-          <img src="resultados-06.png" alt="Print de pagamento recebido por trabalho de treinamento de IA" loading="lazy">
+          <img src="resultados-06.png" alt="Print de pagamento recebido pela Hub.xyz" loading="lazy">
+          <span class="result-tag">HUB.XYZ</span>
+          <div class="result-caption">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Hub.xyz</span>
+          </div>
         </div>
 
 
@@ -732,26 +801,56 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
         <div class="result-card">
           <img src="resultados-01.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">CLARU.AI</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">US$ 61,30 recebidos</span>
+            <span class="meta">1ª semana · 25 ago–02 set/2026 (com bônus de início)</span>
+          </div>
         </div>
 
         <div class="result-card">
           <img src="resultados-02.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">HUB.XYZ</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">2º saque</span>
+            <span class="meta">Hub.xyz</span>
+          </div>
         </div>
 
         <div class="result-card">
           <img src="resultados-03.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">CROWTADO</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
           <img src="resultados-04.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">CROWTADO</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
           <img src="resultados-05.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">CROWTADO</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Crowtado</span>
+          </div>
         </div>
 
         <div class="result-card">
           <img src="resultados-06.png" alt="" aria-hidden="true">
+          <span class="result-tag" aria-hidden="true">HUB.XYZ</span>
+          <div class="result-caption" aria-hidden="true">
+            <span class="amount">Pagamento recebido</span>
+            <span class="meta">Hub.xyz</span>
+          </div>
         </div>
 
       </div>
@@ -804,46 +903,37 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
       <div class="accordion-item">
         <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
-          Quanto posso ganhar?<span class="plus" aria-hidden="true"></span>
+          Quanto posso ganhar e como recebo o pagamento?<span class="plus" aria-hidden="true"></span>
         </button></h3>
         <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
-          <p>As condições de pagamento mudam de uma plataforma para outra, incluindo valor mínimo para saque, prazo e método de recebimento. A maioria trabalha com Pix, enquanto a Claru também disponibiliza PayPal. Os detalhes de cada uma podem ser consultados na seção “Pagamento” dentro do card correspondente à plataforma.</p>
+          <p>As condições de pagamento mudam de uma plataforma para outra — valor mínimo para saque, prazo e método variam entre elas. A maioria trabalha com Pix, e a Claru também disponibiliza PayPal. Você confere os detalhes exatos (valor mínimo, prazo e forma de pagamento) na seção "Pagamento", dentro do card de cada plataforma na seção acima.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
-          Como recebo meu pagamento?<span class="plus" aria-hidden="true"></span>
-        </button></h3>
-        <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
-          <p>Cada plataforma tem sua própria regra de saque, valor mínimo e método de pagamento — a maioria paga via Pix, e a Claru também oferece PayPal. Você confere o prazo e o mínimo exatos em "Pagamento", dentro do card de cada plataforma na seção acima.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
           Preciso mostrar meu rosto ou falar durante a gravação?<span class="plus" aria-hidden="true"></span>
         </button></h3>
-        <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6">
+        <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
           <p>Não. Você não precisa aparecer no vídeo. Na maior parte das tarefas, a gravação mostra apenas suas mãos realizando a atividade, sempre pela perspectiva de quem está executando a tarefa (POV). As instruções podem mudar de acordo com o projeto, então é importante conferir o briefing antes de começar cada gravação.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-trigger-7">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
           O que é o aplicativo Minute e para que ele serve?<span class="plus" aria-hidden="true"></span>
         </button></h3>
-        <div class="accordion-panel" id="faq-panel-7" role="region" aria-labelledby="faq-trigger-7">
+        <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6">
           <p>O Minute é o aplicativo utilizado para realizar as gravações das tarefas nas plataformas. Depois de criar sua conta em uma delas, você instala o aplicativo, acessa usando o mesmo e-mail do cadastro e adiciona o código de organização correspondente para ter acesso às atividades disponíveis.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-8" id="faq-trigger-8">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-trigger-7">
           E se meu vídeo não for aprovado?<span class="plus" aria-hidden="true"></span>
         </button></h3>
-        <div class="accordion-panel" id="faq-panel-8" role="region" aria-labelledby="faq-trigger-8">
-          <p>Isso pode acontecer. Todo vídeo passa por uma análise antes de ser aprovado, e cada plataforma possui critérios específicos para aceitar uma gravação. Para diminuir as chances de recusa, siga cuidadosamente as orientações da tarefa, incluindo duração, enquadramento, formato, visibilidade das mãos e outros requisitos técnicos. Antes de gravar, confira a seção “Requisitos técnicos” no card da plataforma escolhida.</p>
+        <div class="accordion-panel" id="faq-panel-7" role="region" aria-labelledby="faq-trigger-7">
+          <p>Isso pode acontecer. Todo vídeo passa por uma análise antes de ser aprovado, e cada plataforma possui critérios específicos para aceitar uma gravação. Para diminuir as chances de recusa, siga cuidadosamente as orientações da tarefa, incluindo duração, enquadramento, formato, visibilidade das mãos e outros requisitos técnicos. Antes de gravar, confira a seção "Requisitos técnicos" no card da plataforma escolhida.</p>
         </div>
       </div>
 
@@ -1235,7 +1325,7 @@ const CALC_CONFIG = {
   platforms: {
     claru: { label:"Claru", baseRate:6, note:"A Claru também paga bônus por metas de horas acumuladas — de $5 no 1º clipe até $1.000 ao completar 1.000h no total. Esse valor não entra na conta acima." },
     hub:   { label:"Hub",   baseRate:5.5, note:"A Hub também sorteia prêmios e paga bônus extras em tarefas turbinadas ($7/h) e em marcos de horas — não incluídos na conta acima." },
-    crow:  { label:"Crow",  baseRate:6.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
+    crow:  { label:"Crow",  baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
     kgen:  { label:"KGeN",  baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
   }
 };
