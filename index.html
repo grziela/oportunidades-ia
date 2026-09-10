@@ -1030,16 +1030,48 @@ const LAST_STEP = { text:"Depois de cadastrado, é só começar a gravar." };
 /* ===================== PLATAFORMAS ===================== */
 const PLATFORMS = [
   {
-    id:"claru", domain:"Claru.ai", recommended:true, usedPersonally:true,
-    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
-    rateNum:"$6", rateUnit:"USD por hora",
+    id:"crow", domain:"Crowtado", recommended:true, usedPersonally:true,
+    tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
+    rateNum:"$5,50", rateUnit:"USD por hora",
     pros:[
-      "Valor base de aproximadamente US$6 por hora, com possibilidade de aumentar os ganhos por meio de bônus e metas.",
+      "Além das atividades domésticas, também disponibiliza tarefas relacionadas ao ambiente de trabalho/comerciais.",
+      "Saque mínimo de apenas US$10 (aproximadamente R$50), com possibilidade de recebimento via Pix."
+    ],
+    cons:[
+      "O conteúdo enviado pode demorar para aparecer na plataforma e passar pela avaliação.",
+      "O atendimento é mais limitado quando comparado às demais plataformas."
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"US$ 10", avgTime:"Variável", methods:"Pix, transferência internacional" },
+    bonus:null,
+    support:{ text:"O contato com a plataforma é feito pelo chat disponível no próprio site, sem um canal de suporte dedicado como nas outras opções." },
+    referral:"O programa de indicação paga US$10 quando a pessoa indicada acumula US$50.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Crowtado →", href:CROW_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Escolha o código de organização de acordo com o tipo de tarefa que você vai gravar, usando o mesmo e-mail cadastrado na Crowtado.",
+        codes:[
+          {label:"Residencial (em casa)", code:"VZEAE7WC", note:"Ex: lavar louça, dobrar e guardar roupas, jardinagem, tirar o lixo, organizar a garagem."},
+          {label:"Comercial (no trabalho)", code:"4BYSAHUG", note:"Ex: lavar louça em restaurante, limpeza de hotel, separação de pedidos em armazém, reposição de prateleiras, troca de óleo."}
+        ]
+      },
+      LAST_STEP
+    ]
+  },
+  {
+    id:"claru", domain:"Claru.ai", recommended:false, usedPersonally:true,
+    identityNote:"Também recomendo — os bônus aumentam o valor final da hora",
+    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
+    rateNum:"$3,50", rateUnit:"USD por hora",
+    pros:[
+      "Valor base de US$3,50 por hora, com bônus por metas de horas acumuladas que podem aumentar bastante o retorno total — até US$1.000 ao completar 1.000h.",
       "US$5 já no primeiro clipe enviado, sem necessidade de completar uma hora de gravação.",
       "Suporte rápido pelo Discord, considerado o melhor entre as quatro plataformas.",
       "Pagamentos semanais, realizados às terças-feiras."
     ],
     cons:[
+      "Não é mais a plataforma com o maior valor base por hora entre as quatro.",
       "Pode levar algum tempo até que o vídeo enviado fique disponível para avaliação.",
       "Valor mínimo para saque de US$50 (aproximadamente R$250)"
     ],
@@ -1068,36 +1100,6 @@ const PLATFORMS = [
       MINUTE_STEP,
       { text:"Use apenas o endereço de e-mail gerado pela Claru para se inscrever no app Minute. Você encontra esse e-mail na sua caixa de entrada da Claru.", links:[{label:"Acessar inbox da Claru →", href:CLARU_INBOX_URL}] },
       { text:"Coloque o código de organização.", codes:[{code:"WSNEHSKC"}] },
-      LAST_STEP
-    ]
-  },
-  {
-    id:"crow", domain:"Crowtado", recommended:false, usedPersonally:true,
-    tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
-    rateNum:"$5,50", rateUnit:"USD por hora",
-    pros:[
-      "Além das atividades domésticas, também disponibiliza tarefas relacionadas ao ambiente de trabalho/comerciais.",
-      "Saque mínimo de apenas US$10 (aproximadamente R$50), com possibilidade de recebimento via Pix."
-    ],
-    cons:[
-      "O conteúdo enviado pode demorar para aparecer na plataforma e passar pela avaliação.",
-      "O atendimento é mais limitado quando comparado às demais plataformas."
-    ],
-    requirements: REQ_STANDARD,
-    payment:{ minWithdraw:"US$ 10", avgTime:"Variável", methods:"Pix, transferência internacional" },
-    bonus:null,
-    support:{ text:"O contato com a plataforma é feito pelo chat disponível no próprio site, sem um canal de suporte dedicado como nas outras opções." },
-    referral:"O programa de indicação paga US$10 quando a pessoa indicada acumula US$50.",
-    steps:[
-      EMAIL_STEP,
-      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Crowtado →", href:CROW_REFERRAL_URL}] },
-      MINUTE_STEP,
-      { text:"Escolha o código de organização de acordo com o tipo de tarefa que você vai gravar, usando o mesmo e-mail cadastrado na Crowtado.",
-        codes:[
-          {label:"Residencial (em casa)", code:"VZEAE7WC", note:"Ex: lavar louça, dobrar e guardar roupas, jardinagem, tirar o lixo, organizar a garagem."},
-          {label:"Comercial (no trabalho)", code:"4BYSAHUG", note:"Ex: lavar louça em restaurante, limpeza de hotel, separação de pedidos em armazém, reposição de prateleiras, troca de óleo."}
-        ]
-      },
       LAST_STEP
     ]
   },
@@ -1235,7 +1237,7 @@ function renderPlatforms(){
       '<div class="platform-row-head">' +
         '<div class="platform-identity">' +
           '<div class="name-line">' + (p.recommended ? '<span class="star-badge">★</span>' : '') + '<span class="name">'+p.domain+'</span></div>' +
-          (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : '')) +
+          (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (p.identityNote ? '<span class="identity-note">'+p.identityNote+'</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : ''))) +
         '</div>' +
         '<div class="platform-tags">' + p.tags.map(function(t){return '<span class="tag-chip">'+t+'</span>';}).join("") + '</div>' +
         '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
@@ -1280,7 +1282,7 @@ function initCopyButtons(){
 const COMPARE_ROWS = [
   { label:"Já usei", claru:"✓", hub:"✓", crow:"✓", kgen:"—" },
   { label:"Tipo de tarefa", claru:"Doméstica", hub:"Doméstica", crow:"Doméstica + comercial", kgen:"Doméstica" },
-  { label:"Valor por hora", claru:"⭐ $6", hub:"$5 a $6", crow:"$5,50", kgen:"$3 + $1 bônus" },
+  { label:"Valor por hora", claru:"$3,50", hub:"⭐ $5 a $6", crow:"$5,50", kgen:"$3 + $1 bônus" },
   { label:"Bônus", claru:"Metas por hora, até $1.000", hub:"Metas + sorteios", crow:"—", kgen:"Conforme campanha" },
   { label:"Saque mínimo", claru:"US$ 50", hub:"R$ 25", crow:"US$ 10", kgen:"Consulte a plataforma" },
   { label:"Tempo médio de saque", claru:"Semanal (terças)", hub:"Semanal", crow:"Variável", kgen:"Consulte a plataforma" },
@@ -1323,9 +1325,9 @@ const CALC_CONFIG = {
   usdToBrl: 5.20,
   daysPerMonth: 22,
   platforms: {
-    claru: { label:"Claru", baseRate:6, note:"A Claru também paga bônus por metas de horas acumuladas — de $5 no 1º clipe até $1.000 ao completar 1.000h no total. Esse valor não entra na conta acima." },
-    hub:   { label:"Hub",   baseRate:5.5, note:"A Hub também sorteia prêmios e paga bônus extras em tarefas turbinadas ($7/h) e em marcos de horas — não incluídos na conta acima." },
     crow:  { label:"Crow",  baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
+    claru: { label:"Claru", baseRate:3.5, note:"A Claru reduziu o valor base para $3,50/h, mas ainda paga bônus por metas de horas acumuladas — de $5 no 1º clipe até $1.000 ao completar 1.000h no total. Esse valor não entra na conta acima." },
+    hub:   { label:"Hub",   baseRate:5.5, note:"A Hub também sorteia prêmios e paga bônus extras em tarefas turbinadas ($7/h) e em marcos de horas — não incluídos na conta acima." },
     kgen:  { label:"KGeN",  baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
   }
 };
@@ -1343,7 +1345,7 @@ function formatBrl(v){ return "≈ R$ " + Math.round(v).toLocaleString("pt-BR");
 
 function initCalculator(){
   const select = document.getElementById("calcPlatformSelect");
-  let currentPlatform = "claru";
+  let currentPlatform = "crow";
   Object.keys(CALC_CONFIG.platforms).forEach(function(id){
     const btn = document.createElement("button");
     btn.className = "calc-tab";
