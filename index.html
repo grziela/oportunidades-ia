@@ -140,45 +140,53 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .platforms-list{display:flex;flex-direction:column;gap:14px;}
 .platform-row{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);overflow:hidden;}
 .platform-row.is-recommended{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
-.platform-row-head{display:flex;align-items:center;gap:22px;padding:24px 28px;flex-wrap:wrap;}
-.platform-identity{display:flex;flex-direction:column;gap:5px;min-width:160px;}
-.platform-identity .name-line{display:flex;align-items:center;gap:9px;}
-.platform-identity .name{font-family:var(--font-display);font-weight:600;font-size:1.25rem;}
-.star-badge{color:var(--accent);font-size:.95rem;}
-.identity-note{font-family:var(--font-mono);font-size:.68rem;color:var(--accent-text);}
+.platform-row-head{display:grid;grid-template-columns:minmax(220px,1.15fr) minmax(250px,1fr) auto minmax(142px,auto);align-items:center;gap:18px;padding:20px 24px;min-height:108px;}
+.platform-identity{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.platform-identity .name-line{display:flex;align-items:center;gap:9px;min-width:0;}
+.platform-identity .name{font-family:var(--font-display);font-weight:600;font-size:1.42rem;line-height:1.08;letter-spacing:-.01em;}
+.star-badge{color:var(--accent);font-size:.95rem;flex-shrink:0;}
+.identity-note{font-family:var(--font-mono);font-size:.64rem;line-height:1.4;color:var(--accent-text);max-width:430px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
 .identity-note.is-muted{color:var(--ink-50);}
-.platform-tags{display:flex;gap:8px;flex-wrap:wrap;flex:1 1 220px;}
-.tag-chip{font-family:var(--font-mono);font-size:.68rem;padding:6px 11px;border:1px solid var(--ink-12);border-radius:20px;color:var(--ink-70);white-space:nowrap;}
-.platform-rate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:110px;text-align:right;}
-.platform-rate .num{font-family:var(--font-display);font-weight:600;font-size:1.4rem;white-space:nowrap;}
-.platform-rate .unit{font-family:var(--font-mono);font-size:.64rem;color:var(--ink-50);}
-.platform-toggle{font-family:var(--font-mono);font-size:.78rem;padding:11px 18px;border:1.5px solid var(--ink);border-radius:20px;display:flex;align-items:center;gap:9px;flex-shrink:0;transition:background .15s ease,color .15s ease;}
-.platform-toggle:hover{background:var(--ink);color:var(--paper);}
+.platform-tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-width:0;}
+.tag-chip{font-family:var(--font-mono);font-size:.66rem;line-height:1;padding:7px 10px;border:1px solid var(--ink-12);border-radius:20px;color:var(--ink-70);white-space:nowrap;background:transparent;}
+.tag-chip--indication{color:var(--accent-text);border-color:rgba(43,70,245,.24);background:var(--accent-dim);font-weight:600;}
+.tag-chip--bonus{color:#237443;border-color:rgba(35,116,67,.28);background:rgba(35,116,67,.09);font-weight:600;}
+.tag-chip--no-bonus{color:var(--ink-50);border-color:var(--ink-12);background:rgba(23,20,15,.025);}
+.tag-chip--neutral{color:var(--ink-70);}
+.platform-head-action{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:142px;}
+.platform-highlight{font-family:var(--font-mono);font-size:.65rem;line-height:1.2;padding:7px 10px;border-radius:6px;background:var(--accent);color:#fff;text-align:center;white-space:nowrap;max-width:210px;}
+.platform-info-line{font-family:var(--font-mono);font-size:.66rem;line-height:1.4;color:var(--ink-70);}
+.platform-rate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:108px;text-align:right;}
+.platform-rate .num{font-family:var(--font-display);font-weight:600;font-size:1.38rem;line-height:1;white-space:nowrap;}
+.platform-rate .unit{font-family:var(--font-mono);font-size:.62rem;color:var(--ink-50);white-space:nowrap;}
+.platform-toggle{font-family:var(--font-mono);font-size:.76rem;padding:10px 15px;min-width:142px;justify-content:center;border:1.5px solid var(--ink);border-radius:20px;display:flex;align-items:center;gap:9px;flex-shrink:0;transition:background .15s ease,color .15s ease,transform .15s ease;}
+.platform-toggle:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px);}
 .platform-toggle .chev{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;flex-shrink:0;}
 .platform-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg);}
-.platform-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;}
-.platform-panel-inner{padding:28px 28px 34px;border-top:1px solid var(--ink-12);}
+.platform-panel{max-height:0;overflow:hidden;transition:max-height .32s ease;}
+.platform-panel-inner{padding:26px 24px 32px;border-top:1px solid var(--ink-12);background:rgba(23,20,15,.018);}
 .panel-section{margin-top:26px;}
 .panel-section:first-child{margin-top:4px;}
 .panel-section h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--accent-text);margin-bottom:14px;}
-.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;}
 .pros-cons ul{display:flex;flex-direction:column;gap:9px;}
 .pros-cons li{position:relative;padding-left:20px;font-size:.88rem;color:var(--ink-70);line-height:1.55;}
 .pros li::before{content:"+";position:absolute;left:0;top:-1px;color:var(--accent-text);font-weight:600;}
 .cons li::before{content:"–";position:absolute;left:0;top:-1px;color:var(--ink-50);font-weight:600;}
-.facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 32px;}
-.facts-grid>div{font-size:.86rem;}
-.facts-grid dt{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-50);margin-bottom:5px;}
-.facts-grid dd{color:var(--ink-70);line-height:1.55;}
+.facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px;}
+.facts-grid>div{font-size:.86rem;padding:12px 14px;border:1px solid var(--ink-12);border-radius:var(--r-s);background:var(--card);}
+.facts-grid dt{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-50);margin-bottom:5px;}
+.facts-grid dd{color:var(--ink-70);line-height:1.5;}
 .bonus-table{display:flex;flex-direction:column;border-top:1px solid var(--ink-12);}
-.bonus-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed var(--ink-12);font-size:.86rem;}
+.bonus-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--ink-12);font-size:.86rem;}
 .bonus-row .trigger{color:var(--ink-70);}
 .bonus-row .reward{color:var(--accent-text);font-weight:600;text-align:right;}
-.panel-text{font-size:.9rem;color:var(--ink-70);line-height:1.65;max-width:620px;}
-.panel-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;}
-.panel-link{font-family:var(--font-mono);font-size:.78rem;color:var(--accent-text);border-bottom:1px solid currentColor;}
-.signup-steps{display:flex;flex-direction:column;gap:18px;}
-.signup-step{display:flex;gap:16px;}
+.panel-text{font-size:.9rem;color:var(--ink-70);line-height:1.65;max-width:720px;}
+.panel-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.panel-link{font-family:var(--font-mono);font-size:.76rem;color:var(--accent-text);border:1px solid currentColor;border-radius:20px;padding:7px 11px;}
+.signup-steps{display:flex;flex-direction:column;gap:16px;}
+.signup-step{display:flex;gap:14px;padding-bottom:16px;border-bottom:1px dashed var(--ink-12);}
+.signup-step:last-child{padding-bottom:0;border-bottom:0;}
 .signup-step .step-num{font-family:var(--font-display);font-weight:600;font-size:.98rem;color:var(--accent-text);flex-shrink:0;width:22px;}
 .signup-step .step-body p{font-size:.88rem;color:var(--ink-70);line-height:1.55;margin-bottom:9px;}
 .signup-step .step-body p:last-child{margin-bottom:0;}
@@ -444,6 +452,12 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 }
 
 /* Mobile */
+@media (min-width:721px) and (max-width:960px){
+  .platform-row-head{grid-template-columns:minmax(190px,1fr) minmax(210px,1fr);}
+  .platform-rate{align-items:flex-start;text-align:left;justify-self:start;}
+  .platform-head-action{justify-self:end;}
+  .platform-toggle{justify-self:end;}
+}
 @media (max-width:720px){
 
   .results-intro-row{
@@ -547,8 +561,13 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   .mobile-menu nav{display:flex;flex-direction:column;padding:8px 24px 26px;gap:4px;}
   .mobile-menu a{padding:12px 0;font-size:.98rem;border-bottom:1px solid var(--ink-12);}
   .mobile-menu a:last-child{border-bottom:0;margin-top:10px;justify-content:center;}
-  .platform-row-head{padding:20px;}
-  .platform-rate{align-items:flex-start;text-align:left;}
+  .platform-row-head{grid-template-columns:1fr auto;gap:14px 16px;padding:20px;}
+  .platform-identity{grid-column:1 / -1;}
+  .platform-tags{grid-column:1 / -1;}
+  .platform-rate{align-items:flex-start;text-align:left;justify-self:start;}
+  .platform-head-action{justify-self:end;align-items:flex-end;}
+  .platform-highlight{max-width:190px;white-space:normal;}
+  .platform-toggle{justify-self:end;}
   .platform-panel-inner{padding:22px 20px 28px;}
   .calc-controls,.calc-result-panel{padding:30px 24px;}
   .calc-disclaimer-bar{padding:18px 24px;}
@@ -1031,8 +1050,8 @@ const LAST_STEP = { text:"Depois de cadastrado, é só começar a gravar." };
 /* ===================== PLATAFORMAS ===================== */
 const PLATFORMS = [
   {
-    id:"hub", domain:"Hub.xyz", recommended:true, usedPersonally:true,
-    identityNote:"Minha indicação principal — a que estou usando, pelo valor pago e pelas campanhas com premiações exclusivas",
+    id:"hub", domain:"Hub.xyz", recommended:true, highlight:"Minha indicação principal",
+    infoLine:"Vídeo doméstico",
     tags:["Vídeo doméstico","Com indicação","Tem bônus"],
     rateNum:"$6 a $7", rateUnit:"USD por hora",
     pros:[
@@ -1071,8 +1090,8 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"crow", domain:"Crowtado", recommended:true, usedPersonally:true,
-    identityNote:"Também recomendo bastante — uso e o saque mínimo é baixo (US$10)",
+    id:"crow", domain:"Crowtado", recommended:true, highlight:"Uso e recomendo bastante",
+    infoLine:"Vídeo doméstico + comercial",
     tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
     rateNum:"$5,50", rateUnit:"USD por hora",
     pros:[
@@ -1102,8 +1121,8 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"flambra", domain:"Flambra", recommended:false, usedPersonally:false,
-    identityNote:"Recomendo também — paga certinho, sempre às sextas-feiras, e é uma empresa brasileira",
+    id:"flambra", domain:"Flambra", recommended:false, highlight:"Pagamento semanal",
+    infoLine:"Vídeo doméstico",
     tags:["Vídeo doméstico","Com indicação","Sem bônus"],
     rateNum:"$5", rateUnit:"USD por hora",
     pros:[
@@ -1130,8 +1149,8 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"claru", domain:"Claru.ai", recommended:false, usedPersonally:true,
-    identityNote:"Não é mais minha indicação principal, mas tem bom suporte no Discord e dia certo de pagamento (sempre às terças)",
+    id:"claru", domain:"Claru.ai", recommended:false, highlight:"Ótimo suporte",
+    infoLine:"Vídeo doméstico",
     updateNote:"Atualização de 10/09/2026: a Claru encerrou o antigo programa de bônus por metas de horas. Agora a tarifa padrão é de US$3,50/h, com tarefas de valor adicional (\"turbinadas\") pagando até US$7,00/h. Ainda não é possível ver quais tarefas são turbinadas antes de gravar — a Claru informou que essa visualização será liberada em breve no painel. A empresa também sinalizou planos futuros (sem data confirmada) para saques instantâneos e novos métodos de pagamento, como PixPay, carteiras digitais e criptomoedas.",
     tags:["Vídeo doméstico","Com indicação","Sem bônus"],
     rateNum:"$3,50 a $7", rateUnit:"USD por hora (varia por tarefa)",
@@ -1161,7 +1180,8 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"kgen", domain:"Kgen.quest", recommended:false, usedPersonally:false,
+    id:"kgen", domain:"Kgen.quest", recommended:false, highlight:"Ainda não testei pessoalmente",
+    infoLine:"Vídeo doméstico",
     tags:["Vídeo doméstico","Com indicação","Tem bônus"],
     rateNum:"$3 + $1", rateUnit:"bônus por hora",
     pros:[
@@ -1259,11 +1279,17 @@ function renderPlatforms(){
       '<div class="platform-row-head">' +
         '<div class="platform-identity">' +
           '<div class="name-line">' + (p.recommended ? '<span class="star-badge">★</span>' : '') + '<span class="name">'+p.domain+'</span></div>' +
-          (p.identityNote ? '<span class="identity-note">'+p.identityNote+'</span>' : (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : ''))) +
+          '<span class="platform-info-line">'+(p.infoLine || '')+'</span>' +
         '</div>' +
-        '<div class="platform-tags">' + p.tags.map(function(t){return '<span class="tag-chip">'+t+'</span>';}).join("") + '</div>' +
+        '<div class="platform-tags">' + p.tags.map(function(t){
+          var cls = t === "Com indicação" ? "tag-chip tag-chip--indication" : (t === "Tem bônus" ? "tag-chip tag-chip--bonus" : (t === "Sem bônus" ? "tag-chip tag-chip--no-bonus" : "tag-chip tag-chip--neutral"));
+          return '<span class="'+cls+'">'+t+'</span>';
+        }).join("") + '</div>' +
         '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
-        '<button type="button" class="platform-toggle" aria-expanded="false" aria-controls="'+panelId+'"><span class="toggle-label">Mais detalhes</span><span class="chev" aria-hidden="true"></span></button>' +
+        '<div class="platform-head-action">' +
+          '<span class="platform-highlight">'+(p.highlight || "")+'</span>' +
+          '<button type="button" class="platform-toggle" aria-expanded="false" aria-controls="'+panelId+'"><span class="toggle-label">Mais detalhes</span><span class="chev" aria-hidden="true"></span></button>' +
+        '</div>' +
       '</div>' +
       '<div class="platform-panel" id="'+panelId+'"><div class="platform-panel-inner">' + renderPlatformPanel(p) + '</div></div>';
     wrap.appendChild(row);
