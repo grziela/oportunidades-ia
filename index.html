@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oportunidades IA BR — Ganhe em dólar treinando IA</title>
-<meta name="description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos para treinamento de IA. Compare Claru, Hub, Crow e KGeN, veja requisitos, estimativas e como começar.">
+<meta name="description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos para treinamento de IA. Compare Hub, Crow, Flambra, Claru e KGeN, veja requisitos, estimativas e como começar.">
 <meta property="og:title" content="Oportunidades IA BR — Ganhe em dólar treinando IA">
 <meta property="og:description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos POV para treinamento de IA.">
 <meta property="og:type" content="website">
@@ -210,7 +210,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 
 /* ===================== COMPARE ===================== */
 .compare-wrap{overflow-x:auto;}
-.compare-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px;}
+.compare-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:760px;}
 .compare-table th,.compare-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--ink-12);}
 .compare-table thead th{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--ink-50);font-weight:500;}
 .compare-table tbody th{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-70);font-weight:500;white-space:nowrap;}
@@ -632,7 +632,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   <div class="container">
     <p class="eyebrow">01 · PLATAFORMAS</p>
     <h2 class="title">As melhores que recomendo.</h2>
-    <p class="lede">Três delas eu já testei, gravei e saquei pessoalmente. A quarta eu ainda não usei, mas também vale conhecer. Toque em "mais detalhes" para ver o review completo, os requisitos técnicos, os bônus e o passo a passo de cadastro.</p>
+    <p class="lede">Três delas eu já testei, gravei e saquei pessoalmente. As outras duas eu ainda não usei, mas também valem a pena conhecer. Toque em "mais detalhes" para ver o review completo, os requisitos técnicos, os bônus (quando existem) e o passo a passo de cadastro.</p>
     <div class="platforms-list" id="platformsList"></div>
   </div>
 </section>
@@ -663,7 +663,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
           <p class="calc-bonus-note" id="calcBonusNote"></p>
         </div>
       </div>
-      <p class="calc-disclaimer-bar">Estimativa matemática considerando ~22 dias de gravação por mês e cotação aproximada do dólar. Não inclui bônus por metas de horas acumuladas, que variam por plataforma. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
+      <p class="calc-disclaimer-bar">Estimativa matemática considerando ~22 dias de gravação por mês e cotação aproximada do dólar. Não inclui bônus, sorteios ou tarefas turbinadas que variam por plataforma. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
     </div>
   </div>
 </section>
@@ -676,7 +676,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     <p class="lede">Um resumo lado a lado do que já testei — e do que ainda não testei.</p>
 
     <div class="compare-wrap">
-      <table class="compare-table" id="compareTable" aria-label="Comparativo entre Claru, Hub, Crow e KGeN"></table>
+      <table class="compare-table" id="compareTable" aria-label="Comparativo entre Hub, Crow, Flambra, Claru e KGeN"></table>
       <div class="compare-cards" id="compareCards"></div>
     </div>
   </div>
@@ -1002,6 +1002,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 const CLARU_REFERRAL_URL = "https://app.claru.ai/signup?ref=2qxq0h9f";
 const HUB_REFERRAL_URL   = "https://ai.hub.xyz/r/YKXT5X4R";
 const CROW_REFERRAL_URL  = "https://www.crowtado.com/sign-up?ref=WBQPJ9SC";
+const FLAMBRA_REFERRAL_URL = "https://app.flambra.com/indicacao/ABC50FE802";
 const KGEN_REFERRAL_URL  = "https://www.kgen.quest/invite/5a9cfe79";
 const CLARU_INBOX_URL    = "https://app.claru.ai/inbox";
 const MINUTE_APPSTORE    = "https://apps.apple.com/app/minute-data/id6760918280";
@@ -1009,7 +1010,7 @@ const MINUTE_PLAYSTORE   = "https://play.google.com/store/apps/details?id=com.ba
 
 document.getElementById("headsetHubLink").href = HUB_REFERRAL_URL;
 
-/* ===================== REQUISITOS TÉCNICOS (iguais nas 4) ===================== */
+/* ===================== REQUISITOS TÉCNICOS (iguais nas 5) ===================== */
 const REQ_STANDARD = {
   duration:"Até 30 min",
   format:"Horizontal, 1080p",
@@ -1030,7 +1031,48 @@ const LAST_STEP = { text:"Depois de cadastrado, é só começar a gravar." };
 /* ===================== PLATAFORMAS ===================== */
 const PLATFORMS = [
   {
+    id:"hub", domain:"Hub.xyz", recommended:true, usedPersonally:true,
+    identityNote:"Minha indicação principal — a que estou usando, pelo valor pago e pelas campanhas com premiações exclusivas",
+    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
+    rateNum:"$6 a $7", rateUnit:"USD por hora",
+    pros:[
+      "Paga R$30 por hora em tarefas normais e R$36 por hora em tarefas turbinadas — o equivalente a cerca de US$6 a US$7, considerando o dólar a R$5.",
+      "Tem campanhas com premiações exclusivas, como sorteios e bônus por marcos de horas acumuladas.",
+      "Pagamento via Pix, com mínimo de apenas R$25, facilitando o primeiro saque.",
+      "Os vídeos costumam ficar disponíveis na plataforma mais rapidamente do que nas outras opções.",
+      "Possui canal de suporte ativo no Telegram."
+    ],
+    cons:[
+      "O pagamento não possui uma data fixa semanal, tornando o prazo para receber menos previsível."
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"R$ 25", avgTime:"Sem data fixa", methods:"Pix" },
+    bonus:[
+      {trigger:"Tarefas turbinadas", reward:"R$ 36/h (≈ US$7,20)"},
+      {trigger:"1h", reward:"Bônus de R$ 15"},
+      {trigger:"2h", reward:"Bilhete de sorteio de R$ 2.500"},
+      {trigger:"5h", reward:"Bônus de R$ 10"},
+      {trigger:"10h", reward:"Bilhete de sorteio"},
+      {trigger:"20h", reward:"Bilhete de sorteio de R$ 2.500"},
+      {trigger:"40h", reward:"Status Premium Collector"},
+      {trigger:"50h", reward:"Bônus de R$ 50"},
+      {trigger:"75h", reward:"Bilhete mensal de sorteio de iPhone"},
+      {trigger:"100h", reward:"Headstrap premium"},
+      {trigger:"200h", reward:"Bilhete mensal de sorteio de iPhone"}
+    ],
+    support:{ text:"É possível entrar em contato pelo próprio site, além de contar com atendimento por Telegram e e-mail.", links:[{label:"Grupo no Telegram", href:null},{label:"support@hub.xyz", href:"mailto:support@hub.xyz"}] },
+    referral:"Você recebe R$2,50 por cada hora realizada pelo seu indicado e mais R$1,25 por hora quando uma pessoa indicada por ele também participa.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Hub.xyz →", href:HUB_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Coloque o código de organização no app Minute ao criar sua conta, usando o mesmo e-mail cadastrado na Hub.", codes:[{code:"JUK9YQWE"}] },
+      LAST_STEP
+    ]
+  },
+  {
     id:"crow", domain:"Crowtado", recommended:true, usedPersonally:true,
+    identityNote:"Também recomendo bastante — uso e o saque mínimo é baixo (US$10)",
     tags:["Vídeo doméstico + comercial","Com indicação","Sem bônus"],
     rateNum:"$5,50", rateUnit:"USD por hora",
     pros:[
@@ -1060,39 +1102,54 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"claru", domain:"Claru.ai", recommended:false, usedPersonally:true,
-    identityNote:"Também recomendo — os bônus aumentam o valor final da hora",
-    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
-    rateNum:"$3,50", rateUnit:"USD por hora",
+    id:"flambra", domain:"Flambra", recommended:false, usedPersonally:false,
+    identityNote:"Recomendo também — paga certinho, sempre às sextas-feiras, e é uma empresa brasileira",
+    tags:["Vídeo doméstico","Com indicação","Sem bônus"],
+    rateNum:"$5", rateUnit:"USD por hora",
     pros:[
-      "Valor base de US$3,50 por hora, com bônus por metas de horas acumuladas que podem aumentar bastante o retorno total — até US$1.000 ao completar 1.000h.",
-      "US$5 já no primeiro clipe enviado, sem necessidade de completar uma hora de gravação.",
-      "Suporte rápido pelo Discord, considerado o melhor entre as quatro plataformas.",
-      "Pagamentos semanais, realizados às terças-feiras."
+      "É a única empresa brasileira da lista — sem risco cambial nem burocracia de plataformas internacionais.",
+      "Paga R$25 por hora aprovada, direto no Pix, sem conversão de moeda.",
+      "Saque disponível toda sexta-feira, via Pix."
     ],
     cons:[
-      "Não é mais a plataforma com o maior valor base por hora entre as quatro.",
-      "Pode levar algum tempo até que o vídeo enviado fique disponível para avaliação.",
-      "Valor mínimo para saque de US$50 (aproximadamente R$250)"
+      "Em dólar (cerca de US$5/h), o valor fica na faixa mais baixa entre as plataformas da lista.",
+      "É a plataforma mais recente da lista, com menos histórico consolidado na comunidade."
+    ],
+    requirements: REQ_STANDARD,
+    payment:{ minWithdraw:"Nenhum valor mínimo informado até o momento", avgTime:"Semanal, às sextas-feiras", methods:"Pix" },
+    bonus:null,
+    support:{ text:"Por ser uma empresa brasileira, a comunicação acontece em português, direto pelo site e pelo aplicativo." },
+    referral:"Você recebe R$2,50 por cada hora aprovada realizada pelos seus indicados.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Flambra →", href:FLAMBRA_REFERRAL_URL}] },
+      MINUTE_STEP,
+      { text:"Use apenas o endereço de e-mail gerado pela Flambra para se inscrever no app Minute. Você encontra esse e-mail na sua caixa de entrada da Flambra." },
+      { text:"Coloque o código de organização.", codes:[{code:"MHT3TVKF"}] },
+      LAST_STEP
+    ]
+  },
+  {
+    id:"claru", domain:"Claru.ai", recommended:false, usedPersonally:true,
+    identityNote:"Não é mais minha indicação principal, mas tem bom suporte no Discord e dia certo de pagamento (sempre às terças)",
+    updateNote:"Atualização de 10/09/2026: a Claru encerrou o antigo programa de bônus por metas de horas. Agora a tarifa padrão é de US$3,50/h, com tarefas de valor adicional (\"turbinadas\") pagando até US$7,00/h. Ainda não é possível ver quais tarefas são turbinadas antes de gravar — a Claru informou que essa visualização será liberada em breve no painel. A empresa também sinalizou planos futuros (sem data confirmada) para saques instantâneos e novos métodos de pagamento, como PixPay, carteiras digitais e criptomoedas.",
+    tags:["Vídeo doméstico","Com indicação","Sem bônus"],
+    rateNum:"$3,50 a $7", rateUnit:"USD por hora (varia por tarefa)",
+    pros:[
+      "Tarefas com valor adicional (\"turbinadas\") pagam até US$7,00 por hora — bem mais que a tarifa padrão de US$3,50, dependendo do que estiver disponível para gravar.",
+      "Suporte rápido pelo Discord, considerado o melhor entre as plataformas da lista.",
+      "Pagamentos com data certa, sempre às terças-feiras."
+    ],
+    cons:[
+      "O antigo programa de bônus por metas de horas foi descontinuado.",
+      "Ainda não é possível visualizar quais tarefas são turbinadas antes de gravar — mudança muito recente (anunciada em 10/09/2026).",
+      "Deixou de ser a plataforma com o maior valor garantido por hora da lista; a maior parte das tarefas paga a tarifa padrão de US$3,50.",
+      "Valor mínimo para saque de US$50 (aproximadamente R$250), o mais alto entre as opções."
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
-    bonus:[
-      {trigger:"1º clipe enviado", reward:"$5"},
-      {trigger:"1h", reward:"$5"},
-      {trigger:"5h", reward:"$10"},
-      {trigger:"10h", reward:"$15"},
-      {trigger:"25h", reward:"$30"},
-      {trigger:"50h", reward:"$75"},
-      {trigger:"100h", reward:"$100"},
-      {trigger:"175h", reward:"$175"},
-      {trigger:"250h", reward:"$250"},
-      {trigger:"375h", reward:"$375"},
-      {trigger:"500h", reward:"$500"},
-      {trigger:"750h", reward:"$750"},
-      {trigger:"1.000h", reward:"$1.000"}
-    ],
-    support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as quatro opções, é o suporte que considero mais eficiente." },
+    bonus:"Não há mais bônus fixo por metas de horas. O ganho extra agora vem das tarefas com valor adicional (até US$7,00/h) — veja os detalhes na atualização acima.",
+    support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as opções da lista, é o suporte que considero mais eficiente." },
     referral:"Ao indicar alguém, você recebe US$25 quando essa pessoa atingir 5 horas de gravação.",
     steps:[
       EMAIL_STEP,
@@ -1104,53 +1161,17 @@ const PLATFORMS = [
     ]
   },
   {
-    id:"hub", domain:"Hub.xyz", recommended:false, usedPersonally:true,
-    tags:["Vídeo doméstico","Com indicação","Tem bônus"],
-    rateNum:"$5 a $6", rateUnit:"USD por hora",
-    pros:[
-      "Pagamento via Pix, com mínimo de apenas R$25, facilitando o primeiro saque.",
-      "Os vídeos costumam ficar disponíveis na plataforma mais rapidamente do que nas outras opções.",
-      "Possui canal de suporte ativo no Telegram."
-    ],
-    cons:[
-      "O pagamento não possui uma data fixa semanal, tornando o prazo para receber menos previsível."
-    ],
-    requirements: REQ_STANDARD,
-    payment:{ minWithdraw:"R$ 25", avgTime:"Sem data fixa", methods:"Pix" },
-    bonus:[
-      {trigger:"Tarefas turbinadas", reward:"$7/h (R$ 35/h)"},
-      {trigger:"1h", reward:"Bônus de R$ 15"},
-      {trigger:"2h", reward:"Bilhete de sorteio de R$ 2.500"},
-      {trigger:"5h", reward:"Bônus de R$ 10"},
-      {trigger:"10h", reward:"Bilhete de sorteio"},
-      {trigger:"20h", reward:"Bilhete de sorteio de R$ 2.500"},
-      {trigger:"40h", reward:"Status Premium Collector"},
-      {trigger:"50h", reward:"Bônus de R$ 50"},
-      {trigger:"75h", reward:"Bilhete mensal de sorteio de iPhone"},
-      {trigger:"100h", reward:"Headstrap premium"},
-      {trigger:"200h", reward:"Bilhete mensal de sorteio de iPhone"}
-    ],
-    support:{ text:"É possível entrar em contato pelo próprio site, além de contar com atendimento por Telegram e e-mail.", links:[{label:"Grupo no Telegram", href:null},{label:"support@hub.xyz", href:"mailto:support@hub.xyz"}] },
-    referral:"Você recebe R$2,50 por cada hora realizada pelo seu indicado e mais R$1,25 por hora quando uma pessoa indicada por ele também participa.",
-    steps:[
-      EMAIL_STEP,
-      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Hub.xyz →", href:HUB_REFERRAL_URL}] },
-      MINUTE_STEP,
-      { text:"Coloque o código de organização no app Minute ao criar sua conta, usando o mesmo e-mail cadastrado na Hub.", codes:[{code:"JUK9YQWE"}] },
-      LAST_STEP
-    ]
-  },
-  {
     id:"kgen", domain:"Kgen.quest", recommended:false, usedPersonally:false,
     tags:["Vídeo doméstico","Com indicação","Tem bônus"],
     rateNum:"$3 + $1", rateUnit:"bônus por hora",
     pros:[
+      "Tem boas recomendações de outros usuários, que apontam a plataforma como confiável e correta nos pagamentos.",
       "Interface simples, direta ao ponto",
       "Campanhas específicas voltadas para o Brasil"
     ],
     cons:[
       "Ainda não reuni relatos suficientes sobre o tempo de aprovação dos vídeos",
-      "Poucas informações públicas sobre saque e suporte, comparado às outras três"
+      "Poucas informações públicas sobre saque e suporte, comparado às outras plataformas"
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"Consulte as regras atuais da plataforma.", avgTime:"Consulte as regras atuais da plataforma.", methods:"Consulte as regras atuais da plataforma." },
@@ -1208,6 +1229,7 @@ function renderPlatformPanel(p){
       '<div class="pros"><h4>+ Pontos positivos</h4><ul>' + p.pros.map(function(x){return "<li>"+x+"</li>";}).join("") + '</ul></div>' +
       '<div class="cons"><h4>− Pontos negativos</h4><ul>' + p.cons.map(function(x){return "<li>"+x+"</li>";}).join("") + '</ul></div>' +
     '</div>' +
+    (p.updateNote ? '<div class="panel-section"><h4>Atualização recente</h4><p class="panel-text">'+p.updateNote+'</p></div>' : '') +
     '<div class="panel-section"><h4>Requisitos técnicos</h4><dl class="facts-grid">' +
       '<div><dt>Duração</dt><dd>'+req.duration+'</dd></div>' +
       '<div><dt>Formato</dt><dd>'+req.format+'</dd></div>' +
@@ -1237,7 +1259,7 @@ function renderPlatforms(){
       '<div class="platform-row-head">' +
         '<div class="platform-identity">' +
           '<div class="name-line">' + (p.recommended ? '<span class="star-badge">★</span>' : '') + '<span class="name">'+p.domain+'</span></div>' +
-          (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (p.identityNote ? '<span class="identity-note">'+p.identityNote+'</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : ''))) +
+          (p.identityNote ? '<span class="identity-note">'+p.identityNote+'</span>' : (p.recommended ? '<span class="identity-note">Minha indicação principal</span>' : (!p.usedPersonally ? '<span class="identity-note is-muted">Ainda não testei pessoalmente</span>' : ''))) +
         '</div>' +
         '<div class="platform-tags">' + p.tags.map(function(t){return '<span class="tag-chip">'+t+'</span>';}).join("") + '</div>' +
         '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
@@ -1280,17 +1302,17 @@ function initCopyButtons(){
 
 /* ===================== COMPARATIVO ===================== */
 const COMPARE_ROWS = [
-  { label:"Já usei", claru:"✓", hub:"✓", crow:"✓", kgen:"—" },
-  { label:"Tipo de tarefa", claru:"Doméstica", hub:"Doméstica", crow:"Doméstica + comercial", kgen:"Doméstica" },
-  { label:"Valor por hora", claru:"$3,50", hub:"⭐ $5 a $6", crow:"$5,50", kgen:"$3 + $1 bônus" },
-  { label:"Bônus", claru:"Metas por hora, até $1.000", hub:"Metas + sorteios", crow:"—", kgen:"Conforme campanha" },
-  { label:"Saque mínimo", claru:"US$ 50", hub:"R$ 25", crow:"US$ 10", kgen:"Consulte a plataforma" },
-  { label:"Tempo médio de saque", claru:"Semanal (terças)", hub:"Semanal", crow:"Variável", kgen:"Consulte a plataforma" },
-  { label:"Métodos de pagamento", claru:"Pix, PayPal", hub:"Pix", crow:"Pix, transferência internacional", kgen:"Consulte a plataforma" },
-  { label:"Suporte", claru:"⭐ Discord (mais rápido)", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", kgen:"Site, WhatsApp e Discord" }
+  { label:"Já usei", hub:"✓", crow:"✓", flambra:"—", claru:"✓", kgen:"—" },
+  { label:"Tipo de tarefa", hub:"Doméstica", crow:"Doméstica + comercial", flambra:"Doméstica", claru:"Doméstica", kgen:"Doméstica" },
+  { label:"Valor por hora", hub:"⭐ $6 a $7", crow:"$5,50", flambra:"$5", claru:"$3,50 a $7 (tarefas turbinadas)", kgen:"$3 + $1 bônus" },
+  { label:"Bônus", hub:"Metas + sorteios", crow:"—", flambra:"—", claru:"Substituído por tarefas turbinadas", kgen:"Conforme campanha" },
+  { label:"Saque mínimo", hub:"R$ 25", crow:"US$ 10", flambra:"Sem mínimo informado", claru:"US$ 50", kgen:"Consulte a plataforma" },
+  { label:"Tempo médio de saque", hub:"Semanal", crow:"Variável", flambra:"Semanal (sextas)", claru:"Semanal (terças)", kgen:"Consulte a plataforma" },
+  { label:"Métodos de pagamento", hub:"Pix", crow:"Pix, transferência internacional", flambra:"Pix", claru:"Pix, PayPal", kgen:"Consulte a plataforma" },
+  { label:"Suporte", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", flambra:"Site e app, em português", claru:"⭐ Discord (mais rápido)", kgen:"Site, WhatsApp e Discord" }
 ];
 const COMPARE_COLS = [
-  {id:"claru", label:"Claru"}, {id:"hub", label:"Hub"}, {id:"crow", label:"Crow"}, {id:"kgen", label:"KGeN"}
+  {id:"hub", label:"Hub"}, {id:"crow", label:"Crow"}, {id:"flambra", label:"Flambra"}, {id:"claru", label:"Claru"}, {id:"kgen", label:"KGeN"}
 ];
 
 function renderCompare(){
@@ -1325,10 +1347,11 @@ const CALC_CONFIG = {
   usdToBrl: 5.20,
   daysPerMonth: 22,
   platforms: {
-    crow:  { label:"Crow",  baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
-    claru: { label:"Claru", baseRate:3.5, note:"A Claru reduziu o valor base para $3,50/h, mas ainda paga bônus por metas de horas acumuladas — de $5 no 1º clipe até $1.000 ao completar 1.000h no total. Esse valor não entra na conta acima." },
-    hub:   { label:"Hub",   baseRate:5.5, note:"A Hub também sorteia prêmios e paga bônus extras em tarefas turbinadas ($7/h) e em marcos de horas — não incluídos na conta acima." },
-    kgen:  { label:"KGeN",  baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
+    hub:     { label:"Hub",     baseRate:6, note:"A Hub paga R$30/h em tarefas normais (~US$6, considerando o dólar a R$5) e R$36/h em tarefas turbinadas (~US$7,20) — além de sortear prêmios e pagar bônus extras em marcos de horas. Nada disso entra na conta acima." },
+    crow:    { label:"Crow",    baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
+    flambra: { label:"Flambra", baseRate:5, note:"A Flambra paga R$25 por hora aprovada, direto em Pix, com saque toda sexta-feira. Não há bônus além do valor por hora." },
+    claru:   { label:"Claru",   baseRate:3.5, note:"Desde 10/09/2026, a Claru encerrou o bônus por metas e passou a ter tarefas com valor adicional, que pagam até US$7,00/h — a tarifa padrão é de US$3,50/h. Essa diferença não entra na conta acima, pois ainda não dá pra saber quantas tarefas turbinadas vão aparecer." },
+    kgen:    { label:"KGeN",    baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
   }
 };
 
@@ -1345,7 +1368,7 @@ function formatBrl(v){ return "≈ R$ " + Math.round(v).toLocaleString("pt-BR");
 
 function initCalculator(){
   const select = document.getElementById("calcPlatformSelect");
-  let currentPlatform = "crow";
+  let currentPlatform = "hub";
   Object.keys(CALC_CONFIG.platforms).forEach(function(id){
     const btn = document.createElement("button");
     btn.className = "calc-tab";
