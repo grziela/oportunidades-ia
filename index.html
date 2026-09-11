@@ -1282,7 +1282,7 @@ const PLATFORMS = [
 function linksHtml(links){
   if(!links || !links.length) return "";
   return '<div class="panel-links">' + links.map(function(l){
-    return l.href ? '<a class="panel-link" href="'+l.href+'" target="_blank" rel="noopener sponsored">'+l.label+'</a>' : '<span class="panel-link" style="border-bottom:none;cursor:default;">'+l.label+'</span>';
+    return l.href ? '<a class="panel-link" href="'+l.href+'" target="_blank" rel="noopener sponsored">'+l.label+'</a>' : '<span class="panel-link" style="cursor:default;">'+l.label+'</span>';
   }).join("") + "</div>";
 }
 
