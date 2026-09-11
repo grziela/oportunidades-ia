@@ -142,7 +142,7 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .platform-row.is-recommended{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
 .platform-row-head{
   display:grid;
-  grid-template-columns:minmax(260px,1fr) auto auto auto;
+  grid-template-columns:minmax(260px,1fr) auto auto;
   align-items:center;
   gap:18px;
   padding:20px 24px;
@@ -626,35 +626,21 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     gap:14px 16px;
     padding:20px;
   }
-
   .platform-identity{
     grid-column:1 / -1;
   }
-
-  .platform-highlight{
-    grid-column:1;
-    grid-row:auto;
-    justify-self:start;
-  }
-
   .platform-rate{
     grid-column:1;
-    grid-row:auto;
     align-items:flex-start;
     text-align:left;
-    justify-self:start;
   }
-
-  .platform-toggle{
+  .platform-head-action{
     grid-column:2;
-    grid-row:auto;
-    justify-self:end;
+    align-items:flex-end;
   }
-
   .platform-panel-inner{
     padding:22px 20px 28px;
   }
-}
   .calc-controls,.calc-result-panel{padding:30px 24px;}
   .calc-disclaimer-bar{padding:18px 24px;}
   .requirements-row{grid-template-columns:1fr;}
@@ -1253,6 +1239,7 @@ const PLATFORMS = [
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
+    bonus:"Não há mais bônus fixo por metas de horas. O ganho extra agora vem das tarefas com valor adicional (até US$7,00/h) — veja os detalhes na atualização acima.",
     support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as opções da lista, é o suporte que considero mais eficiente." },
     referral:"Ao indicar alguém, você recebe US$25 quando essa pessoa atingir 5 horas de gravação.",
     steps:[
@@ -1363,32 +1350,25 @@ function renderPlatforms(){
     row.innerHTML =
       '<div class="platform-row-head">' +
         '<div class="platform-identity">' +
-
-  '<div class="name-line">' +
-    (p.recommended ? '<span class="star-badge">★</span>' : '') +
-    '<span class="name">'+p.domain+'</span>' +
-  '</div>' +
-
-  '<span class="platform-type">'+p.tags[0]+'</span>' +
-
-  '<div class="platform-status-tags">' +
-    p.tags.slice(1).map(function(t){
-      var cls =
-        t === "Com indicação"
-          ? "tag-chip tag-chip--indication"
-          : t === "Tem bônus"
-            ? "tag-chip tag-chip--bonus"
-            : t === "Sem bônus"
-              ? "tag-chip tag-chip--no-bonus"
-              : "tag-chip tag-chip--neutral";
-
-      return '<span class="'+cls+'">'+t+'</span>';
-    }).join("") +
-  '</div>' +
-
-      '<div class="platform-highlight">'+p.highlight+'</div>' +
-      
-'</div>' +
+          '<div class="name-line">' +
+            (p.recommended ? '<span class="star-badge">★</span>' : '') +
+            '<span class="name">'+p.domain+'</span>' +
+          '</div>' +
+          '<span class="platform-type">'+p.infoLine+'</span>' +
+          '<div class="platform-status-tags">' +
+            p.tags.map(function(t){
+              var cls =
+                t === "Com indicação"
+                  ? "tag-chip tag-chip--indication"
+                  : t === "Tem bônus"
+                    ? "tag-chip tag-chip--bonus"
+                    : t === "Sem bônus"
+                      ? "tag-chip tag-chip--no-bonus"
+                      : "tag-chip tag-chip--neutral";
+              return '<span class="'+cls+'">'+t+'</span>';
+            }).join("") +
+          '</div>' +
+        '</div>' +
         '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
         '<div class="platform-head-action">' +
           '<span class="platform-highlight">'+(p.highlight || "")+'</span>' +
