@@ -140,19 +140,79 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .platforms-list{display:flex;flex-direction:column;gap:14px;}
 .platform-row{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);overflow:hidden;}
 .platform-row.is-recommended{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
-.platform-row-head{display:grid;grid-template-columns:minmax(220px,1.15fr) minmax(250px,1fr) auto minmax(142px,auto);align-items:center;gap:18px;padding:20px 24px;min-height:108px;}
-.platform-identity{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.platform-row-head{
+  display:grid;
+  grid-template-columns:minmax(260px,1fr) auto auto auto;
+  align-items:center;
+  gap:18px;
+  padding:20px 24px;
+  min-height:108px;
+}
+.platform-identity{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  min-width:0;
+}
 .platform-identity .name-line{display:flex;align-items:center;gap:9px;min-width:0;}
 .platform-identity .name{font-family:var(--font-display);font-weight:600;font-size:1.42rem;line-height:1.08;letter-spacing:-.01em;}
 .star-badge{color:var(--accent);font-size:.95rem;flex-shrink:0;}
 .identity-note{font-family:var(--font-mono);font-size:.64rem;line-height:1.4;color:var(--accent-text);max-width:430px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
 .identity-note.is-muted{color:var(--ink-50);}
-.platform-tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-width:0;}
-.tag-chip{font-family:var(--font-mono);font-size:.66rem;line-height:1;padding:7px 10px;border:1px solid var(--ink-12);border-radius:20px;color:var(--ink-70);white-space:nowrap;background:transparent;}
-.tag-chip--indication{color:var(--accent-text);border-color:rgba(43,70,245,.24);background:var(--accent-dim);font-weight:600;}
-.tag-chip--bonus{color:#237443;border-color:rgba(35,116,67,.28);background:rgba(35,116,67,.09);font-weight:600;}
-.tag-chip--no-bonus{color:var(--ink-50);border-color:var(--ink-12);background:rgba(23,20,15,.025);}
-.tag-chip--neutral{color:var(--ink-70);}
+.platform-type{
+  font-family:var(--font-mono);
+  font-size:.66rem;
+  line-height:1.25;
+  color:var(--ink-50);
+  margin-top:1px;
+}
+
+.platform-status-tags{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:2px;
+}
+
+.tag-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  padding:3px 9px;
+  border-radius:999px;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+
+.tag-chip--indication{
+  color:var(--accent-text);
+  border:1px solid rgba(43,70,245,.25);
+  background:var(--accent-dim);
+}
+
+.tag-chip--bonus{
+  color:#21733b;
+  border:1px solid rgba(33,115,59,.25);
+  background:rgba(33,115,59,.09);
+}
+
+.tag-chip--no-bonus{
+  color:var(--ink-50);
+  border:1px solid var(--ink-12);
+  background:rgba(23,20,15,.025);
+}
+
+.tag-chip--neutral{
+  color:var(--ink-70);
+  border:1px solid var(--ink-12);
+  background:transparent;
+}
 .platform-head-action{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:142px;}
 .platform-highlight{font-family:var(--font-mono);font-size:.65rem;line-height:1.2;padding:7px 10px;border-radius:6px;background:var(--accent);color:#fff;text-align:center;white-space:nowrap;max-width:210px;}
 .platform-info-line{font-family:var(--font-mono);font-size:.66rem;line-height:1.4;color:var(--ink-70);}
@@ -561,14 +621,40 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   .mobile-menu nav{display:flex;flex-direction:column;padding:8px 24px 26px;gap:4px;}
   .mobile-menu a{padding:12px 0;font-size:.98rem;border-bottom:1px solid var(--ink-12);}
   .mobile-menu a:last-child{border-bottom:0;margin-top:10px;justify-content:center;}
-  .platform-row-head{grid-template-columns:1fr auto;gap:14px 16px;padding:20px;}
-  .platform-identity{grid-column:1 / -1;}
-  .platform-tags{grid-column:1 / -1;}
-  .platform-rate{align-items:flex-start;text-align:left;justify-self:start;}
-  .platform-head-action{justify-self:end;align-items:flex-end;}
-  .platform-highlight{max-width:190px;white-space:normal;}
-  .platform-toggle{justify-self:end;}
-  .platform-panel-inner{padding:22px 20px 28px;}
+  .platform-row-head{
+    grid-template-columns:1fr auto;
+    gap:14px 16px;
+    padding:20px;
+  }
+
+  .platform-identity{
+    grid-column:1 / -1;
+  }
+
+  .platform-highlight{
+    grid-column:1;
+    grid-row:auto;
+    justify-self:start;
+  }
+
+  .platform-rate{
+    grid-column:1;
+    grid-row:auto;
+    align-items:flex-start;
+    text-align:left;
+    justify-self:start;
+  }
+
+  .platform-toggle{
+    grid-column:2;
+    grid-row:auto;
+    justify-self:end;
+  }
+
+  .platform-panel-inner{
+    padding:22px 20px 28px;
+  }
+}
   .calc-controls,.calc-result-panel{padding:30px 24px;}
   .calc-disclaimer-bar{padding:18px 24px;}
   .requirements-row{grid-template-columns:1fr;}
@@ -1167,7 +1253,6 @@ const PLATFORMS = [
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
-    bonus:"Não há mais bônus fixo por metas de horas. O ganho extra agora vem das tarefas com valor adicional (até US$7,00/h) — veja os detalhes na atualização acima.",
     support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as opções da lista, é o suporte que considero mais eficiente." },
     referral:"Ao indicar alguém, você recebe US$25 quando essa pessoa atingir 5 horas de gravação.",
     steps:[
@@ -1278,13 +1363,32 @@ function renderPlatforms(){
     row.innerHTML =
       '<div class="platform-row-head">' +
         '<div class="platform-identity">' +
-          '<div class="name-line">' + (p.recommended ? '<span class="star-badge">★</span>' : '') + '<span class="name">'+p.domain+'</span></div>' +
-          '<span class="platform-info-line">'+(p.infoLine || '')+'</span>' +
-        '</div>' +
-        '<div class="platform-tags">' + p.tags.map(function(t){
-          var cls = t === "Com indicação" ? "tag-chip tag-chip--indication" : (t === "Tem bônus" ? "tag-chip tag-chip--bonus" : (t === "Sem bônus" ? "tag-chip tag-chip--no-bonus" : "tag-chip tag-chip--neutral"));
-          return '<span class="'+cls+'">'+t+'</span>';
-        }).join("") + '</div>' +
+
+  '<div class="name-line">' +
+    (p.recommended ? '<span class="star-badge">★</span>' : '') +
+    '<span class="name">'+p.domain+'</span>' +
+  '</div>' +
+
+  '<span class="platform-type">'+p.tags[0]+'</span>' +
+
+  '<div class="platform-status-tags">' +
+    p.tags.slice(1).map(function(t){
+      var cls =
+        t === "Com indicação"
+          ? "tag-chip tag-chip--indication"
+          : t === "Tem bônus"
+            ? "tag-chip tag-chip--bonus"
+            : t === "Sem bônus"
+              ? "tag-chip tag-chip--no-bonus"
+              : "tag-chip tag-chip--neutral";
+
+      return '<span class="'+cls+'">'+t+'</span>';
+    }).join("") +
+  '</div>' +
+
+      '<div class="platform-highlight">'+p.highlight+'</div>' +
+      
+'</div>' +
         '<div class="platform-rate"><span class="num">'+p.rateNum+'</span><span class="unit">'+p.rateUnit+'</span></div>' +
         '<div class="platform-head-action">' +
           '<span class="platform-highlight">'+(p.highlight || "")+'</span>' +
