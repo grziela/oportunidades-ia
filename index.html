@@ -18,7 +18,7 @@
 <link rel="canonical" href="https://oportunidades-ia-ivory.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
 <style>
 /* ===================== RESET ===================== */
 *,*::before,*::after{box-sizing:border-box;}
@@ -57,6 +57,7 @@ input{font:inherit;}
   --font-display:'Space Grotesk',sans-serif;
   --font-body:'IBM Plex Sans',sans-serif;
   --font-mono:'IBM Plex Mono',monospace;
+  --font-accent:'Fraunces',serif;
   --header-h:76px;
 }
 
@@ -79,7 +80,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 14px);}
 
 .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;color:var(--accent-text);display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;}
 .eyebrow::before{content:"";width:18px;height:1px;background:currentColor;display:inline-block;}
-h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.55rem);letter-spacing:-.01em;line-height:1.12;margin-bottom:16px;}
+h2.title{font-family:var(--font-accent);font-weight:700;font-size:clamp(1.9rem,3.2vw,2.55rem);letter-spacing:-.01em;line-height:1.12;margin-bottom:16px;}
 .lede{font-size:1.05rem;color:var(--ink-70);max-width:640px;line-height:1.7;margin-bottom:44px;}
 
 .btn{font-family:var(--font-mono);font-weight:500;font-size:.82rem;letter-spacing:.02em;padding:15px 24px;border-radius:var(--r-s);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:background .15s ease,border-color .15s ease,color .15s ease,transform .15s ease;}
@@ -105,10 +106,11 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 .site-header{position:sticky;top:0;z-index:100;background:rgba(236,230,216,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ink-12);}
 .header-inner{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px;}
 .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.brand-mark{width:30px;height:30px;flex-shrink:0;}
+.brand-mark{width:30px;height:30px;flex-shrink:0;object-fit:contain;}
 .brand-text{font-family:var(--font-display);font-weight:600;font-size:.92rem;letter-spacing:.01em;white-space:nowrap;}
 .brand-text .accent-ia{color:var(--accent-text);}
-.nav-desktop{display:flex;gap:30px;flex:1;justify-content:center;}
+.nav-desktop{display:flex;gap:30px;}
+.nav-cta-group{display:flex;align-items:center;gap:32px;}
 .nav-desktop a{font-size:.92rem;color:var(--ink-70);transition:color .15s ease;}
 .nav-desktop a:hover{color:var(--ink);}
 .nav-cta{flex-shrink:0;}
@@ -122,7 +124,7 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
 /* ===================== HERO ===================== */
 .hero{padding:28px 0 32px;}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
-.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.5rem,5.6vw,4.1rem);line-height:1.04;letter-spacing:-.015em;margin-bottom:22px;}
+.hero h1{font-family:var(--font-accent);font-weight:700;font-size:clamp(2.5rem,5.6vw,4.1rem);line-height:1.04;letter-spacing:-.015em;margin-bottom:22px;}
 .hero-sub{font-size:1.12rem;color:var(--ink-70);max-width:480px;line-height:1.65;margin-bottom:32px;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
 .hero-disclaimer{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-50);max-width:420px;}
@@ -156,7 +158,7 @@ h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,
   min-width:0;
 }
 .platform-identity .name-line{display:flex;align-items:center;gap:9px;min-width:0;}
-.platform-identity .name{font-family:var(--font-display);font-weight:600;font-size:1.42rem;line-height:1.08;letter-spacing:-.01em;}
+.platform-identity .name{font-family:var(--font-accent);font-weight:700;font-size:1.42rem;line-height:1.08;letter-spacing:-.01em;}
 .star-badge{color:var(--accent);font-size:.95rem;flex-shrink:0;}
 .identity-note{font-family:var(--font-mono);font-size:.64rem;line-height:1.4;color:var(--accent-text);max-width:430px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
 .identity-note.is-muted{color:var(--ink-50);}
@@ -271,8 +273,17 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .calc-current{font-size:.9rem;color:var(--ink-70);margin-top:16px;}
 .calc-result-panel{background:var(--ink);color:var(--paper);padding:48px;display:flex;flex-direction:column;justify-content:center;}
 .calc-result-label{font-family:var(--font-mono);font-size:.76rem;color:var(--paper-70);margin-bottom:8px;}
-.calc-result-usd{font-family:var(--font-display);font-weight:600;font-size:clamp(2.3rem,5.4vw,3.2rem);line-height:1;}
+.calc-result-usd{font-family:var(--font-accent);font-weight:700;font-size:clamp(2.3rem,5.4vw,3.2rem);line-height:1;}
 .calc-result-brl{font-size:1.05rem;color:var(--paper-70);margin-top:8px;}
+.calc-breakdown{display:flex;flex-direction:column;margin-top:18px;border-top:1px solid rgba(255,255,255,.14);}
+.calc-line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:.86rem;}
+.calc-line-label{color:var(--paper-70);}
+.calc-line-value{color:var(--paper);font-weight:700;white-space:nowrap;}
+.calc-line--bonus .calc-line-value{color:#9fe6b0;}
+.calc-total-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;}
+.calc-total-label{font-family:var(--font-mono);font-size:.76rem;color:var(--paper-70);}
+.calc-currency-toggle{font-family:var(--font-mono);font-size:.72rem;color:var(--paper);border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px;}
+.calc-caption{font-size:.82rem;color:var(--paper-70);line-height:1.55;margin-top:10px;}
 .calc-bonus-note{margin-top:24px;font-size:.86rem;color:var(--paper-70);background:rgba(255,255,255,.08);padding:16px 18px;border-radius:var(--r-s);line-height:1.55;}
 .calc-disclaimer-bar{padding:20px 48px;border-top:1px solid var(--ink-12);font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);line-height:1.6;}
 
@@ -286,7 +297,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .compare-table .hl{color:var(--accent-text);font-weight:600;}
 .compare-cards{display:none;}
 .compare-card{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);padding:22px;margin-bottom:16px;}
-.compare-card h4{font-family:var(--font-display);font-size:1.1rem;margin-bottom:14px;}
+.compare-card h4{font-family:var(--font-accent);font-weight:700;font-size:1.1rem;margin-bottom:14px;}
 .compare-card dl{display:flex;flex-direction:column;gap:9px;}
 .compare-card dl>div{display:flex;justify-content:space-between;gap:14px;font-size:.86rem;border-bottom:1px dashed var(--ink-12);padding-bottom:9px;}
 .compare-card dt{color:var(--ink-50);}
@@ -309,7 +320,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .headset-banner{display:flex;align-items:center;gap:36px;background:var(--paper-deep);border-radius:var(--r-m);padding:34px 38px;margin-top:40px;}
 .headset-banner-icon{width:150px;height:150px;flex-shrink:0;overflow:hidden;border-radius:8px;}
 .headset-banner-icon img{width:100%;height:100%;object-fit:cover;display:block;}
-.headset-banner-body h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;margin-bottom:8px;}
+.headset-banner-body h3{font-family:var(--font-accent);font-weight:700;font-size:1.15rem;margin-bottom:8px;}
 .headset-banner-body p{font-size:.92rem;color:var(--ink-70);margin-bottom:16px;max-width:520px;}
 .headset-banner-links{display:flex;gap:12px;flex-wrap:wrap;}
 
@@ -577,7 +588,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 /* ===================== FINAL CTA ===================== */
 .final-cta{background:var(--accent);color:#fff;padding:88px 0;}
 .final-cta-inner{text-align:center;max-width:600px;margin:0 auto;}
-.final-cta h2{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4vw,2.7rem);margin-bottom:16px;}
+.final-cta h2{font-family:var(--font-accent);font-weight:700;font-size:clamp(2rem,4vw,2.7rem);margin-bottom:16px;}
 .final-cta p{color:rgba(255,255,255,.82);font-size:1.05rem;margin-bottom:32px;}
 .final-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
@@ -660,24 +671,19 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="Oportunidades IA BR — início">
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M4 11 L4 4 L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path d="M21 4 L28 4 L28 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path d="M28 21 L28 28 L21 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path d="M11 28 L4 28 L4 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="16" cy="16" r="4.5" stroke="var(--accent)" stroke-width="2"/>
-        <circle cx="23.5" cy="8.5" r="1.8" fill="#ff3b30"/>
-      </svg>
+      <img src="logo-site.png" alt="Oportunidades IA BR" class="brand-mark">
       <span class="brand-text">OPORTUNIDADES <span class="accent-ia">IA</span> BR</span>
     </a>
-    <nav class="nav-desktop" aria-label="Navegação principal">
-      <a href="#plataformas">Plataformas</a>
-      <a href="#calculadora">Quanto paga</a>
-      <a href="#requisitos">Requisitos</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a href="#plataformas" class="btn btn-primary nav-cta">VER PLATAFORMAS</a>
+    <div class="nav-cta-group">
+      <nav class="nav-desktop" aria-label="Navegação principal">
+        <a href="#plataformas">Plataformas</a>
+        <a href="#calculadora">Quanto paga</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#plataformas" class="btn btn-primary nav-cta">VER PLATAFORMAS</a>
+    </div>
     <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
@@ -748,13 +754,18 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
           </div>
         </div>
         <div class="calc-result-panel">
-          <span class="calc-result-label">Sua estimativa mensal</span>
-          <span class="calc-result-usd" id="calcUsd">US$ 0</span>
-          <span class="calc-result-brl" id="calcBrl">≈ R$ 0</span>
+          <span class="calc-result-label">Seu ganho na <strong id="calcPlatformName">Hub.xyz</strong></span>
+          <div class="calc-breakdown" id="calcBreakdown"></div>
+          <div class="calc-total-row">
+            <span class="calc-total-label">Estimativa mensal</span>
+            <button type="button" class="calc-currency-toggle" id="calcCurrencyToggle">Ver em reais</button>
+          </div>
+          <span class="calc-result-usd" id="calcTotalValue">US$ 0 /mês</span>
+          <p class="calc-caption" id="calcCaption"></p>
           <p class="calc-bonus-note" id="calcBonusNote"></p>
         </div>
       </div>
-      <p class="calc-disclaimer-bar">Estimativa matemática considerando ~22 dias de gravação por mês e cotação aproximada do dólar. Não inclui bônus, sorteios ou tarefas turbinadas que variam por plataforma. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
+      <p class="calc-disclaimer-bar">Estimativa matemática considerando 30 dias de gravação por mês e cotação aproximada do dólar. Bônus não monetários (sorteios, status, itens) não entram na conta. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
     </div>
   </div>
 </section>
@@ -1031,8 +1042,8 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     </div>
 
     <div class="faq-contact">
-      <p>Ficou com alguma dúvida ou travou em alguma tarefa? Me chama no Instagram — respondo por lá.</p>
-      <a href="https://www.instagram.com/oportunidadesiabr/" target="_blank" rel="noopener" class="btn btn-outline">FALAR NO INSTAGRAM →</a>
+      <p>Ficou com alguma dúvida ou travou em alguma tarefa? Entra pra nossa comunidade e troca ideia com outras pessoas que também estão nessa. Por lá, a gente tira dúvidas, compartilha experiências e ajuda quem está começando.</p>
+      <a href="https://chat.whatsapp.com/FiLYKUcHEqdGjWgNIzBCqM" target="_blank" rel="noopener" class="btn btn-outline">ENTRAR NA COMUNIDADE →</a>
     </div>
   </div>
 </section>
@@ -1056,14 +1067,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   <div class="container footer-grid">
     <div class="footer-brand">
       <div class="footer-brand-lockup">
-        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M4 11 L4 4 L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M21 4 L28 4 L28 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M28 21 L28 28 L21 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M11 28 L4 28 L4 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="16" cy="16" r="4.5" stroke="var(--accent)" stroke-width="2"/>
-          <circle cx="23.5" cy="8.5" r="1.8" fill="#ff3b30"/>
-        </svg>
+        <img src="logo-site.png" alt="Oportunidades IA BR" class="brand-mark">
         <span>OPORTUNIDADES IA BR</span>
       </div>
       <p>Curadoria pessoal de plataformas que pagam por tarefas do dia a dia gravadas em vídeo, usadas no treinamento de Inteligência Artificial.</p>
@@ -1139,7 +1143,7 @@ const PLATFORMS = [
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"R$ 25", avgTime:"Sem data fixa", methods:"Pix" },
     bonus:[
-      {trigger:"Tarefas turbinadas", reward:"R$ 36/h (≈ US$7,20)"},
+      {trigger:"Tarefas turbinadas", reward:"R$ 30/h (≈ US$6)"},
       {trigger:"1h", reward:"Bônus de R$ 15"},
       {trigger:"2h", reward:"Bilhete de sorteio de R$ 2.500"},
       {trigger:"5h", reward:"Bônus de R$ 10"},
@@ -1238,7 +1242,7 @@ const PLATFORMS = [
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"US$ 50", avgTime:"Semanal", methods:"Pix, PayPal" },
-    bonus:"Não há mais bônus fixo por metas de horas. O ganho extra agora vem das tarefas com valor adicional (até US$7,00/h) — veja os detalhes na atualização acima.",
+    bonus:"Não há mais bônus fixo por metas de horas. O ganho extra agora vem das tarefas com valor adicional (até US$10,00/h) — veja os detalhes na atualização acima.",
     support:{ text:"A plataforma possui uma comunidade ativa no Discord, onde é possível encontrar respostas com rapidez. Entre as opções da lista, é o suporte que considero mais eficiente." },
     referral:"Ao indicar alguém, você recebe US$25 quando essa pessoa atingir 5 horas de gravação.",
     steps:[
@@ -1413,7 +1417,7 @@ function initCopyButtons(){
 const COMPARE_ROWS = [
   { label:"Já usei", hub:"✓", crow:"✓", flambra:"—", claru:"✓", kgen:"—" },
   { label:"Tipo de tarefa", hub:"Doméstica", crow:"Doméstica + comercial", flambra:"Doméstica", claru:"Doméstica", kgen:"Doméstica" },
-  { label:"Valor por hora", hub:"⭐ $6 a $7", crow:"$5,50", flambra:"$5", claru:"$3,50 a $7 (tarefas turbinadas)", kgen:"$3 + $1 bônus" },
+  { label:"Valor por hora", hub:"⭐ $5 a $6", crow:"$5,50", flambra:"$5", claru:"$3,50 a $10 (tarefas turbinadas)", kgen:"$3 + $1 bônus" },
   { label:"Bônus", hub:"Metas + sorteios", crow:"—", flambra:"—", claru:"Substituído por tarefas turbinadas", kgen:"Conforme campanha" },
   { label:"Saque mínimo", hub:"R$ 25", crow:"US$ 10", flambra:"Sem mínimo informado", claru:"US$ 50", kgen:"Consulte a plataforma" },
   { label:"Tempo médio de saque", hub:"Semanal", crow:"Variável", flambra:"Semanal (sextas)", claru:"Semanal (terças)", kgen:"Consulte a plataforma" },
@@ -1454,30 +1458,43 @@ function renderCompare(){
 /* ===================== CALCULADORA ===================== */
 const CALC_CONFIG = {
   usdToBrl: 5.20,
-  daysPerMonth: 22,
+  daysPerMonth: 30,
   platforms: {
-    hub:     { label:"Hub",     baseRate:6, note:"A Hub paga R$30/h em tarefas normais (~US$6, considerando o dólar a R$5) e R$36/h em tarefas turbinadas (~US$7,20) — além de sortear prêmios e pagar bônus extras em marcos de horas. Nada disso entra na conta acima." },
+    hub:     { label:"Hub",     baseRate:5, calcBonusTiers:[{hours:1,usd:3},{hours:5,usd:2},{hours:50,usd:10}], note:"A Hub varia entre US$5 e US$6 por hora (R$25 a R$30, considerando o dólar a R$5) — a conta acima usa US$5 como referência. Ela também sorteia prêmios e libera status/headstrap em marcos mais altos, que não entram nos valores acima." },
     crow:    { label:"Crow",    baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
     flambra: { label:"Flambra", baseRate:5, note:"A Flambra paga R$25 por hora aprovada, direto em Pix, com saque toda sexta-feira. Não há bônus além do valor por hora." },
-    claru:   { label:"Claru",   baseRate:3.5, note:"Desde 10/09/2026, a Claru encerrou o bônus por metas e passou a ter tarefas com valor adicional, que pagam até US$7,00/h — a tarifa padrão é de US$3,50/h. Essa diferença não entra na conta acima, pois ainda não dá pra saber quantas tarefas turbinadas vão aparecer." },
+    claru:   { label:"Claru",   baseRate:3.5, note:"Desde 10/09/2026, a Claru encerrou o bônus por metas e passou a ter tarefas com valor adicional, que pagam até US$10,00/h — a tarifa padrão é de US$3,50/h. Essa diferença não entra na conta acima, pois ainda não dá pra saber quantas tarefas turbinadas vão aparecer." },
     kgen:    { label:"KGeN",    baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
   }
 };
 
-function computeEstimate(platformId, hoursPerDay){
+function computeBreakdown(platformId, hoursPerDay){
   const cfg = CALC_CONFIG.platforms[platformId];
-  const monthlyHours = hoursPerDay * CALC_CONFIG.daysPerMonth;
-  const usd = monthlyHours * cfg.baseRate;
-  const brl = usd * CALC_CONFIG.usdToBrl;
-  return { usd:usd, brl:brl };
+  const days = CALC_CONFIG.daysPerMonth;
+  const monthlyHours = hoursPerDay * days;
+  const baseUsd = hoursPerDay * cfg.baseRate * days;
+  const bonusLines = [];
+  if(cfg.calcBonusTiers){
+    cfg.calcBonusTiers.forEach(function(tier){
+      if(monthlyHours >= tier.hours){
+        bonusLines.push({ label:"Bônus "+tier.hours+"h (batido)", usd:tier.usd });
+      }
+    });
+  }
+  const bonusTotal = bonusLines.reduce(function(sum,b){ return sum + b.usd; }, 0);
+  return { baseUsd:baseUsd, bonusLines:bonusLines, bonusTotal:bonusTotal, totalUsd:baseUsd + bonusTotal, days:days, rate:cfg.baseRate };
 }
 
-function formatUsd(v){ return "US$ " + Math.round(v).toLocaleString("pt-BR"); }
-function formatBrl(v){ return "≈ R$ " + Math.round(v).toLocaleString("pt-BR"); }
+function fmt(usdValue, showBrl){
+  const v = showBrl ? usdValue * CALC_CONFIG.usdToBrl : usdValue;
+  const prefix = showBrl ? "R$ " : "US$ ";
+  return prefix + Math.round(v).toLocaleString("pt-BR");
+}
 
 function initCalculator(){
   const select = document.getElementById("calcPlatformSelect");
   let currentPlatform = "hub";
+  let showBrl = false;
   Object.keys(CALC_CONFIG.platforms).forEach(function(id){
     const btn = document.createElement("button");
     btn.className = "calc-tab";
@@ -1495,17 +1512,41 @@ function initCalculator(){
 
   const range = document.getElementById("hoursRange");
   const hoursValue = document.getElementById("hoursValue");
-  const usdOut = document.getElementById("calcUsd");
-  const brlOut = document.getElementById("calcBrl");
+  const platformName = document.getElementById("calcPlatformName");
+  const breakdown = document.getElementById("calcBreakdown");
+  const totalValue = document.getElementById("calcTotalValue");
+  const caption = document.getElementById("calcCaption");
   const bonusNote = document.getElementById("calcBonusNote");
+  const currencyToggle = document.getElementById("calcCurrencyToggle");
+
+  currencyToggle.addEventListener("click", function(){
+    showBrl = !showBrl;
+    currencyToggle.textContent = showBrl ? "Ver em dólares" : "Ver em reais";
+    update();
+  });
 
   function update(){
     const hours = parseFloat(range.value);
-    hoursValue.textContent = (hours % 1 === 0 ? hours : hours.toFixed(1)) + "h";
-    const est = computeEstimate(currentPlatform, hours);
-    usdOut.textContent = formatUsd(est.usd);
-    brlOut.textContent = formatBrl(est.brl);
-    bonusNote.textContent = "💡 " + CALC_CONFIG.platforms[currentPlatform].note;
+    const hoursLabel = (hours % 1 === 0 ? hours : hours.toFixed(1)) + "h";
+    hoursValue.textContent = hoursLabel;
+    const cfg = CALC_CONFIG.platforms[currentPlatform];
+    const est = computeBreakdown(currentPlatform, hours);
+    const platformData = PLATFORMS.find(function(p){ return p.id === currentPlatform; });
+    platformName.textContent = platformData ? platformData.domain : cfg.label;
+
+    let rows = '<div class="calc-line"><span class="calc-line-label">Gravação · '+hoursLabel+'/dia × '+fmt(est.rate, showBrl)+'/h × '+est.days+' dias</span><span class="calc-line-value">'+fmt(est.baseUsd, showBrl)+'</span></div>';
+    est.bonusLines.forEach(function(b){
+      rows += '<div class="calc-line calc-line--bonus"><span class="calc-line-label">'+b.label+'</span><span class="calc-line-value">+ '+fmt(b.usd, showBrl)+'</span></div>';
+    });
+    breakdown.innerHTML = rows;
+
+    totalValue.textContent = fmt(est.totalUsd, showBrl) + " /mês";
+
+    caption.textContent = est.bonusTotal > 0
+      ? "Estimativa com base em gravar "+est.days+" dias no mês, incluindo "+fmt(est.bonusTotal, showBrl)+" em bônus desbloqueados nesse ritmo."
+      : "Estimativa com base em gravar "+est.days+" dias no mês.";
+
+    bonusNote.textContent = "💡 " + cfg.note;
   }
   range.addEventListener("input", update);
   update();
