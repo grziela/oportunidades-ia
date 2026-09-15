@@ -13,7 +13,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Oportunidades IA BR — Ganhe em dólar treinando IA">
-<meta name="twitter:description" content="Curadoria pessoal das s que pagam por tarefas e vídeos POV para treinamento de IA.">
+<meta name="twitter:description" content="Curadoria pessoal das plataformas que pagam por tarefas e vídeos POV para treinamento de IA.">
 <meta name="twitter:image" content="https://oportunidades-ia-ivory.vercel.app/hub-ganhos.png">
 <link rel="canonical" href="https://oportunidades-ia-ivory.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +106,7 @@ h2.title{font-family:var(--font-accent);font-weight:700;font-size:clamp(1.9rem,3
 .site-header{position:sticky;top:0;z-index:100;background:rgba(236,230,216,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ink-12);}
 .header-inner{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px;}
 .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.brand-mark{width:30px;height:30px;flex-shrink:0;object-fit:contain;}
+.brand-mark{width:30px;height:30px;flex-shrink:0;object-fit:contain;border-radius:8px;}
 .brand-text{font-family:var(--font-display);font-weight:600;font-size:.92rem;letter-spacing:.01em;white-space:nowrap;}
 .brand-text .accent-ia{color:var(--accent-text);}
 .nav-desktop{display:flex;gap:30px;}
@@ -265,7 +265,8 @@ h2.title{font-family:var(--font-accent);font-weight:700;font-size:clamp(1.9rem,3
 .calc-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:36px;}
 .calc-tab{font-family:var(--font-mono);font-size:.8rem;padding:11px 18px;border-radius:20px;border:1.5px solid var(--ink-12);color:var(--ink-70);transition:border-color .15s ease,background .15s ease,color .15s ease;}
 .calc-tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);}
-.calc-row label,.calc-label-block{display:block;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-70);margin-bottom:16px;}
+.calc-row label{display:block;font-family:var(--font-mono);font-size:.78rem;color:var(--ink-70);margin-bottom:16px;}
+.calc-label-block{display:block;font-family:var(--font-accent);font-weight:700;font-size:1.2rem;color:var(--ink);margin-bottom:20px;}
 input[type="range"]{width:100%;-webkit-appearance:none;appearance:none;height:3px;background:var(--ink-12);border-radius:2px;outline-offset:6px;}
 input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
 input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:0 0 0 1px var(--accent);cursor:pointer;}
@@ -285,7 +286,7 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .calc-currency-toggle{font-family:var(--font-mono);font-size:.72rem;color:var(--paper);border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px;}
 .calc-caption{font-size:.82rem;color:var(--paper-70);line-height:1.55;margin-top:10px;}
 .calc-bonus-note{margin-top:24px;font-size:.86rem;color:var(--paper-70);background:rgba(255,255,255,.08);padding:16px 18px;border-radius:var(--r-s);line-height:1.55;}
-.calc-disclaimer-bar{padding:20px 48px;border-top:1px solid var(--ink-12);font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);line-height:1.6;}
+.calc-disclaimer-inline{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-50);line-height:1.6;margin-top:28px;padding-top:20px;border-top:1px solid var(--ink-12);}
 
 /* ===================== COMPARE ===================== */
 .compare-wrap{overflow-x:auto;}
@@ -653,7 +654,6 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     padding:22px 20px 28px;
   }
   .calc-controls,.calc-result-panel{padding:30px 24px;}
-  .calc-disclaimer-bar{padding:18px 24px;}
   .requirements-row{grid-template-columns:1fr;}
   .req-block{border-right:0 !important;padding-left:0 !important;}
   .req-block:not(:first-child){border-top:1px solid var(--ink-12);padding-top:24px;}
@@ -744,13 +744,14 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
     <div class="calc-shell">
       <div class="calc-grid">
         <div class="calc-controls">
-          <span class="calc-label-block">Plataformas</span>
+          <span class="calc-label-block">Plataforma</span>
           <div class="calc-tabs" id="calcPlatformSelect" role="group" aria-label="Selecionar plataforma"></div>
           <div class="calc-row">
             <label for="hoursRange">Horas que você grava por dia</label>
             <input type="range" id="hoursRange" min="0" max="12" step="0.5" value="3" aria-describedby="hoursValue">
             <div class="calc-scale"><span>0h</span><span>3h</span><span>6h</span><span>9h</span><span>12h</span></div>
             <p class="calc-current">Você selecionou <strong id="hoursValue">3h</strong> por dia</p>
+            <p class="calc-disclaimer-inline">*Estimativa matemática considerando 30 dias de gravação por mês e cotação aproximada do dólar. Bônus não monetários (sorteios, status, itens) não entram na conta. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
           </div>
         </div>
         <div class="calc-result-panel">
@@ -765,7 +766,6 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
           <p class="calc-bonus-note" id="calcBonusNote"></p>
         </div>
       </div>
-      <p class="calc-disclaimer-bar">Estimativa matemática considerando 30 dias de gravação por mês e cotação aproximada do dólar. Bônus não monetários (sorteios, status, itens) não entram na conta. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
     </div>
   </div>
 </section>
