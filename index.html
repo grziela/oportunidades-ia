@@ -239,6 +239,14 @@ h2.title{font-family:var(--font-accent);font-weight:700;font-size:clamp(1.9rem,3
 .facts-grid>div{font-size:.86rem;padding:12px 14px;border:1px solid var(--ink-12);border-radius:var(--r-s);background:var(--card);}
 .facts-grid dt{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-50);margin-bottom:5px;}
 .facts-grid dd{color:var(--ink-70);line-height:1.5;}
+.spec-table{display:flex;flex-direction:column;border-top:1px solid var(--ink-12);}
+.spec-row{display:grid;grid-template-columns:160px 1fr;gap:16px;padding:11px 0;border-bottom:1px dashed var(--ink-12);align-items:start;}
+.spec-row:last-child{border-bottom:0;}
+.spec-row dt{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-50);line-height:1.5;}
+.spec-row dd{font-size:.86rem;color:var(--ink-70);line-height:1.55;margin:0;}
+@media (max-width:520px){
+  .spec-row{grid-template-columns:120px 1fr;gap:10px;}
+}
 .bonus-table{display:flex;flex-direction:column;border-top:1px solid var(--ink-12);}
 .bonus-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--ink-12);font-size:.86rem;}
 .bonus-row .trigger{color:var(--ink-70);}
@@ -1327,17 +1335,17 @@ function renderPlatformPanel(p){
       '<div class="cons"><h4>− Pontos negativos</h4><ul>' + p.cons.map(function(x){return "<li>"+x+"</li>";}).join("") + '</ul></div>' +
     '</div>' +
     (p.updateNote ? '<div class="panel-section"><h4>Atualização recente</h4><p class="panel-text">'+p.updateNote+'</p></div>' : '') +
-    '<div class="panel-section"><h4>Requisitos técnicos</h4><dl class="facts-grid">' +
-      '<div><dt>Duração</dt><dd>'+req.duration+'</dd></div>' +
-      '<div><dt>Formato</dt><dd>'+req.format+'</dd></div>' +
-      '<div><dt>Mãos</dt><dd>'+req.hands+'</dd></div>' +
-      '<div><dt>Zoom</dt><dd>'+req.zoom+'</dd></div>' +
-      '<div style="grid-column:1/-1;"><dt>Celulares compatíveis</dt><dd>'+req.devices+'</dd></div>' +
+    '<div class="panel-section"><h4>Requisitos técnicos</h4><dl class="spec-table">' +
+      '<div class="spec-row"><dt>Duração</dt><dd>'+req.duration+'</dd></div>' +
+      '<div class="spec-row"><dt>Formato</dt><dd>'+req.format+'</dd></div>' +
+      '<div class="spec-row"><dt>Mãos</dt><dd>'+req.hands+'</dd></div>' +
+      '<div class="spec-row"><dt>Zoom</dt><dd>'+req.zoom+'</dd></div>' +
+      '<div class="spec-row"><dt>Celulares compatíveis</dt><dd>'+req.devices+'</dd></div>' +
     '</dl></div>' +
-    '<div class="panel-section"><h4>Pagamento</h4><dl class="facts-grid">' +
-      '<div><dt>Saque mínimo</dt><dd>'+p.payment.minWithdraw+'</dd></div>' +
-      '<div><dt>Tempo médio</dt><dd>'+p.payment.avgTime+'</dd></div>' +
-      '<div><dt>Métodos</dt><dd>'+p.payment.methods+'</dd></div>' +
+    '<div class="panel-section"><h4>Pagamento</h4><dl class="spec-table">' +
+      '<div class="spec-row"><dt>Saque mínimo</dt><dd>'+p.payment.minWithdraw+'</dd></div>' +
+      '<div class="spec-row"><dt>Tempo médio</dt><dd>'+p.payment.avgTime+'</dd></div>' +
+      '<div class="spec-row"><dt>Métodos</dt><dd>'+p.payment.methods+'</dd></div>' +
     '</dl></div>' +
     '<div class="panel-section"><h4>Bônus</h4>' + bonusHtml(p.bonus) + '</div>' +
     '<div class="panel-section"><h4>Suporte</h4><p class="panel-text">'+p.support.text+'</p>' + linksHtml(p.support.links) + '</div>' +
