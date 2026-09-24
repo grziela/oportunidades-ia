@@ -1296,7 +1296,7 @@ const PLATFORMS = [
   },
   {
     id:"claru", domain:"Claru.ai", recommended:false, highlight:"Ótimo suporte",
-    infoLine:"Vídeo doméstico",
+    infoLine:"Vídeo doméstico + comercial",
     updateNote:"Atualização de 10/09/2026: a Claru encerrou o antigo programa de bônus por metas de horas. Agora a tarifa padrão é de US$3,50/h, com tarefas de valor adicional (\"turbinadas\") pagando até US$10/h. A empresa também sinalizou planos futuros (sem data confirmada) para saques instantâneos e novos métodos de pagamento, como PixPay, carteiras digitais e criptomoedas.",
     tags:["Com indicação","Sem bônus"],
     rateNum:"$3,50 a $10", rateUnit:"USD por hora",
@@ -1337,7 +1337,7 @@ const PLATFORMS = [
     ],
     cons:[
       "Ainda não reuni relatos suficientes sobre o tempo de aprovação dos vídeos",
-      "Poucas informações públicas sobre saque e suporte, comparado às outras plataformas"
+      "Poucas informações sobre saque e suporte, comparado às outras plataformas"
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"Consulte as regras atuais da plataforma.", avgTime:"Consulte as regras atuais da plataforma.", methods:"Consulte as regras atuais da plataforma." },
@@ -1354,7 +1354,7 @@ const PLATFORMS = [
   },
   {
     id:"invent", domain:"Invent Money", recommended:false, highlight:"Aceita mais celulares",
-    infoLine:"Suporte de cabeça ou de peito",
+    infoLine:"Vídeo doméstico + comercial",
     tags:["Com indicação"],
     rateNum:"$5", rateUnit:"USD por hora",
     pros:[
@@ -1580,14 +1580,14 @@ function initCopyButtons(){
 
 /* ===================== COMPARATIVO ===================== */
 const COMPARE_ROWS = [
-  { label:"Já usei", hub:"✓", crow:"✓", flambra:"—", claru:"✓", kgen:"—", invent:"—" },
+  { label:"Já usei", hub:"✓", crow:"✓", flambra:"✓", claru:"✓", kgen:"—", invent:"—" },
   { label:"Tipo de tarefa", hub:"Doméstica + comercial", crow:"Doméstica + comercial", flambra:"Doméstica", claru:"Doméstica", kgen:"Doméstica", invent:"Doméstica + comercial" },
-  { label:"Valor por hora", hub:"⭐ R$15 a R$42", crow:"$5,50", flambra:"R$12,50", claru:"$3,50 a $10 (tarefas turbinadas)", kgen:"$3 (até $4 em tarefas especiais)", invent:"$5" },
+  { label:"Valor por hora", hub:"⭐ R$15 a R$42", crow:"⭐ $5,50", flambra:"R$12,50", claru:"$3,50 a $10 (tarefas turbinadas)", kgen:"$3 (até $4 em tarefas especiais)", invent:"$5" },
   { label:"Bônus", hub:"Metas + sorteios", crow:"—", flambra:"—", claru:"Substituído por tarefas turbinadas", kgen:"—", invent:"Consulte a plataforma" },
   { label:"Celulares aceitos", hub:"Lista padrão", crow:"Lista padrão", flambra:"Lista padrão", claru:"Lista padrão", kgen:"Lista padrão", invent:"⭐ Mais modelos + suporte de peito" },
   { label:"Saque mínimo", hub:"R$ 25", crow:"US$ 10", flambra:"Sem mínimo informado", claru:"US$ 50", kgen:"Consulte a plataforma", invent:"Consulte a plataforma" },
   { label:"Tempo médio de saque", hub:"Semanal", crow:"Variável", flambra:"Semanal (sextas)", claru:"Semanal (terças)", kgen:"Consulte a plataforma", invent:"Consulte a plataforma" },
-  { label:"Métodos de pagamento", hub:"Pix", crow:"Pix, transferência internacional", flambra:"Pix", claru:"Pix, PayPal", kgen:"Consulte a plataforma", invent:"Cripto (converter em reais)" },
+  { label:"Métodos de pagamento", hub:"Pix", crow:"Pix, transferência internacional", flambra:"Pix", claru:"Pix, PayPal", kgen:"Pix", invent:"Cripto (converter em reais)" },
   { label:"Suporte", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", flambra:"Site e app, em português", claru:"⭐ Discord (mais rápido)", kgen:"Site, WhatsApp e Discord", invent:"Consulte a plataforma" }
 ];
 const COMPARE_COLS = [
