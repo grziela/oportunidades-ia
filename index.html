@@ -672,6 +672,43 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   .footer-bottom{flex-direction:column;}
   .footer-transparency{text-align:left;}
 }
+/* ===== ajustes gerais ===== */
+[hidden]{display:none !important;}
+.platform-head-action{align-items:stretch;}
+.platform-highlight{max-width:none;}
+.platform-toggle{width:100%;}
+.panel-section h4{padding-bottom:8px;border-bottom:1px solid var(--ink-12);}
+.signup-step .step-num{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--accent-dim);font-size:.8rem;}
+
+/* ===== 00 · Comece por aqui ===== */
+.start-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px;}
+.start-head .lede{margin-bottom:0;}
+.start-progress{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-70);min-width:220px;}
+.start-bar{height:4px;background:var(--ink-12);border-radius:2px;margin-top:8px;overflow:hidden;}
+.start-bar i{display:block;height:100%;width:0;background:#21733b;transition:width .3s ease;}
+.start-list{display:flex;flex-direction:column;gap:12px;max-width:860px;}
+.start-step{background:var(--card);border:1px solid var(--ink-12);border-radius:var(--r-m);opacity:.6;transition:opacity .2s ease,border-color .2s ease,background .2s ease;}
+.start-step:hover,.start-step.is-open{opacity:1;}
+.start-step.is-done{opacity:1;background:rgba(33,115,59,.09);border-color:#21733b;}
+.start-trigger{display:flex;align-items:center;gap:16px;width:100%;padding:18px 20px;text-align:left;}
+.start-num{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink-30);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.82rem;font-weight:500;transition:background .2s ease,border-color .2s ease,color .2s ease;}
+.is-done .start-num{background:#21733b;border-color:#21733b;color:#fff;}
+.start-title{flex:1;font-family:var(--font-accent);font-weight:700;font-size:1.12rem;line-height:1.2;}
+.start-title small{display:block;font-family:var(--font-body);font-weight:400;font-size:.84rem;color:var(--ink-70);margin-top:4px;}
+.start-trigger .chev{width:8px;height:8px;flex-shrink:0;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;}
+.start-trigger[aria-expanded="true"] .chev{transform:rotate(-135deg);}
+.start-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.start-body{padding:0 20px 22px 74px;font-size:.92rem;color:var(--ink-70);line-height:1.65;}
+.start-body p+p,.start-body ul{margin-top:10px;}
+.start-body li{position:relative;padding-left:16px;margin-top:6px;}
+.start-body li::before{content:"•";position:absolute;left:0;color:var(--accent-text);}
+@media (max-width:720px){.start-body{padding-left:20px;}}
+
+/* ===== calculadora: turbinadas ===== */
+.calc-modes{margin:-18px 0 30px;}
+.calc-boost{margin-top:30px;}
+.calc-explain{margin-top:24px;font-size:.86rem;color:var(--ink-70);background:var(--accent-dim);border-radius:var(--r-s);padding:14px 16px;line-height:1.6;}
+.calc-line--boost .calc-line-value{color:#ffd28a;}
 </style>
 </head>
 <body>
@@ -734,12 +771,27 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
   </div>
 </section>
 
+<!-- ===================== 00 · COMECE POR AQUI ===================== -->
+<section class="section section-tight" id="comece">
+  <div class="container">
+    <div class="start-head">
+      <div>
+        <p class="eyebrow">00 · COMECE POR AQUI · 6 PASSOS</p>
+        <h2 class="title">Do zero até o primeiro saque.</h2>
+        <p class="lede">O caminho é praticamente o mesmo em qualquer plataforma; o que muda é quanto cada uma paga e como você recebe. Toque em cada passo para ver o que fazer. Ao abrir, ele fica verde, e assim você acompanha o que já concluiu.</p>
+      </div>
+      <div class="start-progress"><span id="startCount">0 de 6 passos concluídos</span><div class="start-bar"><i id="startBar"></i></div></div>
+    </div>
+    <div class="start-list" id="startList"></div>
+  </div>
+</section>
+
 <!-- ===================== PLATAFORMAS ===================== -->
 <section class="section" id="plataformas">
   <div class="container">
     <p class="eyebrow">01 · PLATAFORMAS</p>
     <h2 class="title">As melhores que recomendo.</h2>
-    <p class="lede">Três delas eu já testei, gravei e saquei pessoalmente. As outras duas eu ainda não usei, mas também valem a pena conhecer. Toque em "mais detalhes" para ver o review completo, os requisitos técnicos, os bônus (quando existem) e o passo a passo de cadastro.</p>
+    <p class="lede">Três delas eu já testei, gravei e saquei pessoalmente. As outras eu ainda não usei, mas também valem a pena conhecer. Toque em "mais detalhes" para ver o review completo, os requisitos técnicos, os bônus (quando existem) e o passo a passo de cadastro.</p>
     <div class="platforms-list" id="platformsList"></div>
   </div>
 </section>
@@ -756,11 +808,18 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
         <div class="calc-controls">
           <span class="calc-label-block">Plataforma</span>
           <div class="calc-tabs" id="calcPlatformSelect" role="group" aria-label="Selecionar plataforma"></div>
+          <div class="calc-tabs calc-modes" id="calcModeSelect" role="group" aria-label="Tipo de tarefa" hidden></div>
           <div class="calc-row">
             <label for="hoursRange">Horas que você grava por dia</label>
             <input type="range" id="hoursRange" min="0" max="12" step="0.5" value="3" aria-describedby="hoursValue">
             <div class="calc-scale"><span>0h</span><span>3h</span><span>6h</span><span>9h</span><span>12h</span></div>
             <p class="calc-current">Você selecionou <strong id="hoursValue">3h</strong> por dia</p>
+            <div class="calc-row calc-boost" id="calcBoostRow">
+  <label for="boostRange">Dessas horas, quantas são de tarefas turbinadas?</label>
+  <input type="range" id="boostRange" min="0" max="3" step="0.5" value="0">
+  <p class="calc-current"><strong id="boostValue">0h</strong> por dia em tarefas turbinadas</p>
+</div>
+<p class="calc-explain">💡 <strong>Comuns x turbinadas:</strong> tarefas comuns estão sempre disponíveis e pagam o valor padrão. Tarefas turbinadas pagam mais, mas aparecem por tempo limitado e em quantidade variável. Por isso elas têm um slider separado: use-o para simular quantas horas você conseguiria gravar nelas. O valor turbinado é o máximo anunciado pela plataforma, então trate como um teto.</p>
             <p class="calc-disclaimer-inline">*Estimativa matemática considerando 30 dias de gravação por mês e cotação aproximada do dólar. Bônus não monetários (sorteios, status, itens) não entram na conta. Os ganhos reais dependem de disponibilidade, aprovação e regras de cada plataforma.</p>
           </div>
         </div>
@@ -814,10 +873,10 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
       </div>
       <div class="headset-banner-body">
         <h3>O suporte de cabeça</h3>
-        <p>Ele prende o celular na cabeça e grava a tarefa em POV, do jeito que as plataformas pedem. A Hub costuma liberar de graça para quem entra na fila, mas, se preferir, também dá para comprar pelo Mercado Livre.</p>
+        <p>Ele prende o celular na cabeça e grava a tarefa em POV, do jeito que as plataformas pedem. A Hub costuma liberar de graça para quem entra na fila, mas a fila pode demorar. Para começar mais rápido, compre na Shopee ou improvise um suporte provisório (uma faixa ou elástico que prenda o celular firme na testa, com as duas mãos aparecendo no vídeo) e já comece a ganhar enquanto o seu chega.</p>
         <div class="headset-banner-links">
           <a href="#" id="headsetHubLink" class="btn btn-outline" target="_blank" rel="noopener sponsored">GRÁTIS NA HUB →</a>
-          <a href="https://meli.la/1PQDK2c" class="btn btn-outline" target="_blank" rel="noopener">MERCADO LIVRE →</a>
+          <a href="https://s.shopee.com.br/80Cs5NxWou" class="btn btn-outline" target="_blank" rel="noopener sponsored">COMPRAR NA SHOPEE →</a>
         </div>
       </div>
     </div>
@@ -1109,6 +1168,8 @@ const HUB_REFERRAL_URL   = "https://ai.hub.xyz/r/YKXT5X4R";
 const CROW_REFERRAL_URL  = "https://www.crowtado.com/sign-up?ref=WBQPJ9SC";
 const FLAMBRA_REFERRAL_URL = "https://app.flambra.com/indicacao/ABC50FE802";
 const KGEN_REFERRAL_URL  = "https://www.kgen.quest/invite/5a9cfe79";
+const INVENT_REFERRAL_URL = "https://app.inventmoney.com/r/HGG0I60M";
+const SHOPEE_HEADSET_URL  = "https://s.shopee.com.br/80Cs5NxWou";
 const CLARU_INBOX_URL    = "https://app.claru.ai/inbox";
 const MINUTE_APPSTORE    = "https://apps.apple.com/app/minute-data/id6760918280";
 const MINUTE_PLAYSTORE   = "https://play.google.com/store/apps/details?id=com.bakerdata.minute";
@@ -1139,9 +1200,9 @@ const PLATFORMS = [
     id:"hub", domain:"Hub.xyz", recommended:true, highlight:"Minha indicação principal",
     infoLine:"Vídeo doméstico + comercial",
     tags:["Com indicação","Tem bônus"],
-    rateNum:"$5 a $6", rateUnit:"USD por hora",
+    rateNum:"R$15 a R$42", rateUnit:"por hora (residencial e comercial)",
     pros:[
-      "Paga R$25 por hora em tarefas normais e R$30 por hora em tarefas turbinadas — o equivalente a cerca de US$5 a US$6, considerando o dólar a R$5.",
+      "Paga R$15 por hora em tarefas residenciais e R$42 por hora em tarefas comerciais. Nesta semana, algumas tarefas residenciais têm bônus e pagam até R$37,50/h, e as comerciais até R$50/h.",
       "Tem campanhas com premiações exclusivas, como sorteios e bônus por marcos de horas acumuladas.",
       "Pagamento via Pix, com mínimo de apenas R$25, facilitando o primeiro saque.",
       "Os vídeos costumam ficar disponíveis na plataforma mais rapidamente do que nas outras opções.",
@@ -1153,7 +1214,7 @@ const PLATFORMS = [
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"R$ 25", avgTime:"Sem data fixa", methods:"Pix" },
     bonus:[
-      {trigger:"Tarefas turbinadas", reward:"R$ 30/h (≈ US$6)"},
+      {trigger:"Tarefas turbinadas (esta semana)", reward:"Até R$ 37,50/h (residencial) · até R$ 50/h (comercial)"},
       {trigger:"1h", reward:"Bônus de R$ 15"},
       {trigger:"2h", reward:"Bilhete de sorteio de R$ 2.500"},
       {trigger:"5h", reward:"Bônus de R$ 10"},
@@ -1210,10 +1271,10 @@ const PLATFORMS = [
     id:"flambra", domain:"Flambra", recommended:false, highlight:"Pagamento semanal",
     infoLine:"Vídeo doméstico",
     tags:["Com indicação","Sem bônus"],
-    rateNum:"$5", rateUnit:"USD por hora",
+    rateNum:"R$12,50", rateUnit:"por hora",
     pros:[
       "É a única empresa brasileira da lista — sem risco cambial nem burocracia de plataformas internacionais.",
-      "Paga R$25 por hora aprovada, direto no Pix, sem conversão de moeda.",
+      "Paga R$12,50 por hora aprovada, direto no Pix, sem conversão de moeda.",
       "Saque disponível toda sexta-feira, via Pix."
     ],
     cons:[
@@ -1267,8 +1328,8 @@ const PLATFORMS = [
   {
     id:"kgen", domain:"Kgen.quest", recommended:false, highlight:"Ainda não testei pessoalmente",
     infoLine:"Vídeo doméstico",
-    tags:["Com indicação","Tem bônus"],
-    rateNum:"$3 + $1", rateUnit:"USD por hora",
+    tags:["Com indicação","Sem bônus"],
+    rateNum:"$3 a $4", rateUnit:"USD por hora (até $4 em tarefas especiais)",
     pros:[
       "Tem boas recomendações de outros usuários, que apontam a plataforma como confiável e correta nos pagamentos.",
       "Interface simples, direta ao ponto",
@@ -1280,7 +1341,7 @@ const PLATFORMS = [
     ],
     requirements: REQ_STANDARD,
     payment:{ minWithdraw:"Consulte as regras atuais da plataforma.", avgTime:"Consulte as regras atuais da plataforma.", methods:"Consulte as regras atuais da plataforma." },
-    bonus:"Bônus de $1/h somado ao valor base, conforme a campanha ativa no momento do cadastro.",
+    bonus:null,
     support:{ text:"Atendimento pelo próprio site, além de canal ativo no WhatsApp e no Discord." },
     referral:"Consulte as regras atuais da plataforma.",
     steps:[
@@ -1288,6 +1349,41 @@ const PLATFORMS = [
       { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na KGeN →", href:KGEN_REFERRAL_URL}] },
       MINUTE_STEP,
       { text:"Coloque o código de organização no app Minute ao criar sua conta, usando o mesmo e-mail cadastrado na KGeN.", codes:[{code:"5TBCT4ZC"}] },
+      LAST_STEP
+    ]
+  },
+  {
+    id:"invent", domain:"Invent Money", recommended:false, highlight:"Aceita mais celulares",
+    infoLine:"Suporte de cabeça ou de peito",
+    tags:["Com indicação"],
+    rateNum:"$5", rateUnit:"USD por hora",
+    pros:[
+      "Paga US$5 por hora.",
+      "Aceita mais modelos de celular do que as outras plataformas (inclui iPhone 11 e Redmi Note de linha top), uma boa saída se o seu não é compatível com Hub, Crowtado, Flambra ou Claru.",
+      "Aceita suporte de peito, além do de cabeça.",
+      "Tem tarefas domésticas e comerciais.",
+      "A gravação é feita direto no aplicativo da própria Invent Money, sem precisar do Minute."
+    ],
+    cons:[
+      "O pagamento é feito só em cripto, então você precisa converter o saldo em reais depois.",
+      "Ainda não testei pessoalmente. Confira as regras de saque e de suporte no app antes de começar."
+    ],
+    requirements:{
+      duration:"Confira no app",
+      format:"Confira no app",
+      hands:"Confira no app",
+      zoom:"0,5 (grande angular)",
+      devices:"Aceita mais modelos do que as demais, incluindo iPhone 11 e Redmi Note de linha top. Confira a lista atual no app da Invent Money."
+    },
+    payment:{ minWithdraw:"Consulte as regras atuais no app.", avgTime:"Consulte as regras atuais no app.", methods:"Criptomoeda (converta em reais depois)" },
+    bonus:null,
+    support:{ text:"Consulte os canais de atendimento disponíveis no app da Invent Money." },
+    referral:"Consulte as regras atuais da plataforma.",
+    steps:[
+      EMAIL_STEP,
+      { text:"Cadastre pelo meu link de indicação.", links:[{label:"Cadastrar na Invent Money →", href:INVENT_REFERRAL_URL}] },
+      { text:"Instale o app da Invent Money e entre com a conta que você acabou de criar. As gravações são feitas dentro do próprio app, sem o Minute." },
+      { text:"Grave com suporte de cabeça ou de peito, o que for mais confortável para você." },
       LAST_STEP
     ]
   }
@@ -1403,6 +1499,65 @@ function renderPlatforms(){
   });
 }
 
+/* ===================== 00 · COMECE POR AQUI ===================== */
+const START_STEPS = [
+  { t:"Confira se você pode participar", s:"18 anos ou mais, América Latina e celular compatível",
+    h:`<p>Antes de tudo, veja se você atende aos requisitos básicos:</p><ul><li>Ter 18 anos ou mais;</li><li>Morar em um país da América Latina;</li><li>Ter um celular compatível: iPhone 12 ou mais novo, Pixel 6 ou mais novo, ou Galaxy S21 ou mais novo (a lista completa está no FAQ).</li></ul><p>Seu celular não está na lista? Sem problema: a Invent Money aceita mais modelos.</p>`,
+    l:[{t:"Ver lista de celulares", h:"#faq-celulares"},{t:"Ver a Invent Money", h:"#plataformas"}] },
+  { t:"Providencie o suporte de cabeça", s:"É o único item que você precisa ter",
+    h:`<p>O celular precisa ficar firme, apontado para as suas mãos, do início ao fim da gravação. Você tem três caminhos:</p><ul><li><strong>Grátis na Hub:</strong> ela envia o suporte para quem entra na fila, mas pode demorar;</li><li><strong>Comprar na Shopee:</strong> mais rápido, por cerca de R$35;</li><li><strong>Improvisar um provisório:</strong> prenda o celular na testa com uma faixa larga ou elástico e comece já, sem esperar a entrega. Só garanta que ele não balance e que as duas mãos apareçam no vídeo.</li></ul><p>A Invent Money também aceita suporte de peito.</p>`,
+    l:[{t:"Comprar na Shopee", h:SHOPEE_HEADSET_URL},{t:"Pedir grátis na Hub", h:HUB_REFERRAL_URL}] },
+  { t:"Escolha uma plataforma e crie sua conta", s:"Na dúvida, comece pela Hub",
+    h:`<p>Cada plataforma paga por hora de vídeo aprovada. Se estiver em dúvida, comece pela Hub, minha indicação principal. Depois você pode se cadastrar em outras para ter mais tarefas disponíveis.</p><p><strong>Importante:</strong> use um e-mail diferente em cada plataforma. Cadastro duplicado pode bloquear a conta.</p>`,
+    l:[{t:"Ver plataformas", h:"#plataformas"},{t:"Calcular meus ganhos", h:"#calculadora"}] },
+  { t:"Instale o app e conecte sua conta", s:"Minute + código de organização",
+    h:`<p>Hub, Crowtado, Flambra, Claru e KGeN usam o app Minute: baixe o app, entre com o e-mail do cadastro e informe o código de organização da plataforma. Você encontra o código no card de cada uma, em "Como se cadastrar".</p><p>Na Flambra e na Claru, use o e-mail gerado por elas dentro do Minute. A Invent Money grava direto no próprio app, sem o Minute.</p>`,
+    l:[{t:"App Store", h:MINUTE_APPSTORE},{t:"Play Store", h:MINUTE_PLAYSTORE},{t:"Ver códigos", h:"#plataformas"}] },
+  { t:"Grave suas primeiras tarefas", s:"Siga o briefing de cada tarefa",
+    h:`<p>Escolha uma tarefa disponível, leia o briefing e grave em primeira pessoa (POV). Você não precisa mostrar o rosto: aparecem só as suas mãos.</p><ul><li>Vídeos de até 30 minutos, na horizontal, em 1080p;</li><li>As duas mãos sempre visíveis;</li><li>Câmera no zoom 0,5 (grande angular);</li><li>Celular preso ao suporte do início ao fim.</li></ul><p>Comece por tarefas simples, como lavar louça ou dobrar roupas.</p>`,
+    l:[{t:"Ver requisitos", h:"#requisitos"}] },
+  { t:"Aguarde a aprovação e faça o saque", s:"Só vídeos aprovados são pagos",
+    h:`<p>Cada vídeo passa por uma análise, e só os aprovados entram no pagamento. Quando o saldo atingir o mínimo da plataforma, é só sacar:</p><ul><li><strong>Hub:</strong> Pix, mínimo de R$ 25;</li><li><strong>Crowtado:</strong> Pix, mínimo de US$ 10;</li><li><strong>Flambra:</strong> Pix, toda sexta-feira;</li><li><strong>Claru:</strong> Pix ou PayPal, toda terça-feira, mínimo de US$ 50;</li><li><strong>Invent Money:</strong> o pagamento é em cripto, então você converte em reais depois.</li></ul><p>Regras e prazos podem mudar. Confira sempre em "Pagamento", dentro do card de cada plataforma.</p>`,
+    l:[{t:"Ver plataformas", h:"#plataformas"}] }
+];
+
+function initStart(){
+  const list = document.getElementById("startList");
+  const count = document.getElementById("startCount");
+  const bar = document.getElementById("startBar");
+  let done = 0;
+  START_STEPS.forEach(function(s, i){
+    const links = (s.l || []).map(function(k){
+      const ext = /^http/.test(k.h);
+      return '<a class="panel-link" href="'+k.h+'"'+(ext ? ' target="_blank" rel="noopener sponsored"' : '')+'>'+k.t+'</a>';
+    }).join("");
+    const el = document.createElement("div");
+    el.className = "start-step";
+    el.innerHTML =
+      '<h3><button type="button" class="start-trigger" aria-expanded="false" aria-controls="start-p'+i+'">' +
+        '<span class="start-num">'+(i+1)+'</span>' +
+        '<span class="start-title">'+s.t+'<small>'+s.s+'</small></span>' +
+        '<span class="chev" aria-hidden="true"></span></button></h3>' +
+      '<div class="start-panel" id="start-p'+i+'"><div class="start-body">'+s.h+(links ? '<div class="panel-links">'+links+'</div>' : '')+'</div></div>';
+    const btn = el.querySelector(".start-trigger");
+    const panel = el.querySelector(".start-panel");
+    btn.addEventListener("click", function(){
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      el.classList.toggle("is-open", !open);
+      panel.style.maxHeight = open ? null : panel.scrollHeight + "px";
+      if(!el.classList.contains("is-done")){
+        el.classList.add("is-done");
+        el.querySelector(".start-num").textContent = "✓";
+        done++;
+        count.textContent = done + " de " + START_STEPS.length + " passos concluídos";
+        bar.style.width = (done / START_STEPS.length * 100) + "%";
+      }
+    });
+    list.appendChild(el);
+  });
+}
+
 /* ===================== COPIAR CÓDIGO ===================== */
 function initCopyButtons(){
   document.addEventListener("click", function(e){
@@ -1425,17 +1580,18 @@ function initCopyButtons(){
 
 /* ===================== COMPARATIVO ===================== */
 const COMPARE_ROWS = [
-  { label:"Já usei", hub:"✓", crow:"✓", flambra:"—", claru:"✓", kgen:"—" },
-  { label:"Tipo de tarefa", hub:"Doméstica", crow:"Doméstica + comercial", flambra:"Doméstica", claru:"Doméstica", kgen:"Doméstica" },
-  { label:"Valor por hora", hub:"⭐ $5 a $6", crow:"$5,50", flambra:"$5", claru:"$3,50 a $10 (tarefas turbinadas)", kgen:"$3 + $1 bônus" },
-  { label:"Bônus", hub:"Metas + sorteios", crow:"—", flambra:"—", claru:"Substituído por tarefas turbinadas", kgen:"Conforme campanha" },
-  { label:"Saque mínimo", hub:"R$ 25", crow:"US$ 10", flambra:"Sem mínimo informado", claru:"US$ 50", kgen:"Consulte a plataforma" },
-  { label:"Tempo médio de saque", hub:"Semanal", crow:"Variável", flambra:"Semanal (sextas)", claru:"Semanal (terças)", kgen:"Consulte a plataforma" },
-  { label:"Métodos de pagamento", hub:"Pix", crow:"Pix, transferência internacional", flambra:"Pix", claru:"Pix, PayPal", kgen:"Consulte a plataforma" },
-  { label:"Suporte", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", flambra:"Site e app, em português", claru:"⭐ Discord (mais rápido)", kgen:"Site, WhatsApp e Discord" }
+  { label:"Já usei", hub:"✓", crow:"✓", flambra:"—", claru:"✓", kgen:"—", invent:"—" },
+  { label:"Tipo de tarefa", hub:"Doméstica + comercial", crow:"Doméstica + comercial", flambra:"Doméstica", claru:"Doméstica", kgen:"Doméstica", invent:"Doméstica + comercial" },
+  { label:"Valor por hora", hub:"⭐ R$15 a R$42", crow:"$5,50", flambra:"R$12,50", claru:"$3,50 a $10 (tarefas turbinadas)", kgen:"$3 (até $4 em tarefas especiais)", invent:"$5" },
+  { label:"Bônus", hub:"Metas + sorteios", crow:"—", flambra:"—", claru:"Substituído por tarefas turbinadas", kgen:"—", invent:"Consulte a plataforma" },
+  { label:"Celulares aceitos", hub:"Lista padrão", crow:"Lista padrão", flambra:"Lista padrão", claru:"Lista padrão", kgen:"Lista padrão", invent:"⭐ Mais modelos + suporte de peito" },
+  { label:"Saque mínimo", hub:"R$ 25", crow:"US$ 10", flambra:"Sem mínimo informado", claru:"US$ 50", kgen:"Consulte a plataforma", invent:"Consulte a plataforma" },
+  { label:"Tempo médio de saque", hub:"Semanal", crow:"Variável", flambra:"Semanal (sextas)", claru:"Semanal (terças)", kgen:"Consulte a plataforma", invent:"Consulte a plataforma" },
+  { label:"Métodos de pagamento", hub:"Pix", crow:"Pix, transferência internacional", flambra:"Pix", claru:"Pix, PayPal", kgen:"Consulte a plataforma", invent:"Cripto (converter em reais)" },
+  { label:"Suporte", hub:"Telegram, site e e-mail", crow:"Chat no site (mais lento)", flambra:"Site e app, em português", claru:"⭐ Discord (mais rápido)", kgen:"Site, WhatsApp e Discord", invent:"Consulte a plataforma" }
 ];
 const COMPARE_COLS = [
-  {id:"hub", label:"Hub"}, {id:"crow", label:"Crow"}, {id:"flambra", label:"Flambra"}, {id:"claru", label:"Claru"}, {id:"kgen", label:"KGeN"}
+  {id:"hub", label:"Hub"}, {id:"crow", label:"Crow"}, {id:"flambra", label:"Flambra"}, {id:"claru", label:"Claru"}, {id:"kgen", label:"KGeN"}, {id:"invent", label:"Invent Money"}
 ];
 
 function renderCompare(){
@@ -1470,96 +1626,126 @@ const CALC_CONFIG = {
   usdToBrl: 5.20,
   daysPerMonth: 30,
   platforms: {
-    hub:     { label:"Hub",     baseRate:5, calcBonusTiers:[{hours:1,usd:3},{hours:5,usd:2},{hours:50,usd:10}], note:"A Hub varia entre US$5 e US$6 por hora (R$25 a R$30, considerando o dólar a R$5) — a conta acima usa US$5 como referência. Ela também sorteia prêmios e libera status/headstrap em marcos mais altos, que não entram nos valores acima." },
-    crow:    { label:"Crow",    baseRate:5.5, note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
-    flambra: { label:"Flambra", baseRate:5, note:"A Flambra paga R$25 por hora aprovada, direto em Pix, com saque toda sexta-feira. Não há bônus além do valor por hora." },
-    claru:   { label:"Claru",   baseRate:3.5, note:"Desde 10/09/2026, a Claru encerrou o bônus por metas e passou a ter tarefas com valor adicional, que pagam até US$10,00/h — a tarifa padrão é de US$3,50/h. Essa diferença não entra na conta acima, pois ainda não dá pra saber quantas tarefas turbinadas vão aparecer." },
-    kgen:    { label:"KGeN",    baseRate:4, note:"O valor já inclui o bônus de $1/h somado à base de $3/h. Ainda não testei esta plataforma pessoalmente." }
+    hub: { label:"Hub",
+      modes:[ {label:"Residencial", brl:true, base:15, boost:37.5}, {label:"Comercial", brl:true, base:42, boost:50} ],
+      bonusTiers:[ {hours:1, brl:15}, {hours:5, brl:10}, {hours:50, brl:50} ],
+      note:"O valor turbinado da Hub é o teto (\"até\") e muda de semana para semana. Sorteios e prêmios em marcos de horas não entram na conta; os bônus em dinheiro de 1h, 5h e 50h entram." },
+    crow: { label:"Crow", modes:[ {label:"Padrão", base:5.5} ],
+      note:"A Crowtado não paga bônus além do valor por hora, mas aceita tarefas comerciais (no trabalho) também." },
+    flambra: { label:"Flambra", modes:[ {label:"Padrão", brl:true, base:12.5} ],
+      note:"A Flambra paga R$12,50 por hora aprovada, direto em Pix, com saque toda sexta-feira. Não há bônus além do valor por hora." },
+    claru: { label:"Claru", modes:[ {label:"Padrão", base:3.5, boost:10} ],
+      note:"Desde 10/09/2026, a tarifa padrão da Claru é de US$3,50/h. Tarefas turbinadas pagam até US$10/h, mas ainda não dá para saber quantas vão aparecer. Por isso, use o slider de turbinadas com cautela." },
+    kgen: { label:"KGeN", modes:[ {label:"Padrão", base:3, boost:4} ],
+      note:"A KGeN paga US$3/h e até US$4/h em tarefas especiais, sem bônus adicionais. Ainda não testei esta plataforma pessoalmente." },
+    invent: { label:"Invent Money", modes:[ {label:"Padrão", base:5} ],
+      note:"A Invent Money paga US$5/h e aceita mais modelos de celular. O pagamento é em cripto, então você precisa converter em reais depois. Ainda não testei esta plataforma pessoalmente." }
   }
 };
 
-function computeBreakdown(platformId, hoursPerDay){
-  const cfg = CALC_CONFIG.platforms[platformId];
-  const days = CALC_CONFIG.daysPerMonth;
-  const monthlyHours = hoursPerDay * days;
-  const baseUsd = hoursPerDay * cfg.baseRate * days;
+function computeBreakdown(id, mode, hours, boostHours){
+  const cfg = CALC_CONFIG.platforms[id];
+  const r = CALC_CONFIG.usdToBrl, days = CALC_CONFIG.daysPerMonth;
+  const toUsd = function(v){ return mode.brl ? v / r : v; };
+  const base = toUsd(mode.base);
+  const boost = mode.boost ? toUsd(mode.boost) : base;
   const bonusLines = [];
-  if(cfg.calcBonusTiers){
-    cfg.calcBonusTiers.forEach(function(tier){
-      if(monthlyHours >= tier.hours){
-        bonusLines.push({ label:"Bônus "+tier.hours+"h (batido)", usd:tier.usd });
-      }
-    });
-  }
-  const bonusTotal = bonusLines.reduce(function(sum,b){ return sum + b.usd; }, 0);
-  return { baseUsd:baseUsd, bonusLines:bonusLines, bonusTotal:bonusTotal, totalUsd:baseUsd + bonusTotal, days:days, rate:cfg.baseRate };
+  (cfg.bonusTiers || []).forEach(function(t){
+    if(hours * days >= t.hours){ bonusLines.push({ label:"Bônus "+t.hours+"h (batido)", usd:t.brl / r }); }
+  });
+  const bonusTotal = bonusLines.reduce(function(s, b){ return s + b.usd; }, 0);
+  const normalUsd = (hours - boostHours) * days * base;
+  const boostUsd = boostHours * days * boost;
+  return {
+    base:base, boost:boost, days:days, bonusLines:bonusLines, bonusTotal:bonusTotal,
+    normalUsd:normalUsd, boostUsd:boostUsd, totalUsd:normalUsd + boostUsd + bonusTotal,
+    minUsd:hours * days * base + bonusTotal, maxUsd:hours * days * boost + bonusTotal
+  };
 }
 
 function fmt(usdValue, showBrl){
   const v = showBrl ? usdValue * CALC_CONFIG.usdToBrl : usdValue;
-  const prefix = showBrl ? "R$ " : "US$ ";
-  return prefix + Math.round(v).toLocaleString("pt-BR");
+  return (showBrl ? "R$ " : "US$ ") + Math.round(v).toLocaleString("pt-BR");
 }
+function fmtRate(usdValue, showBrl){
+  const v = showBrl ? usdValue * CALC_CONFIG.usdToBrl : usdValue;
+  return (showBrl ? "R$ " : "US$ ") + v.toLocaleString("pt-BR", { maximumFractionDigits:2 });
+}
+function fmtH(h){ return (h % 1 === 0 ? h : h.toFixed(1)) + "h"; }
 
 function initCalculator(){
-  const select = document.getElementById("calcPlatformSelect");
-  let currentPlatform = "hub";
-  let showBrl = false;
+  const $ = function(id){ return document.getElementById(id); };
+  const select = $("calcPlatformSelect"), modeSel = $("calcModeSelect");
+  const range = $("hoursRange"), hoursValue = $("hoursValue");
+  const boostRange = $("boostRange"), boostRow = $("calcBoostRow"), boostValue = $("boostValue");
+  const platformName = $("calcPlatformName"), breakdown = $("calcBreakdown");
+  const totalValue = $("calcTotalValue"), caption = $("calcCaption"), bonusNote = $("calcBonusNote");
+  const toggle = $("calcCurrencyToggle");
+  let cur = "hub", modeIdx = 0, showBrl = true;
+
+  function syncToggle(){ toggle.textContent = showBrl ? "Ver em dólares" : "Ver em reais"; }
+
+  function buildModes(){
+    const modes = CALC_CONFIG.platforms[cur].modes;
+    modeSel.innerHTML = "";
+    modeSel.hidden = modes.length < 2;
+    modes.forEach(function(m, i){
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "calc-tab"; b.textContent = m.label;
+      b.setAttribute("aria-pressed", i === modeIdx ? "true" : "false");
+      b.addEventListener("click", function(){ modeIdx = i; buildModes(); update(); });
+      modeSel.appendChild(b);
+    });
+  }
+
   Object.keys(CALC_CONFIG.platforms).forEach(function(id){
     const btn = document.createElement("button");
-    btn.className = "calc-tab";
-    btn.type = "button";
-    btn.setAttribute("aria-pressed", id === currentPlatform ? "true" : "false");
+    btn.className = "calc-tab"; btn.type = "button";
+    btn.setAttribute("aria-pressed", id === cur ? "true" : "false");
     btn.textContent = CALC_CONFIG.platforms[id].label;
     btn.dataset.platform = id;
     btn.addEventListener("click", function(){
-      currentPlatform = id;
-      select.querySelectorAll(".calc-tab").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.platform === id ? "true":"false"); });
-      update();
+      cur = id; modeIdx = 0;
+      showBrl = !!CALC_CONFIG.platforms[id].modes[0].brl;
+      select.querySelectorAll(".calc-tab").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.platform === id ? "true" : "false"); });
+      syncToggle(); buildModes(); update();
     });
     select.appendChild(btn);
   });
 
-  const range = document.getElementById("hoursRange");
-  const hoursValue = document.getElementById("hoursValue");
-  const platformName = document.getElementById("calcPlatformName");
-  const breakdown = document.getElementById("calcBreakdown");
-  const totalValue = document.getElementById("calcTotalValue");
-  const caption = document.getElementById("calcCaption");
-  const bonusNote = document.getElementById("calcBonusNote");
-  const currencyToggle = document.getElementById("calcCurrencyToggle");
-
-  currencyToggle.addEventListener("click", function(){
-    showBrl = !showBrl;
-    currencyToggle.textContent = showBrl ? "Ver em dólares" : "Ver em reais";
-    update();
-  });
+  toggle.addEventListener("click", function(){ showBrl = !showBrl; syncToggle(); update(); });
 
   function update(){
+    const p = CALC_CONFIG.platforms[cur], mode = p.modes[modeIdx], hasBoost = !!mode.boost;
     const hours = parseFloat(range.value);
-    const hoursLabel = (hours % 1 === 0 ? hours : hours.toFixed(1)) + "h";
-    hoursValue.textContent = hoursLabel;
-    const cfg = CALC_CONFIG.platforms[currentPlatform];
-    const est = computeBreakdown(currentPlatform, hours);
-    const platformData = PLATFORMS.find(function(p){ return p.id === currentPlatform; });
-    platformName.textContent = platformData ? platformData.domain : cfg.label;
+    boostRange.max = hours;
+    if(!hasBoost || parseFloat(boostRange.value) > hours){ boostRange.value = hasBoost ? hours : 0; }
+    boostRow.hidden = !hasBoost;
+    const bh = parseFloat(boostRange.value);
+    const est = computeBreakdown(cur, mode, hours, bh);
+    hoursValue.textContent = fmtH(hours);
+    boostValue.textContent = fmtH(bh);
+    const pd = PLATFORMS.find(function(x){ return x.id === cur; });
+    platformName.textContent = pd ? pd.domain : p.label;
 
-    let rows = '<div class="calc-line"><span class="calc-line-label">Gravação · '+hoursLabel+'/dia × '+fmt(est.rate, showBrl)+'/h × '+est.days+' dias</span><span class="calc-line-value">'+fmt(est.baseUsd, showBrl)+'</span></div>';
+    let rows = '<div class="calc-line"><span class="calc-line-label">Tarefas comuns · '+fmtH(hours - bh)+'/dia × '+fmtRate(est.base, showBrl)+'/h × '+est.days+' dias</span><span class="calc-line-value">'+fmt(est.normalUsd, showBrl)+'</span></div>';
+    if(hasBoost){
+      rows += '<div class="calc-line calc-line--boost"><span class="calc-line-label">Tarefas turbinadas · '+fmtH(bh)+'/dia × '+fmtRate(est.boost, showBrl)+'/h × '+est.days+' dias</span><span class="calc-line-value">'+fmt(est.boostUsd, showBrl)+'</span></div>';
+    }
     est.bonusLines.forEach(function(b){
       rows += '<div class="calc-line calc-line--bonus"><span class="calc-line-label">'+b.label+'</span><span class="calc-line-value">+ '+fmt(b.usd, showBrl)+'</span></div>';
     });
     breakdown.innerHTML = rows;
-
     totalValue.textContent = fmt(est.totalUsd, showBrl) + " /mês";
-
-    caption.textContent = est.bonusTotal > 0
-      ? "Estimativa com base em gravar "+est.days+" dias no mês, incluindo "+fmt(est.bonusTotal, showBrl)+" em bônus desbloqueados nesse ritmo."
+    caption.textContent = hasBoost
+      ? "Só com tarefas comuns: "+fmt(est.minUsd, showBrl)+"/mês. Se todas as horas fossem turbinadas: "+fmt(est.maxUsd, showBrl)+"/mês (valor máximo)."
       : "Estimativa com base em gravar "+est.days+" dias no mês.";
-
-    bonusNote.textContent = "💡 " + cfg.note;
+    bonusNote.textContent = "💡 " + p.note;
   }
+
   range.addEventListener("input", update);
-  update();
+  boostRange.addEventListener("input", update);
+  buildModes(); syncToggle(); update();
 }
 
 /* ===================== MENU MOBILE ===================== */
@@ -1619,6 +1805,7 @@ function initFaqHashLink(){
 
 /* ===================== INIT ===================== */
 document.addEventListener("DOMContentLoaded", function(){
+  initStart();
   renderPlatforms();
   initCopyButtons();
   renderCompare();
